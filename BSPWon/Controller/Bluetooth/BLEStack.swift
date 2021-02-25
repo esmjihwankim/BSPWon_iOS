@@ -26,6 +26,7 @@ class BLEStack : NSObject
     
     var deviceReloadDelegate : DeviceReloadDelegate?
     var sensorDataUpdateDelegate : SensorDataUpdateDelegate?
+    var recordSensorDataDelegate : RecordSensorDataDelegate?
     
     override init()
     {

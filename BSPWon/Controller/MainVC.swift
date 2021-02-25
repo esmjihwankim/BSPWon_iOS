@@ -13,6 +13,7 @@ class MainVC: UIViewController
     @IBOutlet weak var xValueLabel: UILabel!
     @IBOutlet weak var yValueLabel: UILabel!
     @IBOutlet weak var zValueLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel!
     
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
@@ -24,6 +25,7 @@ class MainVC: UIViewController
     {
         super.viewDidLoad()
         BLEStack.shared.sensorDataUpdateDelegate = self
+        BLEStack.shared.recordSensorDataDelegate = self
     }
     
     @IBAction func recordButtonPressed(_ sender: UIButton)
@@ -31,6 +33,7 @@ class MainVC: UIViewController
         // Start Recording
         if(recordPressed == false)
         {
+            dataBox.clear()
             recordPressed = true
             recordButton.setTitle("Stop", for: .normal)
         }
@@ -39,9 +42,11 @@ class MainVC: UIViewController
         {
             recordPressed = false
             recordButton.setTitle("Record", for: .normal)
+            dataBox.saveToFileSystem()
         }
     }
 }
+
 
 extension MainVC : SensorDataUpdateDelegate
 {
@@ -52,6 +57,20 @@ extension MainVC : SensorDataUpdateDelegate
         zValueLabel.text = String(SingletonBlackboard.shared.data.dataZ)
     }
 }
+
+// whenever new data from BLEStack refreshed, append data
+extension MainVC : RecordSensorDataDelegate
+{
+    func recordOnCondition()
+    {
+        if recordPressed == true
+        {
+            dataBox.append()
+        }
+    }
+}
+
+
 
 
 

@@ -67,6 +67,7 @@ extension BLEStack : CBPeripheralDelegate
         
         // Signal MainVC via Delegate
         sensorDataUpdateDelegate?.updateLabel()
+        recordSensorDataDelegate?.recordOnCondition()
 
     }
 }

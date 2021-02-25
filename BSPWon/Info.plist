@@ -64,5 +64,9 @@
 	</array>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Permission for access to Bluetooth is required </string>
+	<key>UIFileSharingEnabled</key>
+	<true/>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
 </dict>
 </plist>

@@ -65,22 +65,31 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbh-ae-hAC">
+                                <rect key="frame" x="180.33333333333334" y="620.33333333333337" width="53.333333333333343" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="xVH-Wg-yeX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JXU-rJ-HBG"/>
                             <constraint firstItem="xVH-Wg-yeX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MyG-Rp-dNO"/>
+                            <constraint firstItem="Dbh-ae-hAC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TAV-Ns-W78"/>
                             <constraint firstItem="JNW-Uz-8Wk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="b5I-0W-yql"/>
                             <constraint firstItem="Uf4-04-4I5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hBx-cS-49m"/>
                             <constraint firstItem="xVH-Wg-yeX" firstAttribute="top" secondItem="JNW-Uz-8Wk" secondAttribute="bottom" constant="30" id="iJC-FR-Bed"/>
                             <constraint firstItem="JNW-Uz-8Wk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rfI-VE-6lf"/>
+                            <constraint firstItem="Dbh-ae-hAC" firstAttribute="top" secondItem="Uf4-04-4I5" secondAttribute="bottom" constant="40" id="tnl-p2-E8X"/>
                             <constraint firstItem="Uf4-04-4I5" firstAttribute="top" secondItem="xVH-Wg-yeX" secondAttribute="bottom" constant="70" id="udw-l0-GTx"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="connectButton" destination="eoT-kt-WcG" id="6MS-m4-imp"/>
                         <outlet property="recordButton" destination="3ec-9F-OQr" id="l62-HG-BoC"/>
+                        <outlet property="statusLabel" destination="Dbh-ae-hAC" id="viT-mr-1LS"/>
                         <outlet property="xValueLabel" destination="Cwa-eG-yjl" id="cq1-B5-sCg"/>
                         <outlet property="yValueLabel" destination="M5s-oy-03I" id="Cvz-0f-pBC"/>
                         <outlet property="zValueLabel" destination="W0S-eH-YzN" id="Zxa-gE-Fdp"/>

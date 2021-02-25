@@ -13,10 +13,16 @@ protocol DeviceReloadDelegate {
     func reloadView()
 }
 
-//MARK: - For MainVC
+//MARK: - Updating label in MainVC
 // updating the follwing:
 // value of x y z label
 protocol SensorDataUpdateDelegate {
     func updateLabel()
+}
+
+//MARK: - Recording data received from another object if button pressed
+// recording means to append data in array
+protocol RecordSensorDataDelegate {
+    func recordOnCondition()
 }
 

@@ -29,7 +29,6 @@
 		05A90A0D25E229BB00BB8E4C /* BLEPeripheralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A0C25E229BB00BB8E4C /* BLEPeripheralManager.swift */; };
 		05A90A2325E2432A00BB8E4C /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A2225E2432A00BB8E4C /* DataContainer.swift */; };
 		05A90A2B25E252FE00BB8E4C /* DataBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A2A25E252FE00BB8E4C /* DataBox.swift */; };
-		05A90A3025E2587600BB8E4C /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A2F25E2587600BB8E4C /* FileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,7 +77,6 @@
 		05A90A0C25E229BB00BB8E4C /* BLEPeripheralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEPeripheralManager.swift; sourceTree = "<group>"; };
 		05A90A2225E2432A00BB8E4C /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		05A90A2A25E252FE00BB8E4C /* DataBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBox.swift; sourceTree = "<group>"; };
-		05A90A2F25E2587600BB8E4C /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +223,6 @@
 			children = (
 				05A90A2225E2432A00BB8E4C /* DataContainer.swift */,
 				05A90A2A25E252FE00BB8E4C /* DataBox.swift */,
-				05A90A2F25E2587600BB8E4C /* FileManager.swift */,
 			);
 			path = DataSave;
 			sourceTree = "<group>";
@@ -383,7 +380,6 @@
 				05A90A2325E2432A00BB8E4C /* DataContainer.swift in Sources */,
 				05452C8A25D6791200745531 /* BluetoothPeripheral.swift in Sources */,
 				051878FE25BB14BF0054849D /* SceneDelegate.swift in Sources */,
-				05A90A3025E2587600BB8E4C /* FileManager.swift in Sources */,
 				0563C35125E2099600E9D5F4 /* SensorDataFormat.swift in Sources */,
 				05A90A0525E2298F00BB8E4C /* BLECentralManager.swift in Sources */,
 			);
