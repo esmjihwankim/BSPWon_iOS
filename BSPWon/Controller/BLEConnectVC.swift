@@ -10,17 +10,14 @@ import CoreBluetooth
 
 class BLEConnectVC : UIViewController
 {
-    
     @IBOutlet weak var tableView: UITableView!
 
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         tableView.layer.cornerRadius = 15
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        
         BLEStack.shared.deviceReloadDelegate = self
     }
 }
@@ -51,6 +48,13 @@ extension BLEConnectVC : UITableViewDataSource, UITableViewDelegate
         BLEStack.shared.connectToDevice()
         
         // manipulate MainVC's content and dismiss
+        guard let vc = self.presentingViewController as? MainVC
+        else
+        {
+            print("cannot find previous viewcontroller")
+            return
+        }
+        vc.connectButton.setTitle("Disconnect", for: .normal)
         self.dismiss(animated: true, completion: nil)
     }
 }

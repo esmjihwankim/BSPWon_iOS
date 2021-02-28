@@ -16,24 +16,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="114" translatesAutoresizingMaskIntoConstraints="NO" id="JNW-Uz-8Wk">
-                                <rect key="frame" x="90" y="30" width="234" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="JNW-Uz-8Wk" userLabel="Button Stack">
+                                <rect key="frame" x="77" y="30" width="260" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoT-kt-WcG">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="sYu-md-8uh"/>
+                                            <constraint firstAttribute="width" constant="90" id="sYu-md-8uh"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Connect"/>
                                         <connections>
                                             <action selector="connectButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M8f-oc-HHv"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ec-9F-OQr">
-                                        <rect key="frame" x="174" y="0.0" width="60" height="30"/>
+                                        <rect key="frame" x="170" y="0.0" width="90" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="0Ze-gO-MUE"/>
+                                            <constraint firstAttribute="width" constant="90" id="0Ze-gO-MUE"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" title="Record"/>
                                         <connections>
                                             <action selector="recordButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fLA-Bf-19j"/>
@@ -54,7 +56,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="qlG-5N-P4l" userLabel="Valu">
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="qlG-5N-P4l" userLabel="Value Stack">
                                 <rect key="frame" x="48.666666666666657" y="571" width="317" height="20.333333333333371"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="w val" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AU1-vE-g2P" userLabel="WValue Label">
@@ -95,8 +97,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="58" translatesAutoresizingMaskIntoConstraints="NO" id="a3a-mg-FTp" userLabel="LightbulbStack">
-                                <rect key="frame" x="103.33333333333333" y="500" width="207.33333333333337" height="31"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="a3a-mg-FTp" userLabel="LightbulbStack">
+                                <rect key="frame" x="122.33333333333333" y="500" width="169.33333333333337" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Light On/Off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpL-nH-8oJ">
                                         <rect key="frame" x="0.0" y="0.0" width="100.33333333333333" height="31"/>
@@ -105,7 +107,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e1E-jS-pxt">
-                                        <rect key="frame" x="158.33333333333337" y="0.0" width="51" height="31"/>
+                                        <rect key="frame" x="120.33333333333331" y="0.0" width="51" height="31"/>
                                     </switch>
                                 </subviews>
                             </stackView>

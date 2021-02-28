@@ -35,7 +35,7 @@ class DataBox : DataContainer {
         
         _cnt += 4
         
-        if(count > 1000000)
+        if(count > 100000)
         {
             DispatchQueue.global(qos: .background).async
             {
@@ -55,7 +55,7 @@ class DataBox : DataContainer {
     func saveToFileSystem()
     {
         let currentDateTime = Date()
-        df.dateFormat = "yyyy.MM.dd_HH:mm:ss"
+        df.dateFormat = "YYYY.mm.dd.HH_mm"
         let fileName = df.string(from: currentDateTime)
         
         guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first

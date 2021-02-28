@@ -64,14 +64,12 @@ extension BLEStack : CBCentralManagerDelegate {
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral)
     {
         print("Connected!")
-        measurementValue.removeAll()
         peripheralArray.removeAll()
         
         centralManager?.stopScan()
         print("Scan stopped")
-        
-        BLEStack.shared.connected = true
-        
+                
+        self.mainVC.connectButton.setTitle("Disconnect", for: .normal)
         peripheral.delegate = self
         selected!.peripheral.discoverServices(nil)
     }
@@ -83,6 +81,7 @@ extension BLEStack : CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?)
     {
+        self.mainVC.connectButton.setTitle("Connect", for: .normal)
         centralManager.scanForPeripherals(withServices: nil, options: nil)
         deviceReloadDelegate?.reloadView()
         print("Disconnected")

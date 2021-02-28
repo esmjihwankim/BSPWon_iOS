@@ -14,6 +14,8 @@ class BLEStack : NSObject
     
     static var shared : BLEStack = BLEStack()
     
+    var mainVC = MainVC()
+    
     var centralManager : CBCentralManager!
     var peripheral : CBPeripheral!
     
@@ -22,10 +24,7 @@ class BLEStack : NSObject
     var selectedUUID : UUID?
     
     var characteristicArray : [CBCharacteristic] = []
-    var measurementValue : [[AnyObject]] = [[]]
-    
-    var connected : Bool = false
-    
+        
     var deviceReloadDelegate : DeviceReloadDelegate?
     var sensorDataUpdateDelegate : SensorDataUpdateDelegate?
     var recordSensorDataDelegate : RecordSensorDataDelegate?

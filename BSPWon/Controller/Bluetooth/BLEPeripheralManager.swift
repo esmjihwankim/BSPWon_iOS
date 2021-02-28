@@ -59,6 +59,7 @@ extension BLEStack : CBPeripheralDelegate
             print("encoding failed")
             return
         }
+        print(encodedStringSensorData)
                 
         guard let resultArray = DataConversion.bleSensorStringToNumberArray(data: encodedStringSensorData) else
         {
@@ -66,7 +67,7 @@ extension BLEStack : CBPeripheralDelegate
             centralManager.cancelPeripheralConnection(peripheral)
             return
         }
-        print(resultArray)
+        //print(resultArray)
         
         // Update Singleton instance
         SingletonBlackboard.shared.data.dataW = resultArray[0]

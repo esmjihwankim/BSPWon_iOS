@@ -50,7 +50,7 @@ class DataConversion
                 }
                 else
                 {
-                    print("number conversion not successful")
+                    print("number conversion not successful. content:", numberArray)
                 }
             }
         }

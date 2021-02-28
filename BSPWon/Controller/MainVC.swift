@@ -15,7 +15,6 @@ class MainVC: UIViewController
     @IBOutlet weak var yValueLabel: UILabel!
     @IBOutlet weak var zValueLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    
 
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
@@ -28,22 +27,30 @@ class MainVC: UIViewController
         super.viewDidLoad()
         BLEStack.shared.sensorDataUpdateDelegate = self
         BLEStack.shared.recordSensorDataDelegate = self
+        BLEStack.shared.mainVC = self
     }
     
-    
+    // responsible for connecting and disconnecting
     @IBAction func connectButtonPressed(_ sender: UIButton) {
-        let bleConnectVC = self.storyboard?.instantiateViewController(identifier: ID.bleConnectVC)
-        guard let nextVC = bleConnectVC
+        if connectButton.titleLabel?.text == "Connect"
+        {
+            let bleConnectVC = self.storyboard?.instantiateViewController(identifier: ID.bleConnectVC)
+            guard let nextVC = bleConnectVC
+            else
+            {
+                print("Invalid View Controller")
+                return
+            }
+            self.present(nextVC, animated: true, completion: nil)
+        }
         else
         {
-            print("Invalid View Controller")
-            return
+            BLEStack.shared.centralManager.cancelPeripheralConnection(BLEStack.shared.selected!.peripheral)
+            connectButton.setTitle("Connect", for: .normal)
         }
-        self.present(nextVC, animated: true, completion: nil)
-        
-        
         
     }
+    
     
     @IBAction func recordButtonPressed(_ sender: UIButton)
     {
@@ -60,9 +67,9 @@ class MainVC: UIViewController
             recordPressed = false
             recordButton.setTitle("Record", for: .normal)
             dataBox.saveToFileSystem()
+            dataBox.clear()
         }
     }
-
 }
 
 
