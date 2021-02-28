@@ -10,11 +10,13 @@ import UIKit
 class MainVC: UIViewController
 {
     
+    @IBOutlet weak var wValueLabel: UILabel!
     @IBOutlet weak var xValueLabel: UILabel!
     @IBOutlet weak var yValueLabel: UILabel!
     @IBOutlet weak var zValueLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     
+
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     
@@ -26,6 +28,21 @@ class MainVC: UIViewController
         super.viewDidLoad()
         BLEStack.shared.sensorDataUpdateDelegate = self
         BLEStack.shared.recordSensorDataDelegate = self
+    }
+    
+    
+    @IBAction func connectButtonPressed(_ sender: UIButton) {
+        let bleConnectVC = self.storyboard?.instantiateViewController(identifier: ID.bleConnectVC)
+        guard let nextVC = bleConnectVC
+        else
+        {
+            print("Invalid View Controller")
+            return
+        }
+        self.present(nextVC, animated: true, completion: nil)
+        
+        
+        
     }
     
     @IBAction func recordButtonPressed(_ sender: UIButton)
@@ -45,6 +62,7 @@ class MainVC: UIViewController
             dataBox.saveToFileSystem()
         }
     }
+
 }
 
 
@@ -52,6 +70,7 @@ extension MainVC : SensorDataUpdateDelegate
 {
     func updateLabel()
     {
+        wValueLabel.text = String(SingletonBlackboard.shared.data.dataW)
         xValueLabel.text = String(SingletonBlackboard.shared.data.dataX)
         yValueLabel.text = String(SingletonBlackboard.shared.data.dataY)
         zValueLabel.text = String(SingletonBlackboard.shared.data.dataZ)

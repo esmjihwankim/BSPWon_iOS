@@ -10,7 +10,8 @@ import Foundation
 class DataBox : DataContainer {
     var _cnt = 0
     var dataCollection : String = ""
-
+    let df = DateFormatter()
+    
     var count : Int
     {
         return _cnt
@@ -18,6 +19,11 @@ class DataBox : DataContainer {
     
     func append()
     {
+        let currentTime = Date()
+        df.dateFormat = "HH:mm:ss:SSSS"
+        let timestamp = df.string(from: currentTime)
+        dataCollection.append(String(timestamp))
+        dataCollection.append(",")
         dataCollection.append(String(SingletonBlackboard.shared.data.dataW))
         dataCollection.append(",")
         dataCollection.append(String(SingletonBlackboard.shared.data.dataX))
@@ -28,6 +34,15 @@ class DataBox : DataContainer {
         dataCollection.append("\n")
         
         _cnt += 4
+        
+        if(count > 1000000)
+        {
+            DispatchQueue.global(qos: .background).async
+            {
+                self.saveToFileSystem()
+                self.clear()
+            }
+        }
     }
     
     func clear()
@@ -40,8 +55,7 @@ class DataBox : DataContainer {
     func saveToFileSystem()
     {
         let currentDateTime = Date()
-        let df = DateFormatter()
-        df.dateFormat = "yyyy.MM.dd_HH-mm"
+        df.dateFormat = "yyyy.MM.dd_HH:mm:ss"
         let fileName = df.string(from: currentDateTime)
         
         guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
@@ -50,7 +64,7 @@ class DataBox : DataContainer {
             print("invalid url")
             return
         }
-        let fileURL = dir.appendingPathComponent("\(fileName).txt")
+        let fileURL = dir.appendingPathComponent("\(fileName).csv")
         // writing to the file
         do
         {

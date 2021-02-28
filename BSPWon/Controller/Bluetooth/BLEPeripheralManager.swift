@@ -44,7 +44,6 @@ extension BLEStack : CBPeripheralDelegate
             peripheral.readValue(for: characteristic)
             print("UUID: \(characteristic.uuid)")
             print("property: \(characteristic.properties)")
-            print("descriptors: \(characteristic.descriptors)")
         }
     }
     
@@ -54,9 +53,19 @@ extension BLEStack : CBPeripheralDelegate
         
         // Data sent as nus_string from nRF52 converting to uint16 type
         guard let data = characteristic.value else { return }
-        guard let encodedStringSensorData = String(data: data, encoding: .utf8) else { return }
-        
-        let resultArray = DataConversion.bleSensorStringToNumberArray(data: encodedStringSensorData)
+        guard let encodedStringSensorData = String(data: data, encoding: .utf8)
+        else
+        {
+            print("encoding failed")
+            return
+        }
+                
+        guard let resultArray = DataConversion.bleSensorStringToNumberArray(data: encodedStringSensorData) else
+        {
+            print("invalid data type received from device. disconnecting...")
+            centralManager.cancelPeripheralConnection(peripheral)
+            return
+        }
         print(resultArray)
         
         // Update Singleton instance

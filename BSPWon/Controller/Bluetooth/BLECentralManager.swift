@@ -25,7 +25,6 @@ extension BLEStack : CBCentralManagerDelegate {
         }
     }
     
-    
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral,
                        advertisementData: [String : Any], rssi RSSI: NSNumber)
     {
@@ -62,14 +61,16 @@ extension BLEStack : CBCentralManagerDelegate {
         }
     }
     
-    
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral)
     {
         print("Connected!")
         measurementValue.removeAll()
+        peripheralArray.removeAll()
         
         centralManager?.stopScan()
         print("Scan stopped")
+        
+        BLEStack.shared.connected = true
         
         peripheral.delegate = self
         selected!.peripheral.discoverServices(nil)
@@ -82,6 +83,8 @@ extension BLEStack : CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?)
     {
+        centralManager.scanForPeripherals(withServices: nil, options: nil)
+        deviceReloadDelegate?.reloadView()
         print("Disconnected")
     }
     

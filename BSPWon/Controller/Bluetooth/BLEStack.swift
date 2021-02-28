@@ -24,6 +24,8 @@ class BLEStack : NSObject
     var characteristicArray : [CBCharacteristic] = []
     var measurementValue : [[AnyObject]] = [[]]
     
+    var connected : Bool = false
+    
     var deviceReloadDelegate : DeviceReloadDelegate?
     var sensorDataUpdateDelegate : SensorDataUpdateDelegate?
     var recordSensorDataDelegate : RecordSensorDataDelegate?

@@ -35,7 +35,7 @@ extension BLEConnectVC : UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: StoryboardID.deviceCell, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: ID.deviceCell, for: indexPath)
         cell.textLabel?.text = BLEStack.shared.peripheralArray[indexPath.row].name
         return cell
     }
@@ -50,6 +50,8 @@ extension BLEConnectVC : UITableViewDataSource, UITableViewDelegate
         BLEStack.shared.selected = BluetoothPeriperal(name: tmpDevice.name, peripheral: tmpDevice.peripheral)
         BLEStack.shared.connectToDevice()
         
+        // manipulate MainVC's content and dismiss
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
