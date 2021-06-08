@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,10 +25,14 @@
 		0563C34625E2061100E9D5F4 /* SingletonBlackboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563C34525E2061100E9D5F4 /* SingletonBlackboard.swift */; };
 		0563C35125E2099600E9D5F4 /* SensorDataFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563C35025E2099600E9D5F4 /* SensorDataFormat.swift */; };
 		0563C35F25E20DFF00E9D5F4 /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563C35E25E20DFF00E9D5F4 /* SensorData.swift */; };
-		05A90A0525E2298F00BB8E4C /* BLECentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A0425E2298F00BB8E4C /* BLECentralManager.swift */; };
-		05A90A0D25E229BB00BB8E4C /* BLEPeripheralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A0C25E229BB00BB8E4C /* BLEPeripheralManager.swift */; };
+		05A90A0525E2298F00BB8E4C /* BLECentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A0425E2298F00BB8E4C /* BLECentral.swift */; };
+		05A90A0D25E229BB00BB8E4C /* BLEPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A0C25E229BB00BB8E4C /* BLEPeripheral.swift */; };
 		05A90A2325E2432A00BB8E4C /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A2225E2432A00BB8E4C /* DataContainer.swift */; };
 		05A90A2B25E252FE00BB8E4C /* DataBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A2A25E252FE00BB8E4C /* DataBox.swift */; };
+		05C409E025F4083B00C21D38 /* ChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C409DF25F4083B00C21D38 /* ChartManager.swift */; };
+		267349D1A65F224317FA196F /* Pods_BSPWonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4619C1C8703EBFE5C99FE84 /* Pods_BSPWonTests.framework */; };
+		5BD13F8B89B039592FF22E9E /* Pods_BSPWon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04591484D502DBD4640926FE /* Pods_BSPWon.framework */; };
+		F1C6B48A8E31B37A5DD42D84 /* Pods_BSPWon_BSPWonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AD53CC8C2B6095CC01472A /* Pods_BSPWon_BSPWonUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04591484D502DBD4640926FE /* Pods_BSPWon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSPWon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		051878F825BB14BF0054849D /* BSPWon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BSPWon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		051878FB25BB14BF0054849D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		051878FD25BB14BF0054849D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,10 +78,19 @@
 		0563C34525E2061100E9D5F4 /* SingletonBlackboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonBlackboard.swift; sourceTree = "<group>"; };
 		0563C35025E2099600E9D5F4 /* SensorDataFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataFormat.swift; sourceTree = "<group>"; };
 		0563C35E25E20DFF00E9D5F4 /* SensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
-		05A90A0425E2298F00BB8E4C /* BLECentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLECentralManager.swift; sourceTree = "<group>"; };
-		05A90A0C25E229BB00BB8E4C /* BLEPeripheralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEPeripheralManager.swift; sourceTree = "<group>"; };
+		05A90A0425E2298F00BB8E4C /* BLECentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLECentral.swift; sourceTree = "<group>"; };
+		05A90A0C25E229BB00BB8E4C /* BLEPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEPeripheral.swift; sourceTree = "<group>"; };
 		05A90A2225E2432A00BB8E4C /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		05A90A2A25E252FE00BB8E4C /* DataBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBox.swift; sourceTree = "<group>"; };
+		05C409DF25F4083B00C21D38 /* ChartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartManager.swift; sourceTree = "<group>"; };
+		0F6E28E8B59A78F629DE4624 /* Pods-BSPWon-BSPWonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWon-BSPWonUITests.release.xcconfig"; path = "Target Support Files/Pods-BSPWon-BSPWonUITests/Pods-BSPWon-BSPWonUITests.release.xcconfig"; sourceTree = "<group>"; };
+		1EC3B6BD94BAEFC43A873A0F /* Pods-BSPWonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWonTests.debug.xcconfig"; path = "Target Support Files/Pods-BSPWonTests/Pods-BSPWonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		59AD53CC8C2B6095CC01472A /* Pods_BSPWon_BSPWonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSPWon_BSPWonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65C9419D18974E55D7970189 /* Pods-BSPWonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWonTests.release.xcconfig"; path = "Target Support Files/Pods-BSPWonTests/Pods-BSPWonTests.release.xcconfig"; sourceTree = "<group>"; };
+		B20A44E86C71799DF14F0E00 /* Pods-BSPWon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWon.release.xcconfig"; path = "Target Support Files/Pods-BSPWon/Pods-BSPWon.release.xcconfig"; sourceTree = "<group>"; };
+		B4619C1C8703EBFE5C99FE84 /* Pods_BSPWonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSPWonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0D1189F5246B545F2BF9122 /* Pods-BSPWon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWon.debug.xcconfig"; path = "Target Support Files/Pods-BSPWon/Pods-BSPWon.debug.xcconfig"; sourceTree = "<group>"; };
+		F6CAE0EFD7C12E8A3958D2E4 /* Pods-BSPWon-BSPWonUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWon-BSPWonUITests.debug.xcconfig"; path = "Target Support Files/Pods-BSPWon-BSPWonUITests/Pods-BSPWon-BSPWonUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BD13F8B89B039592FF22E9E /* Pods_BSPWon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				267349D1A65F224317FA196F /* Pods_BSPWonTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1C6B48A8E31B37A5DD42D84 /* Pods_BSPWon_BSPWonUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +128,8 @@
 				0518791125BB14C00054849D /* BSPWonTests */,
 				0518791C25BB14C00054849D /* BSPWonUITests */,
 				051878F925BB14BF0054849D /* Products */,
+				28794B0EBB02D0674225CC68 /* Pods */,
+				36B2868413E7B234C769C28F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -181,7 +200,7 @@
 			children = (
 				05452C7D25D6709300745531 /* Helper */,
 				05A90A0325E2295C00BB8E4C /* Bluetooth */,
-				05A90A1825E23E1800BB8E4C /* Plot */,
+				056BF92B25F498980059D6EE /* Chart */,
 				05452C9525D683EF00745531 /* Protocol.swift */,
 				051878FF25BB14BF0054849D /* MainVC.swift */,
 				05452C3025D5983B00745531 /* BLEConnectVC.swift */,
@@ -208,12 +227,20 @@
 			path = Operating;
 			sourceTree = "<group>";
 		};
+		056BF92B25F498980059D6EE /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				05C409DF25F4083B00C21D38 /* ChartManager.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
 		05A90A0325E2295C00BB8E4C /* Bluetooth */ = {
 			isa = PBXGroup;
 			children = (
 				05452C7525D64BEE00745531 /* BLEStack.swift */,
-				05A90A0425E2298F00BB8E4C /* BLECentralManager.swift */,
-				05A90A0C25E229BB00BB8E4C /* BLEPeripheralManager.swift */,
+				05A90A0425E2298F00BB8E4C /* BLECentral.swift */,
+				05A90A0C25E229BB00BB8E4C /* BLEPeripheral.swift */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -227,11 +254,27 @@
 			path = DataSave;
 			sourceTree = "<group>";
 		};
-		05A90A1825E23E1800BB8E4C /* Plot */ = {
+		28794B0EBB02D0674225CC68 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				F0D1189F5246B545F2BF9122 /* Pods-BSPWon.debug.xcconfig */,
+				B20A44E86C71799DF14F0E00 /* Pods-BSPWon.release.xcconfig */,
+				F6CAE0EFD7C12E8A3958D2E4 /* Pods-BSPWon-BSPWonUITests.debug.xcconfig */,
+				0F6E28E8B59A78F629DE4624 /* Pods-BSPWon-BSPWonUITests.release.xcconfig */,
+				1EC3B6BD94BAEFC43A873A0F /* Pods-BSPWonTests.debug.xcconfig */,
+				65C9419D18974E55D7970189 /* Pods-BSPWonTests.release.xcconfig */,
 			);
-			path = Plot;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		36B2868413E7B234C769C28F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04591484D502DBD4640926FE /* Pods_BSPWon.framework */,
+				59AD53CC8C2B6095CC01472A /* Pods_BSPWon_BSPWonUITests.framework */,
+				B4619C1C8703EBFE5C99FE84 /* Pods_BSPWonTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,9 +284,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0518792225BB14C00054849D /* Build configuration list for PBXNativeTarget "BSPWon" */;
 			buildPhases = (
+				FE509F5A867F140B0970A777 /* [CP] Check Pods Manifest.lock */,
 				051878F425BB14BF0054849D /* Sources */,
 				051878F525BB14BF0054849D /* Frameworks */,
 				051878F625BB14BF0054849D /* Resources */,
+				4C0D2FD82320D1443266988E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -258,6 +303,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0518792525BB14C00054849D /* Build configuration list for PBXNativeTarget "BSPWonTests" */;
 			buildPhases = (
+				2E9A46F0EDAFBB92AD3DF912 /* [CP] Check Pods Manifest.lock */,
 				0518790A25BB14C00054849D /* Sources */,
 				0518790B25BB14C00054849D /* Frameworks */,
 				0518790C25BB14C00054849D /* Resources */,
@@ -276,9 +322,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0518792825BB14C00054849D /* Build configuration list for PBXNativeTarget "BSPWonUITests" */;
 			buildPhases = (
+				60B555F8366C71C6C6F76E0D /* [CP] Check Pods Manifest.lock */,
 				0518791525BB14C00054849D /* Sources */,
 				0518791625BB14C00054849D /* Frameworks */,
 				0518791725BB14C00054849D /* Resources */,
+				6A31BCEACFF131D6E2CECD5D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -360,6 +408,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E9A46F0EDAFBB92AD3DF912 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BSPWonTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C0D2FD82320D1443266988E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BSPWon/Pods-BSPWon-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BSPWon/Pods-BSPWon-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BSPWon/Pods-BSPWon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60B555F8366C71C6C6F76E0D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BSPWon-BSPWonUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A31BCEACFF131D6E2CECD5D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BSPWon-BSPWonUITests/Pods-BSPWon-BSPWonUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BSPWon-BSPWonUITests/Pods-BSPWon-BSPWonUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BSPWon-BSPWonUITests/Pods-BSPWon-BSPWonUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE509F5A867F140B0970A777 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BSPWon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		051878F425BB14BF0054849D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -369,7 +520,8 @@
 				0518790025BB14BF0054849D /* MainVC.swift in Sources */,
 				05452C7F25D670D300745531 /* ID.swift in Sources */,
 				05452C7625D64BEE00745531 /* BLEStack.swift in Sources */,
-				05A90A0D25E229BB00BB8E4C /* BLEPeripheralManager.swift in Sources */,
+				05A90A0D25E229BB00BB8E4C /* BLEPeripheral.swift in Sources */,
+				05C409E025F4083B00C21D38 /* ChartManager.swift in Sources */,
 				0563C34625E2061100E9D5F4 /* SingletonBlackboard.swift in Sources */,
 				05452C9625D683EF00745531 /* Protocol.swift in Sources */,
 				051878FC25BB14BF0054849D /* AppDelegate.swift in Sources */,
@@ -381,7 +533,7 @@
 				05452C8A25D6791200745531 /* BluetoothPeripheral.swift in Sources */,
 				051878FE25BB14BF0054849D /* SceneDelegate.swift in Sources */,
 				0563C35125E2099600E9D5F4 /* SensorDataFormat.swift in Sources */,
-				05A90A0525E2298F00BB8E4C /* BLECentralManager.swift in Sources */,
+				05A90A0525E2298F00BB8E4C /* BLECentral.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -554,6 +706,7 @@
 		};
 		0518792325BB14C00054849D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0D1189F5246B545F2BF9122 /* Pods-BSPWon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -575,6 +728,7 @@
 		};
 		0518792425BB14C00054849D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B20A44E86C71799DF14F0E00 /* Pods-BSPWon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -596,6 +750,7 @@
 		};
 		0518792625BB14C00054849D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EC3B6BD94BAEFC43A873A0F /* Pods-BSPWonTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -618,6 +773,7 @@
 		};
 		0518792725BB14C00054849D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65C9419D18974E55D7970189 /* Pods-BSPWonTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -640,6 +796,7 @@
 		};
 		0518792925BB14C00054849D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6CAE0EFD7C12E8A3958D2E4 /* Pods-BSPWon-BSPWonUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -662,6 +819,7 @@
 		};
 		0518792A25BB14C00054849D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F6E28E8B59A78F629DE4624 /* Pods-BSPWon-BSPWonUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;

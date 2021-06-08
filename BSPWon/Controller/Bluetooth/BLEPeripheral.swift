@@ -40,7 +40,7 @@ extension BLEStack : CBPeripheralDelegate
     {
         if characteristic.isNotifying
         {
-            characteristicArray.append(characteristic as CBCharacteristic)
+            characteristicList.append(characteristic as CBCharacteristic)
             peripheral.readValue(for: characteristic)
             print("UUID: \(characteristic.uuid)")
             print("property: \(characteristic.properties)")
@@ -80,4 +80,19 @@ extension BLEStack : CBPeripheralDelegate
         recordSensorDataDelegate?.recordOnCondition()
 
     }
+    
+    func writeOutgoingValue(data: String){
+        let valueString = (data as NSString).data(using: String.Encoding.utf8.rawValue)
+        if let currentPeripheral = self.peripheral {
+            let currentCharacteristic = characteristicList[0]
+            currentPeripheral.writeValue(valueString!, for: currentCharacteristic, type: CBCharacteristicWriteType.withoutResponse)
+        }
+    }
+    
+    
+    func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
+        print("WRITE::\(characteristic)")
+    }
+    
+    
 }

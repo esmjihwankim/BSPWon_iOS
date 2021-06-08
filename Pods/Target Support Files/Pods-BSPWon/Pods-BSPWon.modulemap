@@ -1,0 +1,6 @@
+framework module Pods_BSPWon {
+  umbrella header "Pods-BSPWon-umbrella.h"
+
+  export *
+  module * { export * }
+}

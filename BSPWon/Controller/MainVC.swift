@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Charts
 
 class MainVC: UIViewController
 {
@@ -18,9 +19,12 @@ class MainVC: UIViewController
 
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var lightSwitch: UISwitch!
     
     var dataBox = DataBox()
+
     var recordPressed : Bool = false
+    
     
     override func viewDidLoad()
     {
@@ -68,6 +72,19 @@ class MainVC: UIViewController
             recordButton.setTitle("Record", for: .normal)
             dataBox.saveToFileSystem()
             dataBox.clear()
+        }
+    }
+    
+    
+    @IBAction func lightSwitched(_ sender: UISwitch)
+    {
+        if lightSwitch.isOn
+        {
+            // peripheral is connected peripheral
+            BLEStack.shared.writeOutgoingValue(data: "<on>")
+        }
+        else{
+            BLEStack.shared.writeOutgoingValue(data: "<off>")
         }
     }
 }

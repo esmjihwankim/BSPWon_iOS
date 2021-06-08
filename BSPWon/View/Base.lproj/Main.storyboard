@@ -43,9 +43,9 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVH-Wg-yeX" customClass="DrawView" customModule="BSPWon" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVH-Wg-yeX" customClass="MainChartView" customModule="BSPWon" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="90" width="414" height="400"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="400" id="QSj-OL-9AO"/>
                                 </constraints>
@@ -108,6 +108,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e1E-jS-pxt">
                                         <rect key="frame" x="120.33333333333331" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="lightSwitched:" destination="BYZ-38-t0r" eventType="valueChanged" id="ME7-AK-LgE"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -130,6 +133,7 @@
                     </view>
                     <connections>
                         <outlet property="connectButton" destination="eoT-kt-WcG" id="HbF-S6-bRe"/>
+                        <outlet property="lightSwitch" destination="e1E-jS-pxt" id="DFa-0q-dbE"/>
                         <outlet property="recordButton" destination="3ec-9F-OQr" id="l62-HG-BoC"/>
                         <outlet property="statusLabel" destination="Dbh-ae-hAC" id="viT-mr-1LS"/>
                         <outlet property="wValueLabel" destination="AU1-vE-g2P" id="z4u-zF-QIp"/>
@@ -194,6 +198,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

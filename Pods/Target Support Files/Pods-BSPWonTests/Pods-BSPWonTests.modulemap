@@ -1,0 +1,6 @@
+framework module Pods_BSPWonTests {
+  umbrella header "Pods-BSPWonTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

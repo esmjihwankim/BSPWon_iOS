@@ -18,12 +18,13 @@ class BLEStack : NSObject
     
     var centralManager : CBCentralManager!
     var peripheral : CBPeripheral!
+    var peripheralManager : CBPeripheralManager!
     
     var peripheralArray : [BluetoothPeriperal] = []
     var selected : BluetoothPeriperal?
     var selectedUUID : UUID?
     
-    var characteristicArray : [CBCharacteristic] = []
+    var characteristicList : [CBCharacteristic] = []
         
     var deviceReloadDelegate : DeviceReloadDelegate?
     var sensorDataUpdateDelegate : SensorDataUpdateDelegate?
@@ -34,6 +35,9 @@ class BLEStack : NSObject
         super.init()
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
+    
+    
+    
 }
 
 
