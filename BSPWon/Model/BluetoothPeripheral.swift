@@ -8,11 +8,13 @@
 import Foundation
 import CoreBluetooth
 
-struct BluetoothPeriperal {
+struct BluetoothPeriperal
+{
     var name : String
     var peripheral : CBPeripheral
     
-    init(name: String, peripheral: CBPeripheral){
+    init(name: String, peripheral: CBPeripheral)
+    {
         self.name = "\(name)"
         self.peripheral = peripheral
     }

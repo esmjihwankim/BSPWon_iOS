@@ -20,6 +20,19 @@ class BLEConnectVC : UIViewController
         self.tableView.delegate = self
         BLEStack.shared.deviceReloadDelegate = self
     }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(true)
+        BLEStack.shared.centralManager.scanForPeripherals(withServices: nil, options: nil)
+        tableView.reloadData()        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool)
+    {
+        super.viewDidDisappear(true)
+        BLEStack.shared.peripheralArray.removeAll()
+    }
 }
 
 //MARK: - TableView Delegate

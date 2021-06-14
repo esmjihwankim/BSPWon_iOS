@@ -21,8 +21,8 @@ class DataConversion
         var charBuffer : [Character] = []
         var numberArray : [UInt16] = []
         
-        for char in data {
-            
+        for char in data
+        {
             if char == " "
             {
                 spaceFlag = true

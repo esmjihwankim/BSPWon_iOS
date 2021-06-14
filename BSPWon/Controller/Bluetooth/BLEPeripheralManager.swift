@@ -63,8 +63,8 @@ extension BLEStack : CBPeripheralDelegate
                 
         guard let resultArray = DataConversion.bleSensorStringToNumberArray(data: encodedStringSensorData) else
         {
-            print("invalid data type received from device. disconnecting...")
-            centralManager.cancelPeripheralConnection(peripheral)
+            print("invalid data type received from device")
+            //centralManager.cancelPeripheralConnection(peripheral)
             return
         }
         //print(resultArray)

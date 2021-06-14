@@ -7,44 +7,64 @@
 
 import Foundation
 
-struct SensorData : SensorDataFormat {
+/*
+    t u v w x y z
+    
+ 
+*/
+
+struct SensorData : SensorDataFormat
+{
+    
     private var _w : UInt16 = 0 
     private var _x : UInt16 = 0
     private var _y : UInt16 = 0
     private var _z : UInt16 = 0
     
-    var dataW: UInt16 {
-        get {
+    var dataW: UInt16
+    {
+        get
+        {
             return self._w
         }
-        set(value) {
+        set(value)
+        {
             self._w = value
         }
     }
     
-    var dataX: UInt16 {
-        get {
+    var dataX: UInt16
+    {
+        get
+        {
             return self._x
         }
-        set(value) {
+        set(value)
+        {
             self._x = value
         }
     }
     
-    var dataY: UInt16 {
-        get {
+    var dataY: UInt16
+    {
+        get
+        {
             return self._y
         }
-        set(value) {
+        set(value)
+        {
             self._y = value
         }
     }
     
-    var dataZ: UInt16 {
-        get {
+    var dataZ: UInt16
+    {
+        get
+        {
             return self._z
         }
-        set(value) {
+        set(value)
+        {
             self._z = value
         }
     }

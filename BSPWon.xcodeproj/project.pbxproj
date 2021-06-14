@@ -25,8 +25,8 @@
 		0563C34625E2061100E9D5F4 /* SingletonBlackboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563C34525E2061100E9D5F4 /* SingletonBlackboard.swift */; };
 		0563C35125E2099600E9D5F4 /* SensorDataFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563C35025E2099600E9D5F4 /* SensorDataFormat.swift */; };
 		0563C35F25E20DFF00E9D5F4 /* SensorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563C35E25E20DFF00E9D5F4 /* SensorData.swift */; };
-		05A90A0525E2298F00BB8E4C /* BLECentral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A0425E2298F00BB8E4C /* BLECentral.swift */; };
-		05A90A0D25E229BB00BB8E4C /* BLEPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A0C25E229BB00BB8E4C /* BLEPeripheral.swift */; };
+		05A90A0525E2298F00BB8E4C /* BLECentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A0425E2298F00BB8E4C /* BLECentralManager.swift */; };
+		05A90A0D25E229BB00BB8E4C /* BLEPeripheralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A0C25E229BB00BB8E4C /* BLEPeripheralManager.swift */; };
 		05A90A2325E2432A00BB8E4C /* DataContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A2225E2432A00BB8E4C /* DataContainer.swift */; };
 		05A90A2B25E252FE00BB8E4C /* DataBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A2A25E252FE00BB8E4C /* DataBox.swift */; };
 		05C409E025F4083B00C21D38 /* ChartManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C409DF25F4083B00C21D38 /* ChartManager.swift */; };
@@ -78,8 +78,8 @@
 		0563C34525E2061100E9D5F4 /* SingletonBlackboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonBlackboard.swift; sourceTree = "<group>"; };
 		0563C35025E2099600E9D5F4 /* SensorDataFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDataFormat.swift; sourceTree = "<group>"; };
 		0563C35E25E20DFF00E9D5F4 /* SensorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorData.swift; sourceTree = "<group>"; };
-		05A90A0425E2298F00BB8E4C /* BLECentral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLECentral.swift; sourceTree = "<group>"; };
-		05A90A0C25E229BB00BB8E4C /* BLEPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEPeripheral.swift; sourceTree = "<group>"; };
+		05A90A0425E2298F00BB8E4C /* BLECentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLECentralManager.swift; sourceTree = "<group>"; };
+		05A90A0C25E229BB00BB8E4C /* BLEPeripheralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEPeripheralManager.swift; sourceTree = "<group>"; };
 		05A90A2225E2432A00BB8E4C /* DataContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataContainer.swift; sourceTree = "<group>"; };
 		05A90A2A25E252FE00BB8E4C /* DataBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBox.swift; sourceTree = "<group>"; };
 		05C409DF25F4083B00C21D38 /* ChartManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartManager.swift; sourceTree = "<group>"; };
@@ -239,8 +239,8 @@
 			isa = PBXGroup;
 			children = (
 				05452C7525D64BEE00745531 /* BLEStack.swift */,
-				05A90A0425E2298F00BB8E4C /* BLECentral.swift */,
-				05A90A0C25E229BB00BB8E4C /* BLEPeripheral.swift */,
+				05A90A0425E2298F00BB8E4C /* BLECentralManager.swift */,
+				05A90A0C25E229BB00BB8E4C /* BLEPeripheralManager.swift */,
 			);
 			path = Bluetooth;
 			sourceTree = "<group>";
@@ -520,7 +520,7 @@
 				0518790025BB14BF0054849D /* MainVC.swift in Sources */,
 				05452C7F25D670D300745531 /* ID.swift in Sources */,
 				05452C7625D64BEE00745531 /* BLEStack.swift in Sources */,
-				05A90A0D25E229BB00BB8E4C /* BLEPeripheral.swift in Sources */,
+				05A90A0D25E229BB00BB8E4C /* BLEPeripheralManager.swift in Sources */,
 				05C409E025F4083B00C21D38 /* ChartManager.swift in Sources */,
 				0563C34625E2061100E9D5F4 /* SingletonBlackboard.swift in Sources */,
 				05452C9625D683EF00745531 /* Protocol.swift in Sources */,
@@ -533,7 +533,7 @@
 				05452C8A25D6791200745531 /* BluetoothPeripheral.swift in Sources */,
 				051878FE25BB14BF0054849D /* SceneDelegate.swift in Sources */,
 				0563C35125E2099600E9D5F4 /* SensorDataFormat.swift in Sources */,
-				05A90A0525E2298F00BB8E4C /* BLECentral.swift in Sources */,
+				05A90A0525E2298F00BB8E4C /* BLECentralManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,7 +712,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H7G75LGMFX;
+				DEVELOPMENT_TEAM = 6DHB683768;
 				INFOPLIST_FILE = BSPWon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -734,7 +734,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H7G75LGMFX;
+				DEVELOPMENT_TEAM = 6DHB683768;
 				INFOPLIST_FILE = BSPWon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

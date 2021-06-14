@@ -81,12 +81,12 @@ extension BLEStack : CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?)
     {
+        BLEStack.shared.peripheralArray.removeAll()
+        BLEStack.shared.centralManager.scanForPeripherals(withServices: nil, options: nil)
         self.mainVC.connectButton.setTitle("Connect", for: .normal)
-        centralManager.scanForPeripherals(withServices: nil, options: nil)
         deviceReloadDelegate?.reloadView()
         print("Disconnected")
     }
     
  
-    
 }

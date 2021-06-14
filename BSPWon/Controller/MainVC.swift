@@ -35,7 +35,8 @@ class MainVC: UIViewController
     }
     
     // responsible for connecting and disconnecting
-    @IBAction func connectButtonPressed(_ sender: UIButton) {
+    @IBAction func connectButtonPressed(_ sender: UIButton)
+    {
         if connectButton.titleLabel?.text == "Connect"
         {
             let bleConnectVC = self.storyboard?.instantiateViewController(identifier: ID.bleConnectVC)
