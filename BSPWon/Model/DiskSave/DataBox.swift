@@ -10,7 +10,7 @@ import Foundation
 class DataBox : DataContainer {
     var _cnt = 0
     var dataCollection : String = ""
-    let df = DateFormatter()
+    let dateFormatter = DateFormatter()
     
     var count : Int
     {
@@ -20,8 +20,8 @@ class DataBox : DataContainer {
     func append()
     {
         let currentTime = Date()
-        df.dateFormat = "HH:mm:ss:SSSS"
-        let timestamp = df.string(from: currentTime)
+        dateFormatter.dateFormat = "HH:mm:ss:SSSS"
+        let timestamp = dateFormatter.string(from: currentTime)
         dataCollection.append(String(timestamp))
         dataCollection.append(",")
         dataCollection.append(String(SingletonBlackboard.shared.data.dataW))
@@ -55,8 +55,8 @@ class DataBox : DataContainer {
     func saveToFileSystem()
     {
         let currentDateTime = Date()
-        df.dateFormat = "YYYY.mm.dd.HH_mm"
-        let fileName = df.string(from: currentDateTime)
+        dateFormatter.dateFormat = "YYYY.mm.dd.HH_mm"
+        let fileName = dateFormatter.string(from: currentDateTime)
         
         guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
         else

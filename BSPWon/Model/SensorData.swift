@@ -7,21 +7,17 @@
 
 import Foundation
 
-/*
-    t u v w x y z
-    
- 
-*/
+
 
 struct SensorData : SensorDataFormat
 {
     
-    private var _w : UInt16 = 0 
-    private var _x : UInt16 = 0
-    private var _y : UInt16 = 0
-    private var _z : UInt16 = 0
+    private var _w : Int16 = 0
+    private var _x : Int16 = 0
+    private var _y : Int16 = 0
+    private var _z : Int16 = 0
     
-    var dataW: UInt16
+    var dataW: Int16
     {
         get
         {
@@ -33,7 +29,7 @@ struct SensorData : SensorDataFormat
         }
     }
     
-    var dataX: UInt16
+    var dataX: Int16
     {
         get
         {
@@ -45,7 +41,7 @@ struct SensorData : SensorDataFormat
         }
     }
     
-    var dataY: UInt16
+    var dataY: Int16
     {
         get
         {
@@ -57,7 +53,7 @@ struct SensorData : SensorDataFormat
         }
     }
     
-    var dataZ: UInt16
+    var dataZ: Int16
     {
         get
         {

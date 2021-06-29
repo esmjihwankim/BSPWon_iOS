@@ -15,9 +15,7 @@ struct ID
     static let mainVC : String = "MainVC"
     static let bleConnectVC : String = "BLEConnectVC"
     
-    
     // tableviewcell
     static let deviceCell : String = "deviceCell"
-    
 }
 

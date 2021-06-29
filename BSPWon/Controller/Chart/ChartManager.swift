@@ -6,10 +6,10 @@
 //
 
 import UIKit
-import Charts
 
 class ChartManager : NSObject
 {
+    
     
     
 }

@@ -13,51 +13,37 @@ import CoreBluetooth
 class DataConversion
 {
     
-    static func bleSensorStringToNumberArray(data : String) -> [UInt16]?
+    static func bleSensorStringToNumberArray(data : String) -> [Int16]?
     {
-        
-        var spaceFlag : Bool = false
-        var newlineFlag : Bool = false
+        var recordFlag : Bool = false
         var charBuffer : [Character] = []
-        var numberArray : [UInt16] = []
+        var numberArray : [Int16] = []
+        charBuffer.removeAll()
+        numberArray.removeAll()
         
-        for char in data
+        for c in data
         {
-            if char == " "
+            if c == " "
             {
-                spaceFlag = true
+                recordFlag = true
                 continue
             }
-            if char == "\n"
+            else if c == "\n"
             {
-                newlineFlag = true
-                spaceFlag = false
-            }
-            
-            if spaceFlag == true
-            {
-                charBuffer.append(char)
-            }
-            if newlineFlag == true
-            {
-                // char buffer to Integer type and append to number Array
-                let number : UInt16? = UInt16(String(charBuffer))
+                recordFlag = false
+                let number : Int16? = Int16(String(charBuffer))
                 if let safeNumber = number
                 {
                     numberArray.append(safeNumber)
-                    newlineFlag = false
                     charBuffer.removeAll()
                 }
-                else
-                {
-                    print("number conversion not successful. content:", numberArray)
-                }
+                continue
             }
-        }
-        
-        if numberArray.count != 4
-        {
-            return nil
+            if recordFlag
+            {
+                charBuffer.append(c)
+            }
+            
         }
         
         return numberArray

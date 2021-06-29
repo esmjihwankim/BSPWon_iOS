@@ -59,28 +59,34 @@ extension BLEStack : CBPeripheralDelegate
             print("encoding failed")
             return
         }
-        print(encodedStringSensorData)
-                
+        
+        
+        // Perform String Parsing Algorithm
         guard let resultArray = DataConversion.bleSensorStringToNumberArray(data: encodedStringSensorData) else
         {
             print("invalid data type received from device")
-            //centralManager.cancelPeripheralConnection(peripheral)
             return
         }
-        //print(resultArray)
+        
+        print(resultArray)
         
         // Update Singleton instance
+        SingletonBlackboard.shared.rawString = encodedStringSensorData
         SingletonBlackboard.shared.data.dataW = resultArray[0]
         SingletonBlackboard.shared.data.dataX = resultArray[1]
         SingletonBlackboard.shared.data.dataY = resultArray[2]
         SingletonBlackboard.shared.data.dataZ = resultArray[3]
         
-        // Signal MainVC via Delegate
+        // Signal MainVC via Delegate to record values
         sensorDataUpdateDelegate?.updateLabel()
         recordSensorDataDelegate?.recordOnCondition()
 
     }
     
+    
+    /* Writing Value to Peripheral */
+    
+    // Turn LED on/off by writing to bluetooth
     func writeOutgoingValue(data: String){
         let valueString = (data as NSString).data(using: String.Encoding.utf8.rawValue)
         if let currentPeripheral = self.peripheral {

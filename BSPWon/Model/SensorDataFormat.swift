@@ -9,22 +9,22 @@ import Foundation
 
 protocol SensorDataFormat {
     
-    var dataW : UInt16
+    var dataW : Int16
     {
         get set
     }
     
-    var dataX : UInt16
+    var dataX : Int16
     {
         get set
     }
     
-    var dataY : UInt16
+    var dataY : Int16
     {
         get set
     }
     
-    var dataZ : UInt16
+    var dataZ : Int16
     {
         get set
     }

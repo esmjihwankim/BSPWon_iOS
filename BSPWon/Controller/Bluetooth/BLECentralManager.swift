@@ -74,10 +74,12 @@ extension BLEStack : CBCentralManagerDelegate {
         selected!.peripheral.discoverServices(nil)
     }
     
+    
     func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?)
     {
         print("Failed to Connect")
     }
+    
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?)
     {
