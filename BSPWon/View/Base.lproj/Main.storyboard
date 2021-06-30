@@ -43,7 +43,7 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVH-Wg-yeX" customClass="MainChartView" customModule="BSPWon" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xVH-Wg-yeX" customClass="PlotManager" customModule="BSPWon" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="90" width="414" height="400"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <constraints>
@@ -99,6 +99,7 @@
                     <connections>
                         <outlet property="connectButton" destination="eoT-kt-WcG" id="HbF-S6-bRe"/>
                         <outlet property="lightSwitch" destination="e1E-jS-pxt" id="DFa-0q-dbE"/>
+                        <outlet property="plotView" destination="xVH-Wg-yeX" id="pQe-YW-MLH"/>
                         <outlet property="recordButton" destination="3ec-9F-OQr" id="l62-HG-BoC"/>
                         <outlet property="sensorValueLabel" destination="AU1-vE-g2P" id="z4u-zF-QIp"/>
                     </connections>

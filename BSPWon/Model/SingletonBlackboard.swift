@@ -10,7 +10,8 @@ import Foundation
 //MARK: - Read/Write Singleton
 // Must Provide interface for reading and writing
 
-final class SingletonBlackboard {
+final class SingletonBlackboard
+{
 
     static let shared : SingletonBlackboard = SingletonBlackboard()
     

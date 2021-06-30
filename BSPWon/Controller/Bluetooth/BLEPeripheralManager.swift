@@ -78,7 +78,7 @@ extension BLEStack : CBPeripheralDelegate
         SingletonBlackboard.shared.data.dataZ = resultArray[3]
         
         // Signal MainVC via Delegate to record values
-        sensorDataUpdateDelegate?.updateLabel()
+        sensorDataUpdateDelegate?.updateSensorValue()
         recordSensorDataDelegate?.recordOnCondition()
 
     }

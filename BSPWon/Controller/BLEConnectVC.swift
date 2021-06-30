@@ -83,12 +83,3 @@ extension BLEConnectVC : DeviceReloadDelegate
         tableView.reloadData()
     }
 }
-
-
-
-
-
-
-
-
-

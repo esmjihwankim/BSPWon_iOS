@@ -6,7 +6,7 @@ target 'BSPWon' do
   use_frameworks!
 
   # Pods for BSPWon
-  pod 'Charts'
+  pod 'CorePlot', '~>2.3'
 
   target 'BSPWonTests' do
     inherit! :search_paths

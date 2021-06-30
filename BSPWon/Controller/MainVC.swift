@@ -6,16 +6,15 @@
 //
 
 import UIKit
-import Charts
 
 class MainVC: UIViewController
 {
     
     @IBOutlet weak var sensorValueLabel: UILabel!
-
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var lightSwitch: UISwitch!
+    @IBOutlet weak var plotView: PlotManager!
     
     var dataBox = DataBox()
 
@@ -28,6 +27,8 @@ class MainVC: UIViewController
         BLEStack.shared.sensorDataUpdateDelegate = self
         BLEStack.shared.recordSensorDataDelegate = self
         BLEStack.shared.mainVC = self
+        
+        plotView.initPlot()
     }
     
     // responsible for connecting and disconnecting
@@ -72,7 +73,6 @@ class MainVC: UIViewController
         }
     }
     
-    
     @IBAction func lightSwitched(_ sender: UISwitch)
     {
         if lightSwitch.isOn
@@ -89,17 +89,16 @@ class MainVC: UIViewController
 
 extension MainVC : SensorDataUpdateDelegate
 {
-    func updateLabel()
+    func updateSensorValue()
     {
         sensorValueLabel.text = String(SingletonBlackboard.shared.rawString)
+        plotView.drawPlot()
     }
 }
-
 
 // whenever new data from BLEStack refreshed, append data
 extension MainVC : RecordSensorDataDelegate
 {
-    
     func recordOnCondition()
     {
         if recordPressed == true

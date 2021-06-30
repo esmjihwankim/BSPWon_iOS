@@ -9,20 +9,23 @@ import Foundation
 
 //MARK: - For BLEConnectVC
 // updating device list when new device detected
-protocol DeviceReloadDelegate {
+protocol DeviceReloadDelegate
+{
     func reloadView()
 }
 
 //MARK: - Updating label in MainVC
 // updating the follwing:
 // value of x y z label
-protocol SensorDataUpdateDelegate {
-    func updateLabel()
+protocol SensorDataUpdateDelegate
+{
+    func updateSensorValue()
 }
 
 //MARK: - Recording data received from another object if button pressed
 // recording means to append data in array
-protocol RecordSensorDataDelegate {
+protocol RecordSensorDataDelegate
+{
     func recordOnCondition()
 }
 
