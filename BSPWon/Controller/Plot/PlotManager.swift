@@ -11,9 +11,15 @@ import CorePlot
 class PlotManager : CPTGraphHostingView
 {
     var plotDataW = [Double] (repeating: 0.0, count: 1000)
+    var plotDataX = [Double] (repeating: 0.0, count: 1000)
+    var plotDataY = [Double] (repeating: 0.0, count: 1000)
+    var plotDataZ = [Double] (repeating: 0.0, count: 1000)
     
     // Plot for
-    var currentPlot : CPTScatterPlot!
+    var plotW = CPTScatterPlot()
+    var plotX = CPTScatterPlot()
+    var plotY = CPTScatterPlot()
+    var plotZ = CPTScatterPlot()
     
     // Value for setting equal to all plots
     var currentIndex: Int!
@@ -21,22 +27,26 @@ class PlotManager : CPTGraphHostingView
     var frameRate = 5.0
     var alphaValue = 0.25
     
-    /*
-     @brief Called when sensor value updated to 
-     */
+    
+    // @brief Called when sensor value updated
     func drawPlot()
     {
         let graph = self.hostedGraph
-        let plot = graph?.plot(withIdentifier: ID.wSensorValue as NSCopying)
+        let plotW = graph?.plot(withIdentifier: ID.wSensorValue as NSCopying)
+        let plotX = graph?.plot(withIdentifier: ID.xSensorValue as NSCopying)
+        let plotY = graph?.plot(withIdentifier: ID.ySensorValue as NSCopying)
+        let plotZ = graph?.plot(withIdentifier: ID.zSensorValue as NSCopying)
         
-        if((plot) != nil)
+        if((plotW) != nil)
         {
             if(self.plotDataW.count >= maxDataPoints)
             {
                 self.plotDataW.removeFirst()
-                plot?.deleteData(inIndexRange: _NSRange(location: 0, length: 1))
+                plotW?.deleteData(inIndexRange: _NSRange(location: 0, length: 1))
             }
         }
+        
+        
         guard let plotSpace = graph?.defaultPlotSpace as? CPTXYPlotSpace else { return }
         
         let location: NSInteger
@@ -63,36 +73,27 @@ class PlotManager : CPTGraphHostingView
         let oldRange = CPTPlotRange(locationDecimal: CPTDecimalFromDouble(Double(range)), lengthDecimal: CPTDecimalFromDouble(Double(maxDataPoints-2)))
         let newRange = CPTPlotRange(locationDecimal: CPTDecimalFromDouble(Double(location)), lengthDecimal: CPTDecimalFromDouble(Double(maxDataPoints-2)))
         
-        CPTAnimation.animate(plotSpace, property: "xRange", from: oldRange, to: newRange, duration: 0.002)
+        CPTAnimation.animate(plotSpace, property: "xRange", from: oldRange, to: newRange, duration: 0.2)
         
         self.currentIndex += 1
         
-        let point = Double(SingletonBlackboard.shared.data.dataW)
-        
-        self.plotDataW.append(point)
-        plot?.insertData(at: UInt(self.plotDataW.count-1), numberOfRecords: 1)
-    }
-    
-}
+        // Assign number to graph from Singleton
+        let pointW = Double(SingletonBlackboard.shared.data.dataW)
+//        let pointX = Double(SingletonBlackboard.shared.data.dataX)
+//        let pointY = Double(SingletonBlackboard.shared.data.dataY)
+//        let pointZ = Double(SingletonBlackboard.shared.data.dataZ)
 
-extension PlotManager : CPTScatterPlotDataSource, CPTScatterPlotDelegate
-{
-    func numberOfRecords(for plot: CPTPlot) -> UInt
-    {
-        return UInt(self.plotDataW.count)
-    }
-    
-    func number(for plot: CPTPlot, field fieldEnum: UInt, record idx: UInt) -> Any?
-    {
-        switch CPTScatterPlotField(rawValue: Int(fieldEnum))!
-        {
-        case .X:
-            return NSNumber(value: Int(idx) + self.currentIndex-self.plotDataW.count)
-        case .Y:
-            return self.plotDataW[Int(idx)] as NSNumber
-        default:
-            return 0
-        }
+        
+        plotDataW.append(pointW)
+//        plotDataX.append(pointX)
+//        plotDataY.append(pointY)
+//        plotDataZ.append(pointZ)
+
+        
+        plotW?.insertData(at: UInt(plotDataW.count-1), numberOfRecords: 1)
+//        plotX?.insertData(at: UInt(plotDataX.count-1), numberOfRecords: 1)
+//        plotY?.insertData(at: UInt(plotDataY.count-1), numberOfRecords: 1)
+//        plotZ?.insertData(at: UInt(plotDataZ.count-1), numberOfRecords: 1)
     }
     
 }

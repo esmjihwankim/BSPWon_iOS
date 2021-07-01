@@ -11,11 +11,14 @@ import CorePlot
 extension PlotManager
 {
     
-    func initPlot()
+    func initGraph()
     {
         configureGraphView()
         configureGraphAxis()
-        configurePlot()
+        configurePlot(thisPlot: plotW, thisColor: CPTColor.purple(), thisID: ID.wSensorValue)
+        configurePlot(thisPlot: plotX, thisColor: CPTColor.cyan(), thisID: ID.xSensorValue)
+        configurePlot(thisPlot: plotY, thisColor: CPTColor.red(), thisID: ID.ySensorValue)
+        configurePlot(thisPlot: plotZ, thisColor: CPTColor.white(), thisID: ID.zSensorValue)
     }
     
     func configureGraphView()
@@ -25,7 +28,8 @@ extension PlotManager
         self.currentIndex = 0
     }
     
-    // Setting X Axis and Y Axis
+    // @brief Setting X Axis and Y Axis
+    // axis line and
     func configureGraphAxis()
     {
         let graph = CPTXYGraph(frame: self.bounds)
@@ -93,37 +97,33 @@ extension PlotManager
         let yMax = 5000.0
         
         guard let plotSpace = graph.defaultPlotSpace as? CPTXYPlotSpace else { return }
-        plotSpace.xRange = CPTPlotRange(locationDecimal: CPTDecimalFromDouble(xMin
-        ), lengthDecimal: CPTDecimalFromDouble(xMax - xMin))
+        plotSpace.xRange = CPTPlotRange(locationDecimal: CPTDecimalFromDouble(xMin), lengthDecimal: CPTDecimalFromDouble(xMax - xMin))
         plotSpace.yRange = CPTPlotRange(locationDecimal: CPTDecimalFromDouble(yMin), lengthDecimal: CPTDecimalFromDouble(yMax - yMin))
     }
-    
-    
+
     
     // @brief Setting Plot Line and Color
     // modularized to be used many times by W, X, Y, Z channel values
-    func configurePlot()
+    func configurePlot(thisPlot      : CPTScatterPlot,
+                       thisColor     : CPTColor,
+                       thisID        : String)
     {
-        // number of plots can be adjusted
-        currentPlot = CPTScatterPlot()
-        
         let plotLineStyle = CPTMutableLineStyle()
         plotLineStyle.lineJoin = .round
         plotLineStyle.lineCap = .round
         plotLineStyle.lineWidth = 2
-        plotLineStyle.lineColor = CPTColor.white()
+        plotLineStyle.lineColor = thisColor
         
-        currentPlot.dataLineStyle = plotLineStyle
-        currentPlot.curvedInterpolationOption = .catmullCustomAlpha
-        currentPlot.interpolation = .curved
-        currentPlot.identifier = ID.wSensorValue as NSCoding & NSCopying & NSObjectProtocol
+        thisPlot.dataLineStyle = plotLineStyle
+        thisPlot.curvedInterpolationOption = .catmullCustomAlpha
+        thisPlot.interpolation = .curved
+        thisPlot.identifier = thisID as NSCoding & NSCopying & NSObjectProtocol
         guard let graph = self.hostedGraph else { return }
-
         
         // Set data source and delegate
-        currentPlot.dataSource = (self as CPTPlotDataSource)
-        currentPlot.delegate = (self as CALayerDelegate)
-        graph.add(currentPlot, to: graph.defaultPlotSpace)
+        thisPlot.dataSource = (self as CPTPlotDataSource)
+        thisPlot.delegate = (self as CALayerDelegate)
+        graph.add(thisPlot, to: graph.defaultPlotSpace)
     }
     
 }

@@ -32,7 +32,7 @@ class MainVC: UIViewController
         BLEStack.shared.recordSensorDataDelegate = self
         BLEStack.shared.mainVC = self
         
-        plotView.initPlot()
+        plotView.initGraph()
     }
     
     
@@ -92,6 +92,7 @@ class MainVC: UIViewController
 }
 
 
+
 extension MainVC : SensorDataUpdateDelegate
 {
     func updateSensorValue()
@@ -100,9 +101,11 @@ extension MainVC : SensorDataUpdateDelegate
         xValueLabel.text = String(SingletonBlackboard.shared.data.dataX)
         yValueLabel.text = String(SingletonBlackboard.shared.data.dataY)
         zValueLabel.text = String(SingletonBlackboard.shared.data.dataZ)
-
+        
+        //TODO: to be multithreaded
         plotView.drawPlot()
     }
+    
 }
 
 // whenever new data from BLEStack refreshed, append data
