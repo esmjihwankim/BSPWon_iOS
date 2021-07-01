@@ -11,10 +11,12 @@ import CorePlot
 class PlotManager : CPTGraphHostingView
 {
     var plotDataW = [Double] (repeating: 0.0, count: 1000)
-    var plotDataX = [Double] (repeating)
     
+    // Plot for
+    var currentPlot : CPTScatterPlot!
+    
+    // Value for setting equal to all plots
     var currentIndex: Int!
-    var plot : CPTScatterPlot!
     var maxDataPoints = 100
     var frameRate = 5.0
     var alphaValue = 0.25
@@ -24,6 +26,7 @@ class PlotManager : CPTGraphHostingView
     {
         let graph = self.hostedGraph
         let plot = graph?.plot(withIdentifier: "biograph" as NSCopying)
+        
         if((plot) != nil)
         {
             if(self.plotDataW.count >= maxDataPoints)
@@ -62,8 +65,9 @@ class PlotManager : CPTGraphHostingView
         
         self.currentIndex += 1
         
-        let wPoint = Double(SingletonBlackboard.shared.data.dataW)
-        self.plotDataW.append(wPoint)
+        let point = Double(SingletonBlackboard.shared.data.dataW)
+        
+        self.plotDataW.append(point)
         plot?.insertData(at: UInt(self.plotDataW.count-1), numberOfRecords: 1)
     }
     

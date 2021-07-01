@@ -10,7 +10,11 @@ import UIKit
 class MainVC: UIViewController
 {
     
-    @IBOutlet weak var sensorValueLabel: UILabel!
+    @IBOutlet weak var wValueLabel: UILabel!
+    @IBOutlet weak var xValueLabel: UILabel!
+    @IBOutlet weak var yValueLabel: UILabel!
+    @IBOutlet weak var zValueLabel: UILabel!
+    
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var lightSwitch: UISwitch!
@@ -19,7 +23,6 @@ class MainVC: UIViewController
     var dataBox = DataBox()
 
     var recordPressed : Bool = false
-    
     
     override func viewDidLoad()
     {
@@ -91,7 +94,12 @@ extension MainVC : SensorDataUpdateDelegate
 {
     func updateSensorValue()
     {
-        sensorValueLabel.text = String(SingletonBlackboard.shared.rawString)
+        wValueLabel.text = String(SingletonBlackboard.shared.data.dataW)
+        xValueLabel.text = String(SingletonBlackboard.shared.data.dataX)
+        yValueLabel.text = String(SingletonBlackboard.shared.data.dataY)
+        zValueLabel.text = String(SingletonBlackboard.shared.data.dataZ)
+        
+        
         plotView.drawPlot()
     }
 }

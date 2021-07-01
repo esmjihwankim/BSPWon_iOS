@@ -11,7 +11,7 @@ import CoreBluetooth
 struct ID
 {
     
-    // viewcontroller
+    // Viewcontroller ID
     static let mainVC : String = "MainVC"
     static let bleConnectVC : String = "BLEConnectVC"
     

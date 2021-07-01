@@ -32,7 +32,7 @@ extension PlotManager
         self.hostedGraph = graph
         graph.backgroundColor = UIColor.black.cgColor
         graph.paddingBottom = 40.0
-        graph.paddingLeft = 40.0
+        graph.paddingLeft = 0.0
         graph.paddingTop = 30.0
         graph.paddingRight = 15.0
         
@@ -76,8 +76,8 @@ extension PlotManager
         
         if let y = axisSet.yAxis
         {
-            y.majorIntervalLength = 5
-            y.minorTicksPerInterval = 5
+            y.majorIntervalLength = 100
+            y.minorTicksPerInterval = 0
             y.minorGridLineStyle = gridLineStyle
             y.labelTextStyle = axisTextStyle
             y.alternatingBandFills = [CPTFill(color: CPTColor.init(componentRed: 255, green: 255, blue: 255, alpha: 0.03)), CPTFill(color: CPTColor.black())]
@@ -100,7 +100,7 @@ extension PlotManager
     func configurePlot()
     {
         // number of plots can be adjusted
-        plot = CPTScatterPlot()
+        currentPlot = CPTScatterPlot()
         
         let plotLineStyle = CPTMutableLineStyle()
         plotLineStyle.lineJoin = .round
@@ -108,16 +108,17 @@ extension PlotManager
         plotLineStyle.lineWidth = 2
         plotLineStyle.lineColor = CPTColor.white()
         
-        plot.dataLineStyle = plotLineStyle
-        plot.curvedInterpolationOption = .catmullCustomAlpha
-        plot.interpolation = .curved
-        plot.identifier = "biograph" as NSCoding & NSCopying & NSObjectProtocol
+        currentPlot.dataLineStyle = plotLineStyle
+        currentPlot.curvedInterpolationOption = .catmullCustomAlpha
+        currentPlot.interpolation = .curved
+        currentPlot.identifier = "biograph" as NSCoding & NSCopying & NSObjectProtocol
         guard let graph = self.hostedGraph else { return }
+
         
         // Set data source and delegate
-        plot.dataSource = (self as CPTPlotDataSource)
-        plot.delegate = (self as CALayerDelegate)
-        graph.add(plot, to: graph.defaultPlotSpace)
+        currentPlot.dataSource = (self as CPTPlotDataSource)
+        currentPlot.delegate = (self as CALayerDelegate)
+        graph.add(currentPlot, to: graph.defaultPlotSpace)
     }
     
 }
