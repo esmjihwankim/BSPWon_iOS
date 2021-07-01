@@ -15,13 +15,13 @@ class PlotManager : CPTGraphHostingView
     var plotDataY = [Double] (repeating: 0.0, count: 1000)
     var plotDataZ = [Double] (repeating: 0.0, count: 1000)
     
-    // Plot for
+    // Plot Instance
     var plotW = CPTScatterPlot()
     var plotX = CPTScatterPlot()
     var plotY = CPTScatterPlot()
     var plotZ = CPTScatterPlot()
     
-    // Value for setting equal to all plots
+    // Value for setting. Equal for all plots
     var currentIndex: Int!
     var maxDataPoints = 100
     var frameRate = 5.0
@@ -29,20 +29,47 @@ class PlotManager : CPTGraphHostingView
     
     
     // @brief Called when sensor value updated
-    func drawPlot()
+    // @param plotID
+    func drawPlot(plotID : String)
     {
         let graph = self.hostedGraph
-        let plotW = graph?.plot(withIdentifier: ID.wSensorValue as NSCopying)
-        let plotX = graph?.plot(withIdentifier: ID.xSensorValue as NSCopying)
-        let plotY = graph?.plot(withIdentifier: ID.ySensorValue as NSCopying)
-        let plotZ = graph?.plot(withIdentifier: ID.zSensorValue as NSCopying)
+        let myPlot = graph?.plot(withIdentifier: plotID as NSCopying)
         
-        if((plotW) != nil)
+        var myPoint : Double!
+        var myPlotData : [Double]
+        
+        switch plotID
+        {
+        case ID.wSensorValue:
+            myPoint = Double(SingletonBlackboard.shared.data.dataW)
+            myPlotData = plotDataW
+            break
+        case ID.xSensorValue:
+            myPoint = Double(SingletonBlackboard.shared.data.dataX)
+            myPlotData = plotDataX
+            break
+        case ID.ySensorValue:
+            myPoint = Double(SingletonBlackboard.shared.data.dataY)
+            myPlotData = plotDataY
+            break
+        case ID.zSensorValue:
+            myPoint = Double(SingletonBlackboard.shared.data.dataZ)
+            myPlotData = plotDataZ
+            break
+        default:
+            myPoint = 0.0
+            myPlotData = []
+            print("PlotManager::Wrong Plot ID Entered!!")
+            break
+        }
+
+
+        if((myPlot) != nil)
         {
             if(self.plotDataW.count >= maxDataPoints)
             {
-                self.plotDataW.removeFirst()
-                plotW?.deleteData(inIndexRange: _NSRange(location: 0, length: 1))
+                myPlotData.removeFirst()
+                myPlot?.deleteData(inIndexRange: _NSRange(location: 0, length: 1))
             }
         }
         
@@ -76,24 +103,11 @@ class PlotManager : CPTGraphHostingView
         CPTAnimation.animate(plotSpace, property: "xRange", from: oldRange, to: newRange, duration: 0.2)
         
         self.currentIndex += 1
-        
-        // Assign number to graph from Singleton
-        let pointW = Double(SingletonBlackboard.shared.data.dataW)
-//        let pointX = Double(SingletonBlackboard.shared.data.dataX)
-//        let pointY = Double(SingletonBlackboard.shared.data.dataY)
-//        let pointZ = Double(SingletonBlackboard.shared.data.dataZ)
 
+        myPlotData.append(myPoint)
         
-        plotDataW.append(pointW)
-//        plotDataX.append(pointX)
-//        plotDataY.append(pointY)
-//        plotDataZ.append(pointZ)
+        myPlot?.insertData(at: UInt(myPlotData.count-1), numberOfRecords: 1)
 
-        
-        plotW?.insertData(at: UInt(plotDataW.count-1), numberOfRecords: 1)
-//        plotX?.insertData(at: UInt(plotDataX.count-1), numberOfRecords: 1)
-//        plotY?.insertData(at: UInt(plotDataY.count-1), numberOfRecords: 1)
-//        plotZ?.insertData(at: UInt(plotDataZ.count-1), numberOfRecords: 1)
     }
     
 }

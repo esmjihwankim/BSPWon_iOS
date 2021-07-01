@@ -103,7 +103,8 @@ extension MainVC : SensorDataUpdateDelegate
         zValueLabel.text = String(SingletonBlackboard.shared.data.dataZ)
         
         //TODO: to be multithreaded
-        plotView.drawPlot()
+        plotView.drawPlot(plotID: ID.wSensorValue)
+        
     }
     
 }
