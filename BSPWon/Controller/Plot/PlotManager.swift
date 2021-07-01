@@ -25,7 +25,7 @@ class PlotManager : CPTGraphHostingView
     func drawPlot()
     {
         let graph = self.hostedGraph
-        let plot = graph?.plot(withIdentifier: "biograph" as NSCopying)
+        let plot = graph?.plot(withIdentifier: ID.wSensorValue as NSCopying)
         
         if((plot) != nil)
         {

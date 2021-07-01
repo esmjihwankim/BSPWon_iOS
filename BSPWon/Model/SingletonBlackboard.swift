@@ -14,9 +14,7 @@ final class SingletonBlackboard
 {
 
     static let shared : SingletonBlackboard = SingletonBlackboard()
-    
-    var rawString : String = ""
-    
+        
     var data : SensorData = SensorData()
     
 }

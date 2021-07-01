@@ -32,7 +32,7 @@ extension PlotManager
         self.hostedGraph = graph
         graph.backgroundColor = UIColor.black.cgColor
         graph.paddingBottom = 40.0
-        graph.paddingLeft = 0.0
+        graph.paddingLeft = 50.0
         graph.paddingTop = 30.0
         graph.paddingRight = 15.0
         
@@ -44,7 +44,7 @@ extension PlotManager
         titleStyle.textAlignment = .center
         graph.titleTextStyle = titleStyle
         
-        let title = "www.skkuwongroup.online"
+        let title = "Bio-Electronic System Research Group"
         graph.title = title
         graph.titlePlotAreaFrameAnchor = .top
         graph.titleDisplacement = CGPoint(x: 0.0, y: 0.0)
@@ -76,7 +76,7 @@ extension PlotManager
         
         if let y = axisSet.yAxis
         {
-            y.majorIntervalLength = 100
+            y.majorIntervalLength = 300
             y.minorTicksPerInterval = 0
             y.minorGridLineStyle = gridLineStyle
             y.labelTextStyle = axisTextStyle
@@ -88,7 +88,7 @@ extension PlotManager
         
         let xMin = 0.0
         let xMax = 100.0
-        let yMin = -100.0
+        let yMin = -300.0
         let yMax = 5000.0
         
         guard let plotSpace = graph.defaultPlotSpace as? CPTXYPlotSpace else { return }
@@ -111,7 +111,7 @@ extension PlotManager
         currentPlot.dataLineStyle = plotLineStyle
         currentPlot.curvedInterpolationOption = .catmullCustomAlpha
         currentPlot.interpolation = .curved
-        currentPlot.identifier = "biograph" as NSCoding & NSCopying & NSObjectProtocol
+        currentPlot.identifier = ID.wSensorValue as NSCoding & NSCopying & NSObjectProtocol
         guard let graph = self.hostedGraph else { return }
 
         

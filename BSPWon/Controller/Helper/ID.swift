@@ -20,9 +20,9 @@ struct ID
     
     
     // graphingView
-    static let wValueID = "wValueID"
-    static let xValueID = "xValueID"
-    static let yValueID = "yValueID"
-    static let zValueID = "zValueID"
+    static let wSensorValue = "wValueID"
+    static let xSensorValue = "xValueID"
+    static let ySensorValue = "yValueID"
+    static let zSensorValue = "zValueID"
 }
 

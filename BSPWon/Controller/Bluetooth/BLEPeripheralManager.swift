@@ -60,18 +60,11 @@ extension BLEStack : CBPeripheralDelegate
             return
         }
         
-        
         // Perform String Parsing Algorithm
-        guard let resultArray = DataConversion.bleSensorStringToNumberArray(data: encodedStringSensorData) else
-        {
-            print("invalid data type received from device")
-            return
-        }
-        
+        let resultArray = DataConversion.bleSensorStringToNumberArray(data: encodedStringSensorData)
         print(resultArray)
         
         // Update Singleton instance
-        SingletonBlackboard.shared.rawString = encodedStringSensorData
         SingletonBlackboard.shared.data.dataW = resultArray[0]
         SingletonBlackboard.shared.data.dataX = resultArray[1]
         SingletonBlackboard.shared.data.dataY = resultArray[2]
@@ -80,7 +73,6 @@ extension BLEStack : CBPeripheralDelegate
         // Signal MainVC via Delegate to record values
         sensorDataUpdateDelegate?.updateSensorValue()
         recordSensorDataDelegate?.recordOnCondition()
-
     }
     
     

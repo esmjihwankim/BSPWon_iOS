@@ -9,11 +9,15 @@ import Foundation
 import CoreBluetooth
 
 
+/*
+ Converting incoming data type
+"CHO: %d\nCH1: %d\nCH2: %d\nCH3: %d\n
+ */
 
 class DataConversion
 {
     
-    static func bleSensorStringToNumberArray(data : String) -> [Int16]?
+    static func bleSensorStringToNumberArray(data : String) -> [Int16]
     {
         var recordFlag : Bool = false
         var charBuffer : [Character] = []

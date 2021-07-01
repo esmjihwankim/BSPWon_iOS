@@ -98,8 +98,7 @@ extension MainVC : SensorDataUpdateDelegate
         xValueLabel.text = String(SingletonBlackboard.shared.data.dataX)
         yValueLabel.text = String(SingletonBlackboard.shared.data.dataY)
         zValueLabel.text = String(SingletonBlackboard.shared.data.dataZ)
-        
-        
+
         plotView.drawPlot()
     }
 }
