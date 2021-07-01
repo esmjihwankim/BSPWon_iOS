@@ -18,7 +18,6 @@ struct ID
     // tableviewcell
     static let deviceCell : String = "deviceCell"
     
-    
     // graphingView
     static let wSensorValue = "wValueID"
     static let xSensorValue = "xValueID"

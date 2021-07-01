@@ -21,7 +21,9 @@ class PlotManager : CPTGraphHostingView
     var frameRate = 5.0
     var alphaValue = 0.25
     
-    
+    /*
+     @brief Called when sensor value updated to 
+     */
     func drawPlot()
     {
         let graph = self.hostedGraph

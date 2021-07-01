@@ -25,6 +25,7 @@ extension PlotManager
         self.currentIndex = 0
     }
     
+    // Setting X Axis and Y Axis
     func configureGraphAxis()
     {
         let graph = CPTXYGraph(frame: self.bounds)
@@ -44,7 +45,7 @@ extension PlotManager
         titleStyle.textAlignment = .center
         graph.titleTextStyle = titleStyle
         
-        let title = "Bio-Electronic System Research Group"
+        let title = "Won Research Group"
         graph.title = title
         graph.titlePlotAreaFrameAnchor = .top
         graph.titleDisplacement = CGPoint(x: 0.0, y: 0.0)
@@ -97,6 +98,10 @@ extension PlotManager
         plotSpace.yRange = CPTPlotRange(locationDecimal: CPTDecimalFromDouble(yMin), lengthDecimal: CPTDecimalFromDouble(yMax - yMin))
     }
     
+    
+    
+    // @brief Setting Plot Line and Color
+    // modularized to be used many times by W, X, Y, Z channel values
     func configurePlot()
     {
         // number of plots can be adjusted

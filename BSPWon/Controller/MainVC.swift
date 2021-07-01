@@ -21,8 +21,9 @@ class MainVC: UIViewController
     @IBOutlet weak var plotView: PlotManager!
     
     var dataBox = DataBox()
-
     var recordPressed : Bool = false
+    
+    
     
     override func viewDidLoad()
     {
@@ -33,6 +34,7 @@ class MainVC: UIViewController
         
         plotView.initPlot()
     }
+    
     
     // responsible for connecting and disconnecting
     @IBAction func connectButtonPressed(_ sender: UIButton)
