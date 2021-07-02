@@ -10,6 +10,8 @@ import CorePlot
 
 class PlotManager : CPTGraphHostingView
 {
+    
+    
     var plotDataW = [Double] (repeating: 0.0, count: 1000)
     var plotDataX = [Double] (repeating: 0.0, count: 1000)
     var plotDataY = [Double] (repeating: 0.0, count: 1000)
@@ -27,55 +29,84 @@ class PlotManager : CPTGraphHostingView
     var frameRate = 5.0
     var alphaValue = 0.25
     
-    
     // @brief Called when sensor value updated
     // @param plotID
-    func drawPlot(plotID : String)
+    func drawPlotW()
     {
         let graph = self.hostedGraph
-        let myPlot = graph?.plot(withIdentifier: plotID as NSCopying)
+        let myPlot = graph?.plot(withIdentifier: ID.wPlotValue as NSCopying)
+        let point : Double = Double(SingletonBlackboard.shared.data.dataW)
         
-        var myPoint : Double!
-        var myPlotData : [Double]
-        
-        switch plotID
-        {
-        case ID.wSensorValue:
-            myPoint = Double(SingletonBlackboard.shared.data.dataW)
-            myPlotData = plotDataW
-            break
-        case ID.xSensorValue:
-            myPoint = Double(SingletonBlackboard.shared.data.dataX)
-            myPlotData = plotDataX
-            break
-        case ID.ySensorValue:
-            myPoint = Double(SingletonBlackboard.shared.data.dataY)
-            myPlotData = plotDataY
-            break
-        case ID.zSensorValue:
-            myPoint = Double(SingletonBlackboard.shared.data.dataZ)
-            myPlotData = plotDataZ
-            break
-        default:
-            myPoint = 0.0
-            myPlotData = []
-            print("PlotManager::Wrong Plot ID Entered!!")
-            break
-        }
-
-
         if((myPlot) != nil)
         {
-            if(self.plotDataW.count >= maxDataPoints)
+            if plotDataW.count >= maxDataPoints
             {
-                myPlotData.removeFirst()
+                plotDataW.removeFirst()
                 myPlot?.deleteData(inIndexRange: _NSRange(location: 0, length: 1))
             }
         }
+        plotDataW.append(point)
+        myPlot?.insertData(at: UInt(plotDataW.count-1), numberOfRecords: 1)
+
+    }
+    
+    
+    
+    
+    func drawPlotX()
+    {
+        let graph = self.hostedGraph
+        let myPlot = graph?.plot(withIdentifier: ID.xPlotValue as NSCopying)
+        let point : Double = Double(SingletonBlackboard.shared.data.dataX)
         
+        if((myPlot) != nil)
+        {
+            if plotDataX.count >= maxDataPoints
+            {
+                plotDataX.removeFirst()
+                myPlot?.deleteData(inIndexRange: _NSRange(location: 0, length: 1))
+            }
+        }
+        plotDataX.append(point)
+        myPlot?.insertData(at: UInt(plotDataX.count-1), numberOfRecords: 1)
+    }
+    
+    func drawPlotY()
+    {
+        let graph = self.hostedGraph
+        let myPlot = graph?.plot(withIdentifier: ID.yPlotValue as NSCopying)
+        let point : Double = Double(SingletonBlackboard.shared.data.dataY)
         
+        if((myPlot) != nil)
+        {
+            if plotDataY.count >= maxDataPoints
+            {
+                plotDataY.removeFirst()
+                myPlot?.deleteData(inIndexRange: _NSRange(location: 0, length: 1))
+            }
+        }
+        plotDataY.append(point)
+        myPlot?.insertData(at: UInt(plotDataY.count-1), numberOfRecords: 1)
+    }
+    
+    func drawPlotZ()
+    {
+        let graph = self.hostedGraph
+        let myPlot = graph?.plot(withIdentifier: ID.zPlotValue as NSCopying)
+        let point : Double = Double(SingletonBlackboard.shared.data.dataZ)
+        
+        if((myPlot) != nil)
+        {
+            if plotDataZ.count >= maxDataPoints
+            {
+                plotDataZ.removeFirst()
+                myPlot?.deleteData(inIndexRange: _NSRange(location: 0, length: 1))
+            }
+            
+        }
         guard let plotSpace = graph?.defaultPlotSpace as? CPTXYPlotSpace else { return }
-        
+        plotSpace.allowsUserInteraction = true
+
         let location: NSInteger
         if self.currentIndex >= maxDataPoints
         {
@@ -85,7 +116,6 @@ class PlotManager : CPTGraphHostingView
         {
             location = 0
         }
-        
         
         let range: NSInteger
         if location > 0
@@ -99,15 +129,10 @@ class PlotManager : CPTGraphHostingView
         
         let oldRange = CPTPlotRange(locationDecimal: CPTDecimalFromDouble(Double(range)), lengthDecimal: CPTDecimalFromDouble(Double(maxDataPoints-2)))
         let newRange = CPTPlotRange(locationDecimal: CPTDecimalFromDouble(Double(location)), lengthDecimal: CPTDecimalFromDouble(Double(maxDataPoints-2)))
-        
         CPTAnimation.animate(plotSpace, property: "xRange", from: oldRange, to: newRange, duration: 0.2)
-        
-        self.currentIndex += 1
-
-        myPlotData.append(myPoint)
-        
-        myPlot?.insertData(at: UInt(myPlotData.count-1), numberOfRecords: 1)
-
-    }
     
+        self.currentIndex += 1
+        plotDataZ.append(point)
+        myPlot?.insertData(at: UInt(plotDataZ.count-1), numberOfRecords: 1)
+    }
 }

@@ -19,9 +19,9 @@ struct ID
     static let deviceCell : String = "deviceCell"
     
     // graphingView
-    static let wSensorValue = "wValueID"
-    static let xSensorValue = "xValueID"
-    static let ySensorValue = "yValueID"
-    static let zSensorValue = "zValueID"
+    static let wPlotValue = "wValueID"
+    static let xPlotValue = "xValueID"
+    static let yPlotValue = "yValueID"
+    static let zPlotValue = "zValueID"
 }
 

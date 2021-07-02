@@ -193,6 +193,7 @@
 		0518793425BB1AFC0054849D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				05452C4425D5A29600745531 /* Alert.swift */,
 				0518790125BB14BF0054849D /* Main.storyboard */,
 				0518790625BB14BF0054849D /* LaunchScreen.storyboard */,
 			);
@@ -216,7 +217,6 @@
 			children = (
 				05452C7E25D670D300745531 /* ID.swift */,
 				05452C9525D683EF00745531 /* Protocol.swift */,
-				05452C4425D5A29600745531 /* Alert.swift */,
 				05452CB425D9024F00745531 /* DataConversion.swift */,
 			);
 			path = Helper;
