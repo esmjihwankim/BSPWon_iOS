@@ -61,13 +61,15 @@ extension BLEConnectVC : UITableViewDataSource, UITableViewDelegate
         BLEStack.shared.connectToDevice()
         
         // manipulate MainVC's content and dismiss
-        guard let vc = self.presentingViewController as? MainVC
+        guard let connectButton = BLEStack.shared.mainVC.connectButton
         else
         {
             print("cannot find previous viewcontroller")
             return
         }
-        vc.connectButton.setTitle("Disconnect", for: .normal)
+        connectButton.setTitle("Disconnect", for: .normal)
+        
+        
         self.dismiss(animated: true, completion: nil)
     }
 }

@@ -10,12 +10,12 @@ import UIKit
 
 class SettingVC : UIViewController
 {
-    
     @IBOutlet weak var topBannerView: UIView!
     @IBOutlet weak var yMaxTextField: UITextField!
     @IBOutlet weak var yMinTextField: UITextField!
-    @IBOutlet weak var applyButton: UIButton!
+    @IBOutlet weak var incrementTextField: UITextField!
     
+    @IBOutlet weak var applyButton: UIButton!
     
     override func viewDidLoad()
     {
@@ -31,9 +31,21 @@ class SettingVC : UIViewController
         self.applyButton.tintColor = UIColor.white
         yMaxTextField.keyboardType = UIKeyboardType.numberPad
         yMinTextField.keyboardType = UIKeyboardType.numberPad
+        incrementTextField.keyboardType = UIKeyboardType.numberPad
     }
     
+    
+    // Apply setting to graph view
+    @IBAction func applyButtonPressed(_ sender: UIButton) {
+        
+        
+    }
+    
+    
+    
+    
 }
+
 
 extension SettingVC : UITextFieldDelegate
 {

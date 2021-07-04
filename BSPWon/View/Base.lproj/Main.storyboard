@@ -274,7 +274,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rqQ-GJ-xUN" userLabel="AxisSettingStackView">
-                                <rect key="frame" x="92" y="140" width="230" height="144"/>
+                                <rect key="frame" x="92" y="140" width="230" height="198"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Axis Range " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXg-pE-CD1">
                                         <rect key="frame" x="0.0" y="0.0" width="230" height="36"/>
@@ -282,7 +282,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="PSG-ch-0xC">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="PSG-ch-0xC" userLabel="MaxYSV">
                                         <rect key="frame" x="0.0" y="56" width="230" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maximum Y" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yOs-YR-gTv">
@@ -306,7 +306,7 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="C2e-Jj-PK1">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="C2e-Jj-PK1" userLabel="MinYSV">
                                         <rect key="frame" x="0.0" y="110" width="230" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minimum Y" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edb-yL-PrH">
@@ -330,10 +330,34 @@
                                             </textField>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="6CW-vs-h8j" userLabel="IncrementSV">
+                                        <rect key="frame" x="0.0" y="164" width="230" height="34"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Increment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNk-Ch-F5U">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="7ji-Lr-C2y"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="clc-7X-u6o">
+                                                <rect key="frame" x="150" y="0.0" width="80" height="34"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="qXF-C0-lmR"/>
+                                                </constraints>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7F9-fh-FS5">
-                                <rect key="frame" x="157" y="314" width="100" height="35"/>
+                                <rect key="frame" x="157" y="368" width="100" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="OBn-zf-R2B"/>
                                 </constraints>
@@ -341,6 +365,9 @@
                                 <state key="normal" title="Apply">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="applyButtonPressed:" destination="ngX-bt-Flq" eventType="touchUpInside" id="m21-iU-nsk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xhN-qD-mqh"/>
@@ -357,6 +384,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="F0D-Mf-Bxh"/>
                     <connections>
                         <outlet property="applyButton" destination="7F9-fh-FS5" id="w0c-P8-Rbq"/>
+                        <outlet property="incrementTextField" destination="clc-7X-u6o" id="CuJ-JA-wV9"/>
                         <outlet property="topBannerView" destination="1nj-1A-dOg" id="4xM-CX-Hih"/>
                         <outlet property="yMaxTextField" destination="3YQ-lr-dMZ" id="abD-5w-Zyb"/>
                         <outlet property="yMinTextField" destination="Unb-Uk-qMG" id="uCH-3n-LH1"/>
