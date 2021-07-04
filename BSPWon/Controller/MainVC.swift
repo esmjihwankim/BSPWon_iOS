@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Dispatch
 
 class MainVC: UIViewController
 {
@@ -103,10 +104,10 @@ extension MainVC : SensorDataUpdateDelegate
         zValueLabel.text = String(SingletonBlackboard.shared.data.dataZ)
         
         //TODO: to be multithreaded
-        plotView.drawPlotW()
-        plotView.drawPlotX()
-        plotView.drawPlotY()
-        plotView.drawPlotZ()
+        self.plotView.drawPlotW()
+        self.plotView.drawPlotX()
+        self.plotView.drawPlotY()
+        self.plotView.drawPlotZ()
     }
     
 }
