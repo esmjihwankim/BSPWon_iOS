@@ -30,6 +30,8 @@ class BLEStack : NSObject
     var sensorDataUpdateDelegate : SensorDataUpdateDelegate?
     var recordSensorDataDelegate : RecordSensorDataDelegate?
     
+    var connectedFlag : Bool = false
+    
     override init()
     {
         super.init()

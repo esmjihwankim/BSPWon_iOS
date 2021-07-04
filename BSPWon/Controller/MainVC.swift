@@ -65,15 +65,23 @@ class MainVC: UIViewController
         // Start Recording
         if(recordPressed == false)
         {
+            //TODO: Show Alert if not connected
+            if BLEStack.shared.connectedFlag == false
+            {
+                AlertCall.showAlert(viewController: self, message: "Please connect to a device before recording", handler: nil)
+                return
+            }
             dataBox.clear()
             recordPressed = true
             recordButton.setTitle("Stop", for: .normal)
+            recordButton.tintColor = .red
         }
         // Stop Recording
         else
         {
             recordPressed = false
             recordButton.setTitle("Record", for: .normal)
+            recordButton.tintColor = .systemBlue
             dataBox.saveToFileSystem()
             dataBox.clear()
         }
@@ -119,7 +127,7 @@ extension MainVC : RecordSensorDataDelegate
     {
         if recordPressed == true
         {
-            print("append")
+            //print("append")
             dataBox.append()
         }
     }

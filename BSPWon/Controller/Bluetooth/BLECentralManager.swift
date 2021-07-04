@@ -65,6 +65,7 @@ extension BLEStack : CBCentralManagerDelegate {
     {
         print("Connected!")
         peripheralArray.removeAll()
+        BLEStack.shared.connectedFlag = true
         
         centralManager?.stopScan()
         print("Scan stopped")
@@ -83,6 +84,7 @@ extension BLEStack : CBCentralManagerDelegate {
     
     func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?)
     {
+        BLEStack.shared.connectedFlag = false
         BLEStack.shared.peripheralArray.removeAll()
         BLEStack.shared.centralManager.scanForPeripherals(withServices: nil, options: nil)
         self.mainVC.connectButton.setTitle("Connect", for: .normal)
