@@ -8,6 +8,21 @@
 import UIKit
 
 
-class SettingVC : UIViewController {
+class SettingVC : UIViewController
+{
+    
+    @IBOutlet weak var topBannerView: UIView!
+    @IBOutlet weak var yMaxTextField: UITextField!
+    @IBOutlet weak var yMinTextField: UITextField!
+    
+    override func viewDidLoad()
+    {
+        
+    }
+    
+    func setUI()
+    {
+        
+    }
     
 }

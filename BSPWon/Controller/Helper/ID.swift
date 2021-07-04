@@ -12,8 +12,9 @@ struct ID
 {
     
     // Viewcontroller ID
-    static let mainVC : String = "MainVC"
-    static let bleConnectVC : String = "BLEConnectVC"
+    static let mainVC : String          = "MainVC"
+    static let bleConnectVC : String    = "BLEConnectVC"
+    static let settingsVC : String      = "SettingsVC"
     
     // tableviewcell
     static let deviceCell : String = "deviceCell"
@@ -23,5 +24,7 @@ struct ID
     static let xPlotValue = "xValueID"
     static let yPlotValue = "yValueID"
     static let zPlotValue = "zValueID"
+    
+    
 }
 

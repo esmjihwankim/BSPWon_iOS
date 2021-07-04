@@ -248,7 +248,7 @@
 		0581A787D7E381FCE77EB650DDE64D48 /* _CPTAnimationTimingFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTAnimationTimingFunctions.h; path = framework/Source/_CPTAnimationTimingFunctions.h; sourceTree = "<group>"; };
 		06FEDB7BE6B27970BE3F939E32893871 /* CPTAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTAnimation.m; path = framework/Source/CPTAnimation.m; sourceTree = "<group>"; };
 		071AA6E245E3DCDCC2E308033DB53211 /* CPTGradient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTGradient.h; path = framework/Source/CPTGradient.h; sourceTree = "<group>"; };
-		079DE156FF49EDF3BC360E3863307C09 /* Pods_BSPWonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BSPWonTests.framework; path = "Pods-BSPWonTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		079DE156FF49EDF3BC360E3863307C09 /* Pods_BSPWonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSPWonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		085013E67458F67FF6DA0F1212367F4C /* Pods-BSPWonTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BSPWonTests-umbrella.h"; sourceTree = "<group>"; };
 		091A54A45685FB24A0EEA6CDBD281055 /* CPTImagePlatformSpecific.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTImagePlatformSpecific.m; path = framework/iPhoneOnly/CPTImagePlatformSpecific.m; sourceTree = "<group>"; };
 		0C1E9DA98DD17E3585BADFEFDAC0E128 /* _CPTAnimationNSNumberPeriod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTAnimationNSNumberPeriod.m; path = framework/Source/_CPTAnimationNSNumberPeriod.m; sourceTree = "<group>"; };
@@ -299,7 +299,7 @@
 		36FB60AAF3F22296F9D6C43581286E8B /* CPTLineCap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTLineCap.h; path = framework/Source/CPTLineCap.h; sourceTree = "<group>"; };
 		38A9EB3957E63A52395D3A7B1F143277 /* CPTAxis.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTAxis.m; path = framework/Source/CPTAxis.m; sourceTree = "<group>"; };
 		3A0351288F3AB99E9616097543645C87 /* NSNumberExtensions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = NSNumberExtensions.h; path = framework/Source/NSNumberExtensions.h; sourceTree = "<group>"; };
-		3A51FC538283739C7F93109384E280B0 /* Pods_BSPWon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BSPWon.framework; path = "Pods-BSPWon.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A51FC538283739C7F93109384E280B0 /* Pods_BSPWon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSPWon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C35FBF009601488B81E0A3329E7B134 /* Pods-BSPWonTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BSPWonTests.modulemap"; sourceTree = "<group>"; };
 		3D47892D44918740FC0C834B28ADA8E5 /* CPTScatterPlot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTScatterPlot.m; path = framework/Source/CPTScatterPlot.m; sourceTree = "<group>"; };
 		3D67D7F8D00C3D7C696FD547B148E9F0 /* CPTAnnotation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTAnnotation.h; path = framework/Source/CPTAnnotation.h; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 		722D73FECB667E1BE72D077A4FAD4D32 /* CPTLineStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTLineStyle.m; path = framework/Source/CPTLineStyle.m; sourceTree = "<group>"; };
 		769D174988A0576F2659308C66EBE211 /* _CPTStocksTheme.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTStocksTheme.h; path = framework/Source/_CPTStocksTheme.h; sourceTree = "<group>"; };
 		76ACDA966F669595A0499F3B904E7536 /* Pods-BSPWon-BSPWonUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BSPWon-BSPWonUITests.modulemap"; sourceTree = "<group>"; };
-		77BC9B0B69D3AE4B343485C672C7085C /* Pods_BSPWon_BSPWonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BSPWon_BSPWonUITests.framework; path = "Pods-BSPWon-BSPWonUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77BC9B0B69D3AE4B343485C672C7085C /* Pods_BSPWon_BSPWonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSPWon_BSPWonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7827938814A3AEF3763D0ED4EA3CE3CA /* _CPTFillGradient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTFillGradient.m; path = framework/Source/_CPTFillGradient.m; sourceTree = "<group>"; };
 		792B363C6DC2EB7973A99A48CBD0DAE0 /* Pods-BSPWon-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BSPWon-frameworks.sh"; sourceTree = "<group>"; };
 		7A52F3A2C75048D6DF89821A91B2994E /* CorePlot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CorePlot.h; path = framework/CocoaPods/CorePlot.h; sourceTree = "<group>"; };
@@ -383,7 +383,7 @@
 		99B243BBE334424B8D63CEC3AD81DCFC /* CPTNumericData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTNumericData.m; path = framework/Source/CPTNumericData.m; sourceTree = "<group>"; };
 		9A105F0E8329B3245BC25735742D6B75 /* CPTMutableLineStyle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTMutableLineStyle.m; path = framework/Source/CPTMutableLineStyle.m; sourceTree = "<group>"; };
 		9CD6D2E2A2F3E282C3F9818B9900ED91 /* CPTXYAxis.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTXYAxis.h; path = framework/Source/CPTXYAxis.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9D9583508AE1D319D686F8899AED594C /* _CPTAnimationCGSizePeriod.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTAnimationCGSizePeriod.h; path = framework/Source/_CPTAnimationCGSizePeriod.h; sourceTree = "<group>"; };
 		9FF5BC1C9CE2D23DF5E31F5ADC6D336A /* CPTExceptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTExceptions.h; path = framework/Source/CPTExceptions.h; sourceTree = "<group>"; };
 		A6981201A044D06A3E5853FAF2D46E2A /* CPTTextStylePlatformSpecific.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTTextStylePlatformSpecific.m; path = framework/iPhoneOnly/CPTTextStylePlatformSpecific.m; sourceTree = "<group>"; };
@@ -435,7 +435,7 @@
 		D56F8E3F8CC43E954DF9A242BA2FA0D3 /* CPTLegendEntry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTLegendEntry.m; path = framework/Source/CPTLegendEntry.m; sourceTree = "<group>"; };
 		D60FF0B3A52C5EC2F2D7E26366342A5B /* _CPTFillGradient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _CPTFillGradient.h; path = framework/Source/_CPTFillGradient.h; sourceTree = "<group>"; };
 		D65D78C83BBA6BD6A9349D77C43835A3 /* CPTTimeFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = CPTTimeFormatter.m; path = framework/Source/CPTTimeFormatter.m; sourceTree = "<group>"; };
-		D7DB1281B47952393EC6638394696D1A /* CorePlot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CorePlot.framework; path = CorePlot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7DB1281B47952393EC6638394696D1A /* CorePlot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CorePlot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7F77E28CED5143F248BFCBA28BDC860 /* CPTMutableTextStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CPTMutableTextStyle.h; path = framework/Source/CPTMutableTextStyle.h; sourceTree = "<group>"; };
 		D9319A77B069C11E7CEA958667AB8593 /* _CPTDarkGradientTheme.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTDarkGradientTheme.m; path = framework/Source/_CPTDarkGradientTheme.m; sourceTree = "<group>"; };
 		D961EA6D836E19F08CE893FE73150D81 /* _CPTAnimationNSDecimalPeriod.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = _CPTAnimationNSDecimalPeriod.m; path = framework/Source/_CPTAnimationNSDecimalPeriod.m; sourceTree = "<group>"; };
@@ -774,7 +774,6 @@
 				BAFF570A09374CE28FC9F293FE7D8DC3 /* NSNumberExtensions.m */,
 				9014EC2E331016D12759D2ACDBC1470B /* Support Files */,
 			);
-			name = CorePlot;
 			path = CorePlot;
 			sourceTree = "<group>";
 		};
@@ -1420,7 +1419,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CorePlot/CorePlot-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CorePlot/CorePlot-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1592,7 +1591,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CorePlot/CorePlot-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CorePlot/CorePlot-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

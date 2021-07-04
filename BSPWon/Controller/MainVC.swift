@@ -20,22 +20,19 @@ class MainVC: UIViewController
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var lightSwitch: UISwitch!
     @IBOutlet weak var plotView: PlotManager!
-    
+
     var dataBox = DataBox()
     var recordPressed : Bool = false
-    
-    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        setUI()
         BLEStack.shared.sensorDataUpdateDelegate = self
         BLEStack.shared.recordSensorDataDelegate = self
         BLEStack.shared.mainVC = self
-        
         plotView.initGraph()
     }
-    
     
     // responsible for connecting and disconnecting
     @IBAction func connectButtonPressed(_ sender: UIButton)
@@ -59,7 +56,6 @@ class MainVC: UIViewController
         
     }
     
-    
     @IBAction func recordButtonPressed(_ sender: UIButton)
     {
         // Start Recording
@@ -74,19 +70,20 @@ class MainVC: UIViewController
             dataBox.clear()
             recordPressed = true
             recordButton.setTitle("Stop", for: .normal)
-            recordButton.tintColor = .red
+            recordButton.layer.backgroundColor = UIColor.systemRed.cgColor
         }
         // Stop Recording
         else
         {
             recordPressed = false
             recordButton.setTitle("Record", for: .normal)
-            recordButton.tintColor = .systemBlue
+            recordButton.layer.backgroundColor = UIColor.systemBlue.cgColor
             dataBox.saveToFileSystem()
             dataBox.clear()
         }
     }
     
+    // When LED switch is pressed
     @IBAction func lightSwitched(_ sender: UISwitch)
     {
         if lightSwitch.isOn
@@ -98,10 +95,25 @@ class MainVC: UIViewController
             BLEStack.shared.writeOutgoingValue(data: "<off>")
         }
     }
+    
+    // UI
+    func setUI()
+    {
+        self.connectButton.layer.cornerRadius = 5.0
+        self.connectButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+        self.connectButton.tintColor = UIColor.white
+        
+        self.recordButton.layer.cornerRadius = 5.0
+        self.recordButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+        self.recordButton.tintColor = UIColor.white
+    }
+    
 }
 
 
 
+
+//MARK: Delegate Pattern for Updating value to UI
 extension MainVC : SensorDataUpdateDelegate
 {
     func updateSensorValue()
@@ -127,7 +139,7 @@ extension MainVC : RecordSensorDataDelegate
     {
         if recordPressed == true
         {
-            //print("append")
+            //print("append called")
             dataBox.append()
         }
     }

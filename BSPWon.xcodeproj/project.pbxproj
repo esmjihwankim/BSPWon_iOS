@@ -34,6 +34,7 @@
 		4F1F8CA3268C48280052170C /* PlotSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F8CA2268C48280052170C /* PlotSettings.swift */; };
 		4F1F8CA5268DA4020052170C /* PlotDatasourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F8CA4268DA4020052170C /* PlotDatasourceDelegate.swift */; };
 		4F1F8CA926914E0B0052170C /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F8CA826914E0B0052170C /* SettingsVC.swift */; };
+		4F1F8CAB26915C010052170C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F8CAA26915C010052170C /* TabBarController.swift */; };
 		5BD13F8B89B039592FF22E9E /* Pods_BSPWon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04591484D502DBD4640926FE /* Pods_BSPWon.framework */; };
 		F1C6B48A8E31B37A5DD42D84 /* Pods_BSPWon_BSPWonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AD53CC8C2B6095CC01472A /* Pods_BSPWon_BSPWonUITests.framework */; };
 /* End PBXBuildFile section */
@@ -91,6 +92,7 @@
 		4F1F8CA2268C48280052170C /* PlotSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotSettings.swift; sourceTree = "<group>"; };
 		4F1F8CA4268DA4020052170C /* PlotDatasourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotDatasourceDelegate.swift; sourceTree = "<group>"; };
 		4F1F8CA826914E0B0052170C /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		4F1F8CAA26915C010052170C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		59AD53CC8C2B6095CC01472A /* Pods_BSPWon_BSPWonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSPWon_BSPWonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C9419D18974E55D7970189 /* Pods-BSPWonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWonTests.release.xcconfig"; path = "Target Support Files/Pods-BSPWonTests/Pods-BSPWonTests.release.xcconfig"; sourceTree = "<group>"; };
 		B20A44E86C71799DF14F0E00 /* Pods-BSPWon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWon.release.xcconfig"; path = "Target Support Files/Pods-BSPWon/Pods-BSPWon.release.xcconfig"; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				05452C3025D5983B00745531 /* BLEConnectVC.swift */,
 				051878FF25BB14BF0054849D /* MainVC.swift */,
 				4F1F8CA826914E0B0052170C /* SettingsVC.swift */,
+				4F1F8CAA26915C010052170C /* TabBarController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				05452C3125D5983B00745531 /* BLEConnectVC.swift in Sources */,
 				4F1F8CA3268C48280052170C /* PlotSettings.swift in Sources */,
 				0563C35F25E20DFF00E9D5F4 /* SensorData.swift in Sources */,
+				4F1F8CAB26915C010052170C /* TabBarController.swift in Sources */,
 				05452C4525D5A29600745531 /* Alert.swift in Sources */,
 				05452CB525D9024F00745531 /* DataConversion.swift in Sources */,
 				05A90A2325E2432A00BB8E4C /* DataContainer.swift in Sources */,

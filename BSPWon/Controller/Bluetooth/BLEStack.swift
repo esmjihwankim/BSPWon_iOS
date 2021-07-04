@@ -37,9 +37,7 @@ class BLEStack : NSObject
         super.init()
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
-    
-    
-    
+
 }
 
 
