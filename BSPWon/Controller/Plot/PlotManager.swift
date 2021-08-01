@@ -51,8 +51,6 @@ class PlotManager : CPTGraphHostingView
     }
     
     
-    
-    
     func drawPlotX()
     {
         let graph = self.hostedGraph

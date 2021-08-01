@@ -80,14 +80,14 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="20.333333333333332"/>
                                                 <color key="tintColor" systemColor="systemPurpleColor"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                                <color key="textColor" systemColor="systemYellowColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wVal" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31y-fS-EkW">
                                                 <rect key="frame" x="0.0" y="45.333333333333371" width="60" height="20.333333333333329"/>
                                                 <color key="tintColor" systemColor="systemPurpleColor"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                <color key="textColor" systemColor="systemPurpleColor"/>
+                                                <color key="textColor" systemColor="systemYellowColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -259,22 +259,13 @@
         <!--Item-->
         <scene sceneID="Ggp-ht-8TZ">
             <objects>
-                <viewController id="ngX-bt-Flq" customClass="SettingVC" customModule="BSPWon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ngX-bt-Flq" customClass="SettingsVC" customModule="BSPWon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K2D-qP-oga">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1nj-1A-dOg">
-                                <rect key="frame" x="107" y="10" width="200" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="NGV-Ml-Jzy"/>
-                                    <constraint firstAttribute="width" constant="200" id="hCA-dX-W6v"/>
-                                </constraints>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rqQ-GJ-xUN" userLabel="AxisSettingStackView">
-                                <rect key="frame" x="92" y="140" width="230" height="198"/>
+                                <rect key="frame" x="92" y="100" width="230" height="198"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Axis Range " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yXg-pE-CD1">
                                         <rect key="frame" x="0.0" y="0.0" width="230" height="36"/>
@@ -357,7 +348,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7F9-fh-FS5">
-                                <rect key="frame" x="157" y="368" width="100" height="35"/>
+                                <rect key="frame" x="157" y="328" width="100" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="OBn-zf-R2B"/>
                                 </constraints>
@@ -369,23 +360,39 @@
                                     <action selector="applyButtonPressed:" destination="ngX-bt-Flq" eventType="touchUpInside" id="m21-iU-nsk"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMu-og-MK5">
+                                <rect key="frame" x="67" y="30" width="280" height="50"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4fa-hY-M5r"/>
+                                    <constraint firstAttribute="width" constant="280" id="fg1-wf-Tdl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="About our Research Group">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="topBannerPressed:" destination="ngX-bt-Flq" eventType="touchUpInside" id="XXQ-45-nkx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xhN-qD-mqh"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7F9-fh-FS5" firstAttribute="top" secondItem="rqQ-GJ-xUN" secondAttribute="bottom" constant="30" id="2jK-eh-Xox"/>
-                            <constraint firstItem="1nj-1A-dOg" firstAttribute="centerX" secondItem="K2D-qP-oga" secondAttribute="centerX" id="6IW-vK-35g"/>
                             <constraint firstItem="rqQ-GJ-xUN" firstAttribute="centerX" secondItem="K2D-qP-oga" secondAttribute="centerX" id="8yT-VK-net"/>
-                            <constraint firstItem="1nj-1A-dOg" firstAttribute="top" secondItem="xhN-qD-mqh" secondAttribute="top" constant="10" id="Dn4-fb-2KO"/>
-                            <constraint firstItem="rqQ-GJ-xUN" firstAttribute="top" secondItem="1nj-1A-dOg" secondAttribute="bottom" constant="30" id="JwP-KB-NZs"/>
+                            <constraint firstItem="bMu-og-MK5" firstAttribute="centerX" secondItem="K2D-qP-oga" secondAttribute="centerX" id="BtQ-gH-YVb"/>
+                            <constraint firstItem="rqQ-GJ-xUN" firstAttribute="top" secondItem="bMu-og-MK5" secondAttribute="bottom" constant="20" id="GGH-xH-bx1"/>
+                            <constraint firstItem="bMu-og-MK5" firstAttribute="top" secondItem="xhN-qD-mqh" secondAttribute="top" constant="30" id="LQA-fE-NwP"/>
                             <constraint firstItem="7F9-fh-FS5" firstAttribute="centerX" secondItem="K2D-qP-oga" secondAttribute="centerX" id="Qu4-fm-G7k"/>
+                            <constraint firstItem="bMu-og-MK5" firstAttribute="centerX" secondItem="K2D-qP-oga" secondAttribute="centerX" id="tin-Pf-GyL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="F0D-Mf-Bxh"/>
                     <connections>
                         <outlet property="applyButton" destination="7F9-fh-FS5" id="w0c-P8-Rbq"/>
                         <outlet property="incrementTextField" destination="clc-7X-u6o" id="CuJ-JA-wV9"/>
-                        <outlet property="topBannerView" destination="1nj-1A-dOg" id="4xM-CX-Hih"/>
+                        <outlet property="topBannerButton" destination="bMu-og-MK5" id="yBQ-ef-JcT"/>
                         <outlet property="yMaxTextField" destination="3YQ-lr-dMZ" id="abD-5w-Zyb"/>
                         <outlet property="yMinTextField" destination="Unb-Uk-qMG" id="uCH-3n-LH1"/>
                     </connections>
@@ -400,6 +407,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
@@ -414,6 +424,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

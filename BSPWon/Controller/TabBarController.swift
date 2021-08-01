@@ -28,6 +28,7 @@ class TabBarController : UITabBarController, UITabBarControllerDelegate
             items[x].title = titles[x]
             items[x].image = UIImage(systemName: images[x])
         }
+        
     }
     
     
