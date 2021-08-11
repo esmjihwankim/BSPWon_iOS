@@ -89,10 +89,10 @@ class MainVC: UIViewController
         if lightSwitch.isOn
         {
             // peripheral is connected peripheral
-            BLEStack.shared.writeOutgoingValue(data: "<on>")
+            BLEStack.shared.writeValue(data: "<LEDCASCADEON>")
         }
         else{
-            BLEStack.shared.writeOutgoingValue(data: "<off>")
+            BLEStack.shared.writeValue(data: "<LEDCASCADEOFF>")
         }
     }
     
@@ -107,10 +107,7 @@ class MainVC: UIViewController
         self.recordButton.layer.backgroundColor = UIColor.systemBlue.cgColor
         self.recordButton.tintColor = UIColor.white
     }
-    
 }
-
-
 
 
 //MARK: Delegate Pattern for Updating value to UI
@@ -129,7 +126,6 @@ extension MainVC : SensorDataUpdateDelegate
         self.plotView.drawPlotY()
         self.plotView.drawPlotZ()
     }
-    
 }
 
 // whenever new data from BLEStack refreshed, append data

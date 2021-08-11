@@ -24,7 +24,8 @@ class BLEStack : NSObject
     var selected : BluetoothPeriperal?
     var selectedUUID : UUID?
     
-    var characteristicList : [CBCharacteristic] = []
+    var receiveCharacteristic : CBCharacteristic? = nil
+    var transmitCharacteristic : CBCharacteristic? = nil
         
     var deviceReloadDelegate : DeviceReloadDelegate?
     var sensorDataUpdateDelegate : SensorDataUpdateDelegate?

@@ -17,7 +17,6 @@ class SettingsVC : UIViewController
     @IBOutlet weak var incrementTextField: UITextField!
     @IBOutlet weak var applyButton: UIButton!
     
-    
     var plotManager : PlotManager?
     
     override func viewDidLoad()

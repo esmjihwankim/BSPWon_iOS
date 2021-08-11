@@ -17,20 +17,28 @@ extension BLEStack : CBPeripheralDelegate
     {
         for service in peripheral.services!
         {
-            print(service)
+            print("DID_DISCOVER_SERVICE:::", service)
             peripheral.discoverCharacteristics(nil, for: service)
         }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?)
     {
-        if let characterstics = service.characteristics{
-            for characteristic in characterstics as [CBCharacteristic]
+        if let characterstics = service.characteristics
+        {
+            for c in characterstics as [CBCharacteristic]
             {
-                if characteristic.properties.contains(CBCharacteristicProperties.notify)
+                print("DID_DISCOVER_CHARACTERISTICS:::", c)
+                if c.properties.contains(CBCharacteristicProperties.notify)
                 {
-                    peripheral.readValue(for: characteristic)
-                    peripheral.setNotifyValue(true, for: characteristic)
+                    //peripheral.readValue(for: characteristic)
+                    peripheral.setNotifyValue(true, for: c)
+                    self.receiveCharacteristic = c
+                }
+                // Store the characteristic into the instance array
+                if c.properties.contains(CBCharacteristicProperties.writeWithoutResponse)
+                {
+                    self.transmitCharacteristic = c
                 }
             }
         }
@@ -40,7 +48,6 @@ extension BLEStack : CBPeripheralDelegate
     {
         if characteristic.isNotifying
         {
-            characteristicList.append(characteristic as CBCharacteristic)
             peripheral.readValue(for: characteristic)
             print("UUID: \(characteristic.uuid)")
             print("property: \(characteristic.properties)")
@@ -79,18 +86,20 @@ extension BLEStack : CBPeripheralDelegate
     /* Writing Value to Peripheral */
     
     // Turn LED on/off by writing to bluetooth
-    func writeOutgoingValue(data: String){
+    func writeValue(data: String)
+    {
+        print("value outgoing:::", data)
         let valueString = (data as NSString).data(using: String.Encoding.utf8.rawValue)
-        if let currentPeripheral = self.peripheral {
-            let currentCharacteristic = characteristicList[0]
+        if let currentPeripheral = self.peripheral
+        {
+            guard let currentCharacteristic = transmitCharacteristic else { return print("transmit characteristics not found") }
             currentPeripheral.writeValue(valueString!, for: currentCharacteristic, type: CBCharacteristicWriteType.withoutResponse)
         }
     }
     
-    
-    func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
+    func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?)
+    {
         print("WRITE::\(characteristic)")
     }
-    
     
 }

@@ -25,6 +25,7 @@ extension BLEStack : CBCentralManagerDelegate {
         }
     }
     
+
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral,
                        advertisementData: [String : Any], rssi RSSI: NSNumber)
     {
@@ -43,7 +44,6 @@ extension BLEStack : CBCentralManagerDelegate {
                 peripheralArray.append(BluetoothPeriperal(name: peripheralName, peripheral: peripheral))
                 // reload
                 deviceReloadDelegate?.reloadView()
-                print(peripheralArray)
             }
         }
     }
@@ -61,18 +61,21 @@ extension BLEStack : CBCentralManagerDelegate {
         }
     }
     
+    //MARK: Connection Status Methods
     func centralManager(_ central: CBCentralManager, didConnect peripheral: CBPeripheral)
     {
-        print("Connected!")
+        print("Connected to", peripheral)
+        self.peripheral = peripheral
+        
         peripheralArray.removeAll()
         BLEStack.shared.connectedFlag = true
         
         centralManager?.stopScan()
         print("Scan stopped")
-                
         self.mainVC.connectButton.setTitle("Disconnect", for: .normal)
         peripheral.delegate = self
-        selected!.peripheral.discoverServices(nil)
+        
+        selected!.peripheral.discoverServices(nil)  // Start looking for peripherals and services
     }
     
     

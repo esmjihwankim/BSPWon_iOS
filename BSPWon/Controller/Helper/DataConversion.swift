@@ -16,7 +16,6 @@ import CoreBluetooth
 
 class DataConversion
 {
-    
     static func bleSensorStringToNumberArray(data : String) -> [Int16]
     {
         var recordFlag : Bool = false
