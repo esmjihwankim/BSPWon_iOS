@@ -18,7 +18,10 @@ class MainVC: UIViewController
     
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
-    @IBOutlet weak var lightSwitch: UISwitch!
+    @IBOutlet weak var cascadeSwitch: UISwitch!
+    @IBOutlet weak var pin1Switch: UISwitch!
+    @IBOutlet weak var pin2Switch: UISwitch!
+    
     @IBOutlet weak var plotView: PlotManager!
 
     var dataBox = DataBox()
@@ -83,22 +86,49 @@ class MainVC: UIViewController
         }
     }
     
-    // When LED switch is pressed
-    @IBAction func lightSwitched(_ sender: UISwitch)
+//MARK: Switches for LED Neural Stimulation
+    @IBAction func cascadeSwitchPressed(_ sender: UISwitch)
     {
-        if lightSwitch.isOn
+        if cascadeSwitch.isOn
         {
-            // peripheral is connected peripheral
             BLEStack.shared.writeValue(data: "<LEDCASCADEON>")
         }
-        else{
+        else
+        {
             BLEStack.shared.writeValue(data: "<LEDCASCADEOFF>")
+        }
+    }
+    
+    @IBAction func pin1SwitchPressed(_ sender: UISwitch)
+    {
+        if pin1Switch.isOn
+        {
+            BLEStack.shared.writeValue(data: "<PIN1ON>")
+        }
+        else
+        {
+            BLEStack.shared.writeValue(data: "<PIN1OFF>")
+        }
+    }
+
+    @IBAction func pin2SwitchPressed(_ sender: UISwitch) {
+        if pin2Switch.isOn
+        {
+            BLEStack.shared.writeValue(data: "<PIN2ON>")
+        }
+        else
+        {
+            BLEStack.shared.writeValue(data: "<PIN2OFF>")
         }
     }
     
     // UI
     func setUI()
     {
+        self.cascadeSwitch.isOn = false
+        self.pin1Switch.isOn = false
+        self.pin2Switch.isOn = false
+        
         self.connectButton.layer.cornerRadius = 5.0
         self.connectButton.layer.backgroundColor = UIColor.systemBlue.cgColor
         self.connectButton.tintColor = UIColor.white
@@ -120,7 +150,7 @@ extension MainVC : SensorDataUpdateDelegate
         yValueLabel.text = String(SingletonBlackboard.shared.data.dataY)
         zValueLabel.text = String(SingletonBlackboard.shared.data.dataZ)
         
-        //TODO: to be multithreaded
+        
         self.plotView.drawPlotW()
         self.plotView.drawPlotX()
         self.plotView.drawPlotY()

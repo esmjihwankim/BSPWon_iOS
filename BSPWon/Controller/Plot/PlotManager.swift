@@ -10,8 +10,6 @@ import CorePlot
 
 class PlotManager : CPTGraphHostingView
 {
-    
-    
     var plotDataW = [Double] (repeating: 0.0, count: 1000)
     var plotDataX = [Double] (repeating: 0.0, count: 1000)
     var plotDataY = [Double] (repeating: 0.0, count: 1000)

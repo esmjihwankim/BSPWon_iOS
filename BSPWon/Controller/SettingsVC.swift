@@ -37,9 +37,11 @@ class SettingsVC : UIViewController
     }
     
     
-    @IBAction func topBannerPressed(_ sender: UIButton) {
+    @IBAction func topBannerPressed(_ sender: UIButton)
+    {
         let thisURL = URL(string: "https://www.skkuwongroup.online")!
-        if UIApplication.shared.canOpenURL(thisURL){
+        if UIApplication.shared.canOpenURL(thisURL)
+        {
             UIApplication.shared.open(thisURL, options: [:], completionHandler: nil)
         }
     }

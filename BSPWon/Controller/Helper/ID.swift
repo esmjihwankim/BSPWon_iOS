@@ -25,6 +25,5 @@ struct ID
     static let yPlotValue = "yValueID"
     static let zPlotValue = "zValueID"
     
-    
 }
 
