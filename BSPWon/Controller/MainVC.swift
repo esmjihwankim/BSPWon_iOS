@@ -103,22 +103,22 @@ class MainVC: UIViewController
     {
         if pin1Switch.isOn
         {
-            BLEStack.shared.writeValue(data: "<PIN1ON>")
+            BLEStack.shared.writeValue(data: "<CONTROLPIN1ON>")
         }
         else
         {
-            BLEStack.shared.writeValue(data: "<PIN1OFF>")
+            BLEStack.shared.writeValue(data: "<CONTROLPIN1OFF>")
         }
     }
 
     @IBAction func pin2SwitchPressed(_ sender: UISwitch) {
         if pin2Switch.isOn
         {
-            BLEStack.shared.writeValue(data: "<PIN2ON>")
+            BLEStack.shared.writeValue(data: "<CONTROLPIN2ON>")
         }
         else
         {
-            BLEStack.shared.writeValue(data: "<PIN2OFF>")
+            BLEStack.shared.writeValue(data: "<CONTROLPIN2OFF>")
         }
     }
     
