@@ -21,6 +21,8 @@ class MainVC: UIViewController
     @IBOutlet weak var cascadeSwitch: UISwitch!
     @IBOutlet weak var pin1Switch: UISwitch!
     @IBOutlet weak var pin2Switch: UISwitch!
+    @IBOutlet weak var pin3Switch: UISwitch!
+    @IBOutlet weak var pin4Switch: UISwitch!
     
     @IBOutlet weak var plotView: PlotManager!
 
@@ -122,12 +124,39 @@ class MainVC: UIViewController
         }
     }
     
+    
+    @IBAction func pin3SwitchPressed(_ sender: UISwitch) {
+        if pin3Switch.isOn
+        {
+            BLEStack.shared.writeValue(data: "<CONTROLPIN3ON>")
+        }
+        else
+        {
+            BLEStack.shared.writeValue(data: "<CONTROLPIN3OFF>")
+        }
+    }
+    
+    
+    @IBAction func pin4SwitchPressed(_ sender: UISwitch) {
+        if pin4Switch.isOn
+        {
+            BLEStack.shared.writeValue(data: "<CONTROLPIN4ON>")
+        }
+        else
+        {
+            BLEStack.shared.writeValue(data: "<CONTROLPIN4OFF>")
+        }
+    }
+    
+    
     // UI
     func setUI()
     {
         self.cascadeSwitch.isOn = false
         self.pin1Switch.isOn = false
         self.pin2Switch.isOn = false
+        self.pin3Switch.isOn = false
+        self.pin4Switch.isOn = false
         
         self.connectButton.layer.cornerRadius = 5.0
         self.connectButton.layer.backgroundColor = UIColor.systemBlue.cgColor

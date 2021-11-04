@@ -54,7 +54,7 @@
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Vo6-bV-K7s" userLabel="SensorValue Stack View">
-                                <rect key="frame" x="17" y="582.33333333333337" width="380" height="65.666666666666629"/>
+                                <rect key="frame" x="17" y="592.33333333333337" width="380" height="65.666666666666629"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bL2-D9-wOm" userLabel="tempStack">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="65.666666666666671"/>
@@ -160,8 +160,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="63" translatesAutoresizingMaskIntoConstraints="NO" id="3Zn-p9-R9G" userLabel="SwitchStack">
-                                <rect key="frame" x="55" y="502.99999999999994" width="304" height="59.333333333333314"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="3Zn-p9-R9G" userLabel="SwitchStack">
+                                <rect key="frame" x="19" y="513" width="376" height="59.333333333333371"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WRf-rq-kSf">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="59.333333333333336"/>
@@ -173,7 +173,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e1E-jS-pxt">
-                                                <rect key="frame" x="15.666666666666671" y="28.333333333333371" width="51" height="31"/>
+                                                <rect key="frame" x="15.666666666666664" y="28.333333333333371" width="50.999999999999993" height="31"/>
                                                 <connections>
                                                     <action selector="cascadeSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="ME7-AK-LgE"/>
                                                 </connections>
@@ -184,7 +184,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="FyU-b7-RQI" userLabel="Pin1Stack">
-                                        <rect key="frame" x="143" y="0.0" width="49" height="59.333333333333336"/>
+                                        <rect key="frame" x="105" y="0.0" width="49" height="59.333333333333336"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PIN1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gah-Vo-IhV">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="20.333333333333332"/>
@@ -202,9 +202,9 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SvS-c8-NAg" userLabel="Pin2Stack">
-                                        <rect key="frame" x="255" y="0.0" width="49" height="59.333333333333336"/>
+                                        <rect key="frame" x="179" y="0.0" width="49" height="59.333333333333336"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PIN2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znr-qf-Ogm">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PIN2" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Znr-qf-Ogm">
                                                 <rect key="frame" x="0.0" y="0.0" width="49" height="20.333333333333332"/>
                                                 <color key="tintColor" systemColor="labelColor"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -219,11 +219,43 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="7Ic-Cu-Hnm" userLabel="Pin3Stack">
+                                        <rect key="frame" x="253" y="0.0" width="49" height="59.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PIN3" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yH9-FC-LLO" userLabel="PIN3">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="21.333333333333332"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bJi-uV-h2Q">
+                                                <rect key="frame" x="0.0" y="28.333333333333371" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="pin3SwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="mj7-rg-KgN"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="t3d-jh-xOc" userLabel="Pin4Stack">
+                                        <rect key="frame" x="327" y="0.0" width="49" height="59.333333333333336"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PIN4" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23c-Cz-fKx">
+                                                <rect key="frame" x="0.0" y="0.0" width="49" height="20.333333333333332"/>
+                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Nh-ca-zJb">
+                                                <rect key="frame" x="0.0" y="28.333333333333371" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="pin4SwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="A7p-i0-Cca"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x1m-ZZ-0xr">
-                                <rect key="frame" x="-7" y="556" width="41.333333333333336" height="20.333333333333332"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -232,11 +264,11 @@
                             <constraint firstItem="3Zn-p9-R9G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DdY-kt-QyC"/>
                             <constraint firstItem="xVH-Wg-yeX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JXU-rJ-HBG"/>
                             <constraint firstItem="xVH-Wg-yeX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MyG-Rp-dNO"/>
-                            <constraint firstItem="3Zn-p9-R9G" firstAttribute="top" secondItem="xVH-Wg-yeX" secondAttribute="bottom" constant="10" id="Obp-ZT-xE1"/>
+                            <constraint firstItem="3Zn-p9-R9G" firstAttribute="top" secondItem="xVH-Wg-yeX" secondAttribute="bottom" constant="20" id="Obp-ZT-xE1"/>
                             <constraint firstItem="JNW-Uz-8Wk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="b5I-0W-yql"/>
-                            <constraint firstItem="Vo6-bV-K7s" firstAttribute="top" secondItem="3Zn-p9-R9G" secondAttribute="bottom" constant="20" id="cT7-rr-hhL"/>
                             <constraint firstItem="xVH-Wg-yeX" firstAttribute="top" secondItem="JNW-Uz-8Wk" secondAttribute="bottom" constant="30" id="iJC-FR-Bed"/>
                             <constraint firstItem="Vo6-bV-K7s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nD2-3d-vAl"/>
+                            <constraint firstItem="Vo6-bV-K7s" firstAttribute="top" secondItem="3Zn-p9-R9G" secondAttribute="bottom" constant="20" id="qdS-g0-Hjc"/>
                             <constraint firstItem="JNW-Uz-8Wk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rfI-VE-6lf"/>
                         </constraints>
                     </view>
@@ -246,6 +278,8 @@
                         <outlet property="connectButton" destination="eoT-kt-WcG" id="HbF-S6-bRe"/>
                         <outlet property="pin1Switch" destination="BMG-Kr-AhJ" id="lyd-SB-U1q"/>
                         <outlet property="pin2Switch" destination="Khe-s4-Yhw" id="Zaa-1e-G3C"/>
+                        <outlet property="pin3Switch" destination="bJi-uV-h2Q" id="v6o-1J-8Jn"/>
+                        <outlet property="pin4Switch" destination="8Nh-ca-zJb" id="58B-o6-XaC"/>
                         <outlet property="plotView" destination="xVH-Wg-yeX" id="pQe-YW-MLH"/>
                         <outlet property="recordButton" destination="3ec-9F-OQr" id="l62-HG-BoC"/>
                         <outlet property="wValueLabel" destination="31y-fS-EkW" id="IDl-Gk-KXt"/>
@@ -413,8 +447,8 @@
                     <tabBarItem key="tabBarItem" title="Item" id="F0D-Mf-Bxh"/>
                     <connections>
                         <outlet property="applyButton" destination="7F9-fh-FS5" id="w0c-P8-Rbq"/>
+                        <outlet property="freqTextField" destination="3YQ-lr-dMZ" id="abD-5w-Zyb"/>
                         <outlet property="topBannerButton" destination="bMu-og-MK5" id="yBQ-ef-JcT"/>
-                        <outlet property="yMaxTextField" destination="3YQ-lr-dMZ" id="abD-5w-Zyb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FRd-Zr-b8a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

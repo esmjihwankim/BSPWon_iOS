@@ -12,9 +12,7 @@ class SettingsVC : UIViewController
 {
 
     @IBOutlet weak var topBannerButton: UIButton!
-    @IBOutlet weak var yMaxTextField: UITextField!
-    @IBOutlet weak var yMinTextField: UITextField!
-    @IBOutlet weak var incrementTextField: UITextField!
+    @IBOutlet weak var freqTextField: UITextField!
     @IBOutlet weak var applyButton: UIButton!
     
     var plotManager : PlotManager?
@@ -31,9 +29,7 @@ class SettingsVC : UIViewController
         self.applyButton.layer.cornerRadius = 5.0
         self.applyButton.layer.backgroundColor = UIColor.systemBlue.cgColor
         self.applyButton.tintColor = UIColor.white
-        yMaxTextField.keyboardType = UIKeyboardType.numberPad
-        yMinTextField.keyboardType = UIKeyboardType.numberPad
-        incrementTextField.keyboardType = UIKeyboardType.numberPad
+        freqTextField.keyboardType = UIKeyboardType.numberPad
     }
     
     
