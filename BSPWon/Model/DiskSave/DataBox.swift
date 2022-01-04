@@ -24,6 +24,10 @@ class DataBox : DataContainer {
         let timestamp = dateFormatter.string(from: currentTime)
         dataCollection.append(String(timestamp))
         dataCollection.append(",")
+        dataCollection.append(String(SingletonBlackboard.shared.data.dataU))
+        dataCollection.append(",")
+        dataCollection.append(String(SingletonBlackboard.shared.data.dataV))
+        dataCollection.append(",")
         dataCollection.append(String(SingletonBlackboard.shared.data.dataW))
         dataCollection.append(",")
         dataCollection.append(String(SingletonBlackboard.shared.data.dataX))
@@ -33,7 +37,7 @@ class DataBox : DataContainer {
         dataCollection.append(String(SingletonBlackboard.shared.data.dataZ))
         dataCollection.append("\n")
         
-        _cnt += 4
+        _cnt += 6
         
         if(count > 100000)
         {

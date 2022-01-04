@@ -2,7 +2,7 @@
 //  PlotDatasourceDelegate.swift
 //  BSPWon
 //
-//  Created by skkuwon on 2021/07/01.
+//  Created by Jihwan Kim on 2021/07/01.
 //
 
 import Foundation
@@ -13,7 +13,15 @@ extension PlotManager : CPTScatterPlotDataSource, CPTScatterPlotDelegate
 {
     func numberOfRecords(for plot: CPTPlot) -> UInt
     {
-        if plot.identifier?.description == ID.wPlotValue
+        if plot.identifier?.description == ID.uPlotValue
+        {
+            return UInt(self.plotDataU.count)
+        }
+        else if plot.identifier?.description == ID.vPlotValue
+        {
+            return UInt(self.plotDataV.count)
+        }
+        else if plot.identifier?.description == ID.wPlotValue
         {
             return UInt(self.plotDataW.count)
         }
@@ -29,7 +37,6 @@ extension PlotManager : CPTScatterPlotDataSource, CPTScatterPlotDelegate
         {
             return UInt(self.plotDataZ.count)
         }
-        
         return 0
     }
     
@@ -40,25 +47,41 @@ extension PlotManager : CPTScatterPlotDataSource, CPTScatterPlotDelegate
         switch CPTScatterPlotField(rawValue: Int(fieldEnum))!
         {
         case .X:
-            if plot.identifier?.description == ID.wPlotValue
+            if plot.identifier?.description == ID.uPlotValue
             {
-                return NSNumber(value: Int(idx) + self.currentIndex-self.plotDataW.count)
+                return NSNumber(value: Int(idx) + self.currentIndex - self.plotDataU.count)
+            }
+            else if plot.identifier?.description == ID.vPlotValue
+            {
+                return NSNumber(value: Int(idx) + self.currentIndex - self.plotDataV.count)
+            }
+            else if plot.identifier?.description == ID.wPlotValue
+            {
+                return NSNumber(value: Int(idx) + self.currentIndex - self.plotDataW.count)
             }
             else if plot.identifier?.description == ID.xPlotValue
             {
-                return NSNumber(value: Int(idx) + self.currentIndex-self.plotDataX.count)
+                return NSNumber(value: Int(idx) + self.currentIndex - self.plotDataX.count)
             }
             else if plot.identifier?.description == ID.yPlotValue
             {
-                return NSNumber(value: Int(idx) + self.currentIndex-self.plotDataY.count)
+                return NSNumber(value: Int(idx) + self.currentIndex - self.plotDataY.count)
             }
             else if plot.identifier?.description == ID.zPlotValue
             {
-                return NSNumber(value: Int(idx) + self.currentIndex-self.plotDataZ.count)
+                return NSNumber(value: Int(idx) + self.currentIndex - self.plotDataZ.count)
             }
 
         case .Y:
-            if plot.identifier?.description == ID.wPlotValue
+            if plot.identifier?.description == ID.uPlotValue
+            {
+                return self.plotDataU[Int(idx)] as NSNumber
+            }
+            else if plot.identifier?.description == ID.vPlotValue
+            {
+                return self.plotDataV[Int(idx)] as NSNumber
+            }
+            else if plot.identifier?.description == ID.wPlotValue
             {
                 return self.plotDataW[Int(idx)] as NSNumber
             }

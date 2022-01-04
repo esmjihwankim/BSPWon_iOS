@@ -12,24 +12,18 @@ class SettingsVC : UIViewController
 {
 
     @IBOutlet weak var topBannerButton: UIButton!
-    @IBOutlet weak var freqTextField: UITextField!
-    @IBOutlet weak var applyButton: UIButton!
     
     var plotManager : PlotManager?
     
     override func viewDidLoad()
     {
-        setUI()
+        setUI()e
     }
     
     func setUI()
     {
         self.topBannerButton.layer.backgroundColor = UIColor.black.cgColor
         self.topBannerButton.layer.cornerRadius = 10.0
-        self.applyButton.layer.cornerRadius = 5.0
-        self.applyButton.layer.backgroundColor = UIColor.systemBlue.cgColor
-        self.applyButton.tintColor = UIColor.white
-        freqTextField.keyboardType = UIKeyboardType.numberPad
     }
     
     

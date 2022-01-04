@@ -15,10 +15,12 @@ extension PlotManager
     {
         configureGraphView()
         configureGraphAxis()
-        configurePlot(thisPlot: plotW, thisColor: CPTColor.yellow(), thisID: ID.wPlotValue)
-        configurePlot(thisPlot: plotX, thisColor: CPTColor.green(), thisID: ID.xPlotValue)
-        configurePlot(thisPlot: plotY, thisColor: CPTColor.red(), thisID: ID.yPlotValue)
-        configurePlot(thisPlot: plotZ, thisColor: CPTColor.white(), thisID: ID.zPlotValue)
+        configurePlot(thisPlot: plotU, thisColor: CPTColor.cyan(),      thisID: ID.uPlotValue)
+        configurePlot(thisPlot: plotV, thisColor: CPTColor.lightGray(), thisID: ID.vPlotValue)
+        configurePlot(thisPlot: plotW, thisColor: CPTColor.yellow(),    thisID: ID.wPlotValue)
+        configurePlot(thisPlot: plotX, thisColor: CPTColor.green(),     thisID: ID.xPlotValue)
+        configurePlot(thisPlot: plotY, thisColor: CPTColor.red(),       thisID: ID.yPlotValue)
+        configurePlot(thisPlot: plotZ, thisColor: CPTColor.white(),     thisID: ID.zPlotValue)
     }
     
     func configureGraphView()

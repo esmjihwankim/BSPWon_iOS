@@ -72,10 +72,13 @@ extension BLEStack : CBPeripheralDelegate
         print(resultArray)
         
         // Update Singleton instance
-        SingletonBlackboard.shared.data.dataW = resultArray[0]
-        SingletonBlackboard.shared.data.dataX = resultArray[1]
-        SingletonBlackboard.shared.data.dataY = resultArray[2]
-        SingletonBlackboard.shared.data.dataZ = resultArray[3]
+        SingletonBlackboard.shared.data.dataU = resultArray[0]
+        SingletonBlackboard.shared.data.dataV = resultArray[1]
+        SingletonBlackboard.shared.data.dataW = resultArray[2]
+        SingletonBlackboard.shared.data.dataX = resultArray[3]
+        SingletonBlackboard.shared.data.dataY = resultArray[4]
+        SingletonBlackboard.shared.data.dataZ = resultArray[5]
+        
         
         // Signal MainVC via Delegate to record values
         sensorDataUpdateDelegate?.updateSensorValue()

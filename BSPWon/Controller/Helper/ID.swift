@@ -20,6 +20,8 @@ struct ID
     static let deviceCell : String = "deviceCell"
     
     // graphingView
+    static let uPlotValue = "uValueID"
+    static let vPlotValue = "vValueID"
     static let wPlotValue = "wValueID"
     static let xPlotValue = "xValueID"
     static let yPlotValue = "yValueID"

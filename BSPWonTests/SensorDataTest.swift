@@ -19,15 +19,6 @@ class SensorDataTest : XCTestCase {
     }
     
     
-    // Data conversion from string to Uint16 Array Test
-    func testConversionToUint16Array() {
-        let receivedDataString : String = "CH0: 2000\nCH1: 3000\nCH2: 4000\nCH3: 5000\n"
-        let dataArrayExpected : [UInt16] = [2000, 3000, 4000, 5000]
-        let actualSensorData : [UInt16] = DataConversion.bleSensorStringToNumberArray(data: receivedDataString)
-        
-        XCTAssertEqual(dataArrayExpected, actualSensorData)
-    }
-    
     func testSensorDataStructure() {
         var sensorData = SensorData()
         sensorData.dataW = 4

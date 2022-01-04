@@ -174,12 +174,9 @@ extension MainVC : SensorDataUpdateDelegate
 {
     func updateSensorValue()
     {
-        wValueLabel.text = String(SingletonBlackboard.shared.data.dataW)
-        xValueLabel.text = String(SingletonBlackboard.shared.data.dataX)
-        yValueLabel.text = String(SingletonBlackboard.shared.data.dataY)
-        zValueLabel.text = String(SingletonBlackboard.shared.data.dataZ)
         
-        
+        self.plotView.drawPlotU()
+        self.plotView.drawPlotV()
         self.plotView.drawPlotW()
         self.plotView.drawPlotX()
         self.plotView.drawPlotY()

@@ -11,11 +11,37 @@ import Foundation
 
 struct SensorData : SensorDataFormat
 {
-    
+    private var _u : Int16 = 0
+    private var _v : Int16 = 0
     private var _w : Int16 = 0
     private var _x : Int16 = 0
     private var _y : Int16 = 0
     private var _z : Int16 = 0
+    
+    var dataU: Int16
+    {
+        get
+        {
+            return self._u
+        }
+        set(value)
+        {
+            self._u = value
+        }
+    }
+    
+    var dataV: Int16
+    {
+        get
+        {
+            return self._v
+        }
+        set(value)
+        {
+            self._v = value
+        }
+    }
+    
     
     var dataW: Int16
     {

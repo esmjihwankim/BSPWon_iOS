@@ -10,12 +10,16 @@ import CorePlot
 
 class PlotManager : CPTGraphHostingView
 {
+    var plotDataU = [Double] (repeating: 0.0, count: 1000)
+    var plotDataV = [Double] (repeating: 0.0, count: 1000)
     var plotDataW = [Double] (repeating: 0.0, count: 1000)
     var plotDataX = [Double] (repeating: 0.0, count: 1000)
     var plotDataY = [Double] (repeating: 0.0, count: 1000)
     var plotDataZ = [Double] (repeating: 0.0, count: 1000)
     
     // Plot Instance
+    var plotU = CPTScatterPlot()
+    var plotV = CPTScatterPlot()
     var plotW = CPTScatterPlot()
     var plotX = CPTScatterPlot()
     var plotY = CPTScatterPlot()
@@ -29,6 +33,45 @@ class PlotManager : CPTGraphHostingView
     
     // @brief Called when sensor value updated
     // @param plotID
+    
+    func drawPlotU()
+    {
+        let graph = self.hostedGraph
+        let myPlot = graph?.plot(withIdentifier: ID.uPlotValue as NSCopying)
+        let point : Double = Double(SingletonBlackboard.shared.data.dataU)
+        
+        if((myPlot) != nil)
+        {
+            if plotDataU.count >= maxDataPoints
+            {
+                plotDataU.removeFirst()
+                myPlot?.deleteData(inIndexRange: _NSRange(location: 0, length: 1))
+            }
+        }
+        plotDataU.append(point)
+        myPlot?.insertData(at: UInt(plotDataU.count-1), numberOfRecords: 1)
+
+    }
+    
+    func drawPlotV()
+    {
+        let graph = self.hostedGraph
+        let myPlot = graph?.plot(withIdentifier: ID.vPlotValue as NSCopying)
+        let point : Double = Double(SingletonBlackboard.shared.data.dataV)
+        
+        if((myPlot) != nil)
+        {
+            if plotDataV.count >= maxDataPoints
+            {
+                plotDataV.removeFirst()
+                myPlot?.deleteData(inIndexRange: _NSRange(location: 0, length: 1))
+            }
+        }
+        plotDataV.append(point)
+        myPlot?.insertData(at: UInt(plotDataV.count-1), numberOfRecords: 1)
+    }
+    
+    
     func drawPlotW()
     {
         let graph = self.hostedGraph
