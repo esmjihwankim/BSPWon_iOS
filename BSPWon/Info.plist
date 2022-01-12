@@ -24,6 +24,8 @@
 	<true/>
 	<key>LSSupportsOpeningDocumentsInPlace</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict/>
 	<key>NSBluetoothAlwaysUsageDescription</key>
 	<string>Permission for access to Bluetooth is required </string>
 	<key>UIApplicationSceneManifest</key>
@@ -57,8 +59,6 @@
 	<array>
 		<string>armv7</string>
 	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

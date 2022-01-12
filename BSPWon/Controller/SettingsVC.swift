@@ -17,7 +17,7 @@ class SettingsVC : UIViewController
     
     override func viewDidLoad()
     {
-        setUI()e
+        setUI()
     }
     
     func setUI()
