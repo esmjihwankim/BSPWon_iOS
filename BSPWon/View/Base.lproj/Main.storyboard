@@ -223,7 +223,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a3A-cM-kbU" userLabel="PulsingStackView">
-                                <rect key="frame" x="198.66666666666663" y="98" width="205.33333333333337" height="31"/>
+                                <rect key="frame" x="188.66666666666663" y="98" width="205.33333333333337" height="31"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatic Pulsing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ss3-wj-dse">
                                         <rect key="frame" x="0.0" y="0.0" width="148.33333333333334" height="31"/>
@@ -233,6 +233,9 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frf-S8-gFA">
                                         <rect key="frame" x="156.33333333333334" y="0.0" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="pulsingSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hh2-Lm-x8f"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                             </stackView>
@@ -250,7 +253,7 @@
                             <constraint firstItem="3AF-XB-ANc" firstAttribute="top" secondItem="JNW-Uz-8Wk" secondAttribute="bottom" constant="20" id="kFQ-zI-qrw"/>
                             <constraint firstItem="xVH-Wg-yeX" firstAttribute="top" secondItem="3AF-XB-ANc" secondAttribute="bottom" constant="20" id="r3N-Jw-Qg3"/>
                             <constraint firstItem="JNW-Uz-8Wk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rfI-VE-6lf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a3A-cM-kbU" secondAttribute="trailing" constant="10" id="sJp-ax-TkT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a3A-cM-kbU" secondAttribute="trailing" constant="20" id="sJp-ax-TkT"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="tlZ-fz-YxQ"/>
@@ -262,6 +265,7 @@
                         <outlet property="pin3Switch" destination="bJi-uV-h2Q" id="v6o-1J-8Jn"/>
                         <outlet property="pin4Switch" destination="8Nh-ca-zJb" id="58B-o6-XaC"/>
                         <outlet property="plotView" destination="xVH-Wg-yeX" id="pQe-YW-MLH"/>
+                        <outlet property="pulsingSwitch" destination="frf-S8-gFA" id="DVz-h2-9OI"/>
                         <outlet property="recordButton" destination="3ec-9F-OQr" id="l62-HG-BoC"/>
                     </connections>
                 </viewController>

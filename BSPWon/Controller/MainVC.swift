@@ -11,13 +11,10 @@ import Dispatch
 class MainVC: UIViewController
 {
     
-    @IBOutlet weak var wValueLabel: UILabel!
-    @IBOutlet weak var xValueLabel: UILabel!
-    @IBOutlet weak var yValueLabel: UILabel!
-    @IBOutlet weak var zValueLabel: UILabel!
-    
     @IBOutlet weak var connectButton: UIButton!
     @IBOutlet weak var recordButton: UIButton!
+    
+    @IBOutlet weak var pulsingSwitch: UISwitch!
     @IBOutlet weak var cascadeSwitch: UISwitch!
     @IBOutlet weak var pin1Switch: UISwitch!
     @IBOutlet weak var pin2Switch: UISwitch!
@@ -25,7 +22,7 @@ class MainVC: UIViewController
     @IBOutlet weak var pin4Switch: UISwitch!
     
     @IBOutlet weak var plotView: PlotManager!
-
+    
     var dataBox = DataBox()
     var recordPressed : Bool = false
     
@@ -88,7 +85,22 @@ class MainVC: UIViewController
         }
     }
     
-//MARK: Switches for LED Neural Stimulation
+//MARK: Switches GPIO Control
+    
+    
+    @IBAction func pulsingSwitchPressed(_ sender: UISwitch)
+    {
+        if pulsingSwitch.isOn
+        {
+            BLEStack.shared.writeValue(data: "<AUTOMATICPULSEON>")
+        }
+        else
+        {
+            BLEStack.shared.writeValue(data: "<AUTOMATICPULSEOFF>")
+        }
+    }
+    
+    
     @IBAction func cascadeSwitchPressed(_ sender: UISwitch)
     {
         if cascadeSwitch.isOn
@@ -152,6 +164,7 @@ class MainVC: UIViewController
     // UI
     func setUI()
     {
+        self.pulsingSwitch.isOn = false
         self.cascadeSwitch.isOn = false
         self.pin1Switch.isOn = false
         self.pin2Switch.isOn = false

@@ -16,6 +16,7 @@ class SettingsVC : UIViewController
     var plotManager : PlotManager?
     
     override func viewDidLoad()
+    
     {
         setUI()
     }
