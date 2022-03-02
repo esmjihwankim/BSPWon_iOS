@@ -68,8 +68,6 @@ extension BLEConnectVC : UITableViewDataSource, UITableViewDelegate
             return
         }
         connectButton.setTitle("Disconnect", for: .normal)
-        
-        
         self.dismiss(animated: true, completion: nil)
     }
 }

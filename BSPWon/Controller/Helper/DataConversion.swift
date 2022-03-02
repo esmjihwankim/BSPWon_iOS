@@ -16,11 +16,11 @@ import CoreBluetooth
 
 class DataConversion
 {
-    static func bleSensorStringToNumberArray(data : String) -> [Int16]
+    static func bleSensorStringToNumberArray(data : String) -> [Int32]
     {
         var recordFlag : Bool = false
         var charBuffer : [Character] = []
-        var numberArray : [Int16] = []
+        var numberArray : [Int32] = []
         charBuffer.removeAll()
         numberArray.removeAll()
         
@@ -34,7 +34,7 @@ class DataConversion
             else if c == "\n"
             {
                 recordFlag = false
-                let number : Int16? = Int16(String(charBuffer))
+                let number : Int32? = Int32(String(charBuffer))
                 if let safeNumber = number
                 {
                     numberArray.append(safeNumber)

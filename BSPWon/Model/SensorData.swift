@@ -11,14 +11,15 @@ import Foundation
 
 struct SensorData : SensorDataFormat
 {
-    private var _u : Int16 = 0
-    private var _v : Int16 = 0
-    private var _w : Int16 = 0
-    private var _x : Int16 = 0
-    private var _y : Int16 = 0
-    private var _z : Int16 = 0
+    private var _u : Int32 = 0
+    private var _v : Int32 = 0
+    private var _w : Int32 = 0
+    private var _x : Int32 = 0
+    private var _y : Int32 = 0
+    private var _z : Int32 = 0
+    private var _pulseInfo : Int32 = 0
     
-    var dataU: Int16
+    var dataU: Int32
     {
         get
         {
@@ -30,7 +31,7 @@ struct SensorData : SensorDataFormat
         }
     }
     
-    var dataV: Int16
+    var dataV: Int32
     {
         get
         {
@@ -43,7 +44,7 @@ struct SensorData : SensorDataFormat
     }
     
     
-    var dataW: Int16
+    var dataW: Int32
     {
         get
         {
@@ -55,7 +56,7 @@ struct SensorData : SensorDataFormat
         }
     }
     
-    var dataX: Int16
+    var dataX: Int32
     {
         get
         {
@@ -67,7 +68,7 @@ struct SensorData : SensorDataFormat
         }
     }
     
-    var dataY: Int16
+    var dataY: Int32
     {
         get
         {
@@ -79,7 +80,7 @@ struct SensorData : SensorDataFormat
         }
     }
     
-    var dataZ: Int16
+    var dataZ: Int32
     {
         get
         {
@@ -88,6 +89,18 @@ struct SensorData : SensorDataFormat
         set(value)
         {
             self._z = value
+        }
+    }
+    
+    var pulseInfo: Int32
+    {
+        get
+        {
+            return self._pulseInfo
+        }
+        set(value)
+        {
+            self._pulseInfo = value
         }
     }
     
