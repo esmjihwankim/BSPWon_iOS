@@ -86,17 +86,24 @@ class MainVC: UIViewController
     }
     
 //MARK: Switches GPIO Control
-    
-    
     @IBAction func pulsingSwitchPressed(_ sender: UISwitch)
     {
         if pulsingSwitch.isOn
         {
             BLEStack.shared.writeValue(data: "<AUTOMATICPULSEON>")
+            dataBox.clear()
+            recordPressed = true
+            recordButton.setTitle("Stop", for: .normal)
+            recordButton.layer.backgroundColor = UIColor.systemRed.cgColor
         }
         else
         {
             BLEStack.shared.writeValue(data: "<AUTOMATICPULSEOFF>")
+            recordPressed = false
+            recordButton.setTitle("Record", for: .normal)
+            recordButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+            dataBox.saveToFileSystem()
+            dataBox.clear()
         }
     }
     
