@@ -63,7 +63,7 @@ class MainVC: UIViewController
         // Start Recording
         if(recordPressed == false)
         {
-            //TODO: Show Alert if not connected
+            //TODO: Show Alert if not connected        
             if BLEStack.shared.connectedFlag == false
             {
                 AlertCall.showAlert(viewController: self, message: "Please connect to a device before recording", handler: nil)
@@ -79,7 +79,7 @@ class MainVC: UIViewController
         {
             recordPressed = false
             recordButton.setTitle("Record", for: .normal)
-            recordButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+            recordButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
             dataBox.saveToFileSystem()
             dataBox.clear()
         }
@@ -101,7 +101,7 @@ class MainVC: UIViewController
             BLEStack.shared.writeValue(data: "<AUTOMATICPULSEOFF>")
             recordPressed = false
             recordButton.setTitle("Record", for: .normal)
-            recordButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+            recordButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
             dataBox.saveToFileSystem()
             dataBox.clear()
         }
@@ -131,7 +131,7 @@ class MainVC: UIViewController
             BLEStack.shared.writeValue(data: "<CONTROLPIN1OFF>")
         }
     }
-
+    
     @IBAction func pin2SwitchPressed(_ sender: UISwitch) {
         if pin2Switch.isOn
         {
@@ -179,11 +179,11 @@ class MainVC: UIViewController
         self.pin4Switch.isOn = false
         
         self.connectButton.layer.cornerRadius = 5.0
-        self.connectButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+        self.connectButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
         self.connectButton.tintColor = UIColor.white
         
         self.recordButton.layer.cornerRadius = 5.0
-        self.recordButton.layer.backgroundColor = UIColor.systemBlue.cgColor
+        self.recordButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
         self.recordButton.tintColor = UIColor.white
     }
 }

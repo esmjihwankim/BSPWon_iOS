@@ -21,8 +21,8 @@ class TabBarController : UITabBarController, UITabBarControllerDelegate
         guard let items = self.tabBar.items else {
             return
         }
-        let titles = ["Experiment", "Settings"]
-        let images = ["gamecontroller", "gear"]
+        let titles = ["Experiment", "Pins", "Settings"]
+        let images = ["gamecontroller", "cable.connector", "gear"]
         for x in 0..<items.count
         {
             items[x].title = titles[x]
