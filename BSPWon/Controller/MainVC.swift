@@ -21,6 +21,8 @@ class MainVC: UIViewController
     @IBOutlet weak var pin3Switch: UISwitch!
     @IBOutlet weak var pin4Switch: UISwitch!
     
+    @IBOutlet weak var pulsingMessageLabel: UILabel!
+    
     @IBOutlet weak var plotView: PlotManager!
     
     var dataBox = DataBox()
@@ -185,9 +187,10 @@ class MainVC: UIViewController
         self.recordButton.layer.cornerRadius = 5.0
         self.recordButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
         self.recordButton.tintColor = UIColor.white
+        
+        self.pulsingMessageLabel.text = "Pulsing Ready"
     }
 }
-
 
 //MARK: Delegate Pattern for Updating value to UI
 extension MainVC : SensorDataUpdateDelegate

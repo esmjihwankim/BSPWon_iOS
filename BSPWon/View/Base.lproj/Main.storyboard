@@ -222,21 +222,32 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a3A-cM-kbU" userLabel="PulsingStackView">
-                                <rect key="frame" x="188.66666666666663" y="98" width="205.33333333333337" height="31"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="f0U-7b-Bm0" userLabel="PulsingWholeStackView">
+                                <rect key="frame" x="188.66666666666663" y="93" width="205.33333333333337" height="53.333333333333343"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatic Pulsing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ss3-wj-dse">
-                                        <rect key="frame" x="0.0" y="0.0" width="148.33333333333334" height="31"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="a3A-cM-kbU" userLabel="PulsingSwitchStackView">
+                                        <rect key="frame" x="0.0" y="0.0" width="205.33333333333334" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Automatic Pulsing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ss3-wj-dse">
+                                                <rect key="frame" x="0.0" y="0.0" width="148.33333333333334" height="31"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frf-S8-gFA">
+                                                <rect key="frame" x="156.33333333333334" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="pulsingSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hh2-Lm-x8f"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oqc-JY-p0A">
+                                        <rect key="frame" x="68.333333333333343" y="33" width="68.666666666666657" height="20.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frf-S8-gFA">
-                                        <rect key="frame" x="156.33333333333334" y="0.0" width="51" height="31"/>
-                                        <connections>
-                                            <action selector="pulsingSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="Hh2-Lm-x8f"/>
-                                        </connections>
-                                    </switch>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -245,15 +256,15 @@
                         <constraints>
                             <constraint firstItem="3Zn-p9-R9G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DdY-kt-QyC"/>
                             <constraint firstItem="xVH-Wg-yeX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="JXU-rJ-HBG"/>
+                            <constraint firstItem="f0U-7b-Bm0" firstAttribute="top" secondItem="JNW-Uz-8Wk" secondAttribute="bottom" constant="20" id="K09-qw-rSb"/>
                             <constraint firstItem="xVH-Wg-yeX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="MyG-Rp-dNO"/>
                             <constraint firstItem="3Zn-p9-R9G" firstAttribute="top" secondItem="xVH-Wg-yeX" secondAttribute="bottom" constant="20" id="Obp-ZT-xE1"/>
                             <constraint firstItem="3AF-XB-ANc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wlo-SJ-uzs"/>
                             <constraint firstItem="JNW-Uz-8Wk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="b5I-0W-yql"/>
-                            <constraint firstItem="a3A-cM-kbU" firstAttribute="top" secondItem="JNW-Uz-8Wk" secondAttribute="bottom" constant="25" id="fuL-d3-2lE"/>
                             <constraint firstItem="3AF-XB-ANc" firstAttribute="top" secondItem="JNW-Uz-8Wk" secondAttribute="bottom" constant="20" id="kFQ-zI-qrw"/>
                             <constraint firstItem="xVH-Wg-yeX" firstAttribute="top" secondItem="3AF-XB-ANc" secondAttribute="bottom" constant="20" id="r3N-Jw-Qg3"/>
                             <constraint firstItem="JNW-Uz-8Wk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rfI-VE-6lf"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="a3A-cM-kbU" secondAttribute="trailing" constant="20" id="sJp-ax-TkT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="f0U-7b-Bm0" secondAttribute="trailing" constant="20" id="rlE-HX-lcI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="tlZ-fz-YxQ"/>
@@ -265,6 +276,7 @@
                         <outlet property="pin3Switch" destination="bJi-uV-h2Q" id="v6o-1J-8Jn"/>
                         <outlet property="pin4Switch" destination="8Nh-ca-zJb" id="58B-o6-XaC"/>
                         <outlet property="plotView" destination="xVH-Wg-yeX" id="pQe-YW-MLH"/>
+                        <outlet property="pulsingMessageLabel" destination="Oqc-JY-p0A" id="k1Z-6C-LOb"/>
                         <outlet property="pulsingSwitch" destination="frf-S8-gFA" id="DVz-h2-9OI"/>
                         <outlet property="recordButton" destination="3ec-9F-OQr" id="l62-HG-BoC"/>
                     </connections>
@@ -557,6 +569,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
+                                    <action selector="showPickerviewButton:" destination="Ut5-xl-bDX" eventType="touchUpInside" id="6l2-lb-n85"/>
                                     <action selector="topBannerPressed:" destination="ngX-bt-Flq" eventType="touchUpInside" id="lDw-RN-4fe"/>
                                 </connections>
                             </button>
