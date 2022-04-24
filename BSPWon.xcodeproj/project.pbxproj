@@ -37,6 +37,7 @@
 		4F1F8CAB26915C010052170C /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F8CAA26915C010052170C /* TabBarController.swift */; };
 		4F428DCF28099CAD00222D72 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F428DCE28099CAD00222D72 /* SettingsData.swift */; };
 		4F428DD12809A1AA00222D72 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F428DD02809A1AA00222D72 /* SettingsVC.swift */; };
+		4F428DD32815590000222D72 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F428DD22815590000222D72 /* ToolbarPickerView.swift */; };
 		5BD13F8B89B039592FF22E9E /* Pods_BSPWon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04591484D502DBD4640926FE /* Pods_BSPWon.framework */; };
 		F1C6B48A8E31B37A5DD42D84 /* Pods_BSPWon_BSPWonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AD53CC8C2B6095CC01472A /* Pods_BSPWon_BSPWonUITests.framework */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		4F1F8CAA26915C010052170C /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		4F428DCE28099CAD00222D72 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		4F428DD02809A1AA00222D72 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		4F428DD22815590000222D72 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
 		59AD53CC8C2B6095CC01472A /* Pods_BSPWon_BSPWonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSPWon_BSPWonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C9419D18974E55D7970189 /* Pods-BSPWonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWonTests.release.xcconfig"; path = "Target Support Files/Pods-BSPWonTests/Pods-BSPWonTests.release.xcconfig"; sourceTree = "<group>"; };
 		B20A44E86C71799DF14F0E00 /* Pods-BSPWon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWon.release.xcconfig"; path = "Target Support Files/Pods-BSPWon/Pods-BSPWon.release.xcconfig"; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				05452C7E25D670D300745531 /* ID.swift */,
 				05452C9525D683EF00745531 /* Protocol.swift */,
 				05452CB425D9024F00745531 /* DataConversion.swift */,
+				4F428DD22815590000222D72 /* ToolbarPickerView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 				05A90A2325E2432A00BB8E4C /* DataContainer.swift in Sources */,
 				05452C8A25D6791200745531 /* BluetoothPeripheral.swift in Sources */,
 				051878FE25BB14BF0054849D /* SceneDelegate.swift in Sources */,
+				4F428DD32815590000222D72 /* ToolbarPickerView.swift in Sources */,
 				0563C35125E2099600E9D5F4 /* SensorDataFormat.swift in Sources */,
 				05A90A0525E2298F00BB8E4C /* BLECentralManager.swift in Sources */,
 				4F1F8CA926914E0B0052170C /* PinNamesVC.swift in Sources */,

@@ -38,12 +38,6 @@ class PinNamesVC : UIViewController
     }
     
     
-    // Apply setting to graph view
-    @IBAction func applyButtonPressed(_ sender: UIButton)
-    {
-        print("pressed apply")
-    }
-    
 }
 
 
