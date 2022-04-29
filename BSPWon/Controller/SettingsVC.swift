@@ -34,7 +34,6 @@ extension SettingsVC
         pickerView.delegate = self
         pickerView.center = self.view.center
         self.view.addSubview(pickerView)
-        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int
@@ -55,16 +54,14 @@ extension SettingsVC
 
 extension SettingsVC : ToolbarPickerViewDelegate
 {
-    
-    
     func didTapDone()
     {
         
     }
     
-    func didTapCancel() {
+    func didTapCancel()
+    {
         self.pickerView.resignFirstResponder()
     }
-    
     
 }

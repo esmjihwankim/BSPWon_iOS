@@ -8,18 +8,22 @@
 import XCTest
 @testable import BSPWon
 
-class SensorDataTest : XCTestCase {
+class SensorDataTest : XCTestCase
+{
     
-    override func setUp() {
+    override func setUp()
+    {
         super.setUp()
     }
     
-    override func tearDown() {
+    override func tearDown()
+    {
         super.tearDown()
     }
     
     
-    func testSensorDataStructure() {
+    func testSensorDataStructure()
+    {
         var sensorData = SensorData()
         sensorData.dataW = 4
         sensorData.dataX = 5
@@ -33,7 +37,8 @@ class SensorDataTest : XCTestCase {
     }
     
     //MARK: - Test Singleton only once to avoid problems
-    func testSingletonBlackboard_DataStructure() {
+    func testSingletonBlackboard_DataStructure()
+    {
         SingletonBlackboard.shared.data.dataW = 1
         SingletonBlackboard.shared.data.dataX = 2
         SingletonBlackboard.shared.data.dataY = 3

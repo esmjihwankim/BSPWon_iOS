@@ -36,8 +36,6 @@ class PinNamesVC : UIViewController
             UIApplication.shared.open(thisURL, options: [:], completionHandler: nil)
         }
     }
-    
-    
 }
 
 
@@ -52,3 +50,4 @@ extension PinNamesVC : UITextFieldDelegate
         return true
     }
 }
+

@@ -22,11 +22,13 @@ class MainVC: UIViewController
     @IBOutlet weak var pin4Switch: UISwitch!
     
     @IBOutlet weak var pulsingMessageLabel: UILabel!
-    
     @IBOutlet weak var plotView: PlotManager!
     
+    var automaticPulsing = AutomaticPulsing()
     var dataBox = DataBox()
     var recordPressed : Bool = false
+    
+    static let pulse_ui_notification = Notification.Name("signal_pulsing")
     
     override func viewDidLoad()
     {
@@ -36,6 +38,7 @@ class MainVC: UIViewController
         BLEStack.shared.recordSensorDataDelegate = self
         BLEStack.shared.mainVC = self
         plotView.initGraph()
+        NotificationCenter.default.addObserver(self, selector: #selector(on_pulse_notification), name: MainVC.pulse_ui_notification, object: nil)
     }
     
     // responsible for connecting and disconnecting
@@ -87,23 +90,22 @@ class MainVC: UIViewController
         }
     }
     
-//MARK: Switches GPIO Control
+    //MARK: Switches GPIO Control
     @IBAction func pulsingSwitchPressed(_ sender: UISwitch)
     {
         if pulsingSwitch.isOn
         {
             BLEStack.shared.writeValue(data: "<AUTOMATICPULSEON>")
             dataBox.clear()
-            recordPressed = true
-            recordButton.setTitle("Stop", for: .normal)
-            recordButton.layer.backgroundColor = UIColor.systemRed.cgColor
+            prepareStopRecordButton()
+            
+            // automatic pulsing instance activated
+            automaticPulsing.start_pulsing()
         }
         else
         {
             BLEStack.shared.writeValue(data: "<AUTOMATICPULSEOFF>")
-            recordPressed = false
-            recordButton.setTitle("Record", for: .normal)
-            recordButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
+            prepareOriginalRecordButton()
             dataBox.saveToFileSystem()
             dataBox.clear()
         }
@@ -169,6 +171,32 @@ class MainVC: UIViewController
         }
     }
     
+   
+}
+
+extension MainVC
+{
+    
+    func prepareOriginalConnectButton()
+    {
+        self.connectButton.layer.cornerRadius = 5.0
+        self.connectButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        self.connectButton.tintColor = UIColor.white
+    }
+    
+    func prepareOriginalRecordButton()
+    {
+        self.recordButton.layer.cornerRadius = 5.0
+        self.recordButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
+        self.recordButton.tintColor = UIColor.white
+    }
+    
+    func prepareStopRecordButton()
+    {
+        recordPressed = true
+        recordButton.setTitle("Stop", for: .normal)
+        recordButton.layer.backgroundColor = UIColor.systemRed.cgColor
+    }
     
     // UI
     func setUI()
@@ -180,15 +208,29 @@ class MainVC: UIViewController
         self.pin3Switch.isOn = false
         self.pin4Switch.isOn = false
         
-        self.connectButton.layer.cornerRadius = 5.0
-        self.connectButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
-        self.connectButton.tintColor = UIColor.white
+        prepareOriginalRecordButton()
+        prepareOriginalConnectButton()
         
-        self.recordButton.layer.cornerRadius = 5.0
-        self.recordButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
-        self.recordButton.tintColor = UIColor.white
-        
-        self.pulsingMessageLabel.text = "Pulsing Ready"
+        self.pulsingMessageLabel.text = "Ready"
+    }
+    
+    // Pulsing UI change from Notification
+    @objc
+    func on_pulse_notification()
+    {
+        if (Pulse_State.addup_state)
+        {
+            self.pulsingMessageLabel.text = "Stay still!"
+        }
+        else if (Pulse_State.sign_state)
+        {
+            self.pulsingMessageLabel.text = "Perform gesture"
+        }
+        else if (Pulse_State.off_state)
+        {
+            self.pulsingMessageLabel.text = "Ready"
+            
+        }
     }
 }
 
@@ -197,7 +239,6 @@ extension MainVC : SensorDataUpdateDelegate
 {
     func updateSensorValue()
     {
-        
         self.plotView.drawPlotU()
         self.plotView.drawPlotV()
         self.plotView.drawPlotW()
