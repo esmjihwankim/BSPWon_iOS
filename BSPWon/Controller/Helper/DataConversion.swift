@@ -16,9 +16,33 @@ import CoreBluetooth
 
 class DataConversion
 {
+    
+    // data received in "D: XXXX" or "L: YYYY" form is sorted
+    static func sortChannel(input: String) -> (BLEReceivedDataType, String)
+    {
+        var dataType : BLEReceivedDataType?
+        
+        let start = input.index(input.startIndex, offsetBy: 2)
+        let end = input.index(input.endIndex, offsetBy: -1)
+        let substring = input[start...end]
+        
+        if(input[input.startIndex] == "D")
+        {
+            dataType = BLEReceivedDataType.Data
+        }
+        // logging channel
+        else if(input[input.startIndex] == "L")
+        {
+            dataType = BLEReceivedDataType.Log
+        }
+        
+        return (dataType!, String(substring))
+    }
+    
+    // data received is stored in array and returned
     static func bleSensorStringToNumberArray(data : String) -> [Int32]
     {
-        var recordFlag : Bool = false
+        var storeFlag : Bool = false
         var charBuffer : [Character] = []
         var numberArray : [Int32] = []
         charBuffer.removeAll()
@@ -28,12 +52,12 @@ class DataConversion
         {
             if c == " "
             {
-                recordFlag = true
+                storeFlag = true
                 continue
             }
-            else if c == "\n"
+            else if c == "."
             {
-                recordFlag = false
+                storeFlag = false
                 let number : Int32? = Int32(String(charBuffer))
                 if let safeNumber = number
                 {
@@ -42,7 +66,7 @@ class DataConversion
                 }
                 continue
             }
-            if recordFlag
+            if storeFlag
             {
                 charBuffer.append(c)
             }
@@ -51,4 +75,6 @@ class DataConversion
         
         return numberArray
     }
+    
+    
 }

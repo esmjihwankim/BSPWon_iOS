@@ -38,8 +38,8 @@
 		4F428DCF28099CAD00222D72 /* SettingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F428DCE28099CAD00222D72 /* SettingsData.swift */; };
 		4F428DD12809A1AA00222D72 /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F428DD02809A1AA00222D72 /* SettingsVC.swift */; };
 		4F428DD32815590000222D72 /* ToolbarPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F428DD22815590000222D72 /* ToolbarPickerView.swift */; };
-		4F80818A281A56EA003C5728 /* AutomaticPulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F808189281A56EA003C5728 /* AutomaticPulsing.swift */; };
-		4F97A065281C01BD004FF956 /* PulsingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F97A064281C01BD004FF956 /* PulsingTest.swift */; };
+		4F97A065281C01BD004FF956 /* DataConversionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F97A064281C01BD004FF956 /* DataConversionTest.swift */; };
+		4F97A06728200183004FF956 /* BLEReceivedDataType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F97A06628200183004FF956 /* BLEReceivedDataType.swift */; };
 		5BD13F8B89B039592FF22E9E /* Pods_BSPWon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04591484D502DBD4640926FE /* Pods_BSPWon.framework */; };
 		F1C6B48A8E31B37A5DD42D84 /* Pods_BSPWon_BSPWonUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59AD53CC8C2B6095CC01472A /* Pods_BSPWon_BSPWonUITests.framework */; };
 /* End PBXBuildFile section */
@@ -101,8 +101,8 @@
 		4F428DCE28099CAD00222D72 /* SettingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsData.swift; sourceTree = "<group>"; };
 		4F428DD02809A1AA00222D72 /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 		4F428DD22815590000222D72 /* ToolbarPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarPickerView.swift; sourceTree = "<group>"; };
-		4F808189281A56EA003C5728 /* AutomaticPulsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutomaticPulsing.swift; sourceTree = "<group>"; };
-		4F97A064281C01BD004FF956 /* PulsingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PulsingTest.swift; sourceTree = "<group>"; };
+		4F97A064281C01BD004FF956 /* DataConversionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConversionTest.swift; sourceTree = "<group>"; };
+		4F97A06628200183004FF956 /* BLEReceivedDataType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEReceivedDataType.swift; sourceTree = "<group>"; };
 		59AD53CC8C2B6095CC01472A /* Pods_BSPWon_BSPWonUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BSPWon_BSPWonUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C9419D18974E55D7970189 /* Pods-BSPWonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWonTests.release.xcconfig"; path = "Target Support Files/Pods-BSPWonTests/Pods-BSPWonTests.release.xcconfig"; sourceTree = "<group>"; };
 		B20A44E86C71799DF14F0E00 /* Pods-BSPWon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWon.release.xcconfig"; path = "Target Support Files/Pods-BSPWon/Pods-BSPWon.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,7 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				0518791225BB14C00054849D /* SensorDataTest.swift */,
-				4F97A064281C01BD004FF956 /* PulsingTest.swift */,
+				4F97A064281C01BD004FF956 /* DataConversionTest.swift */,
 				0518791425BB14C00054849D /* Info.plist */,
 			);
 			path = BSPWonTests;
@@ -202,6 +202,7 @@
 				0563C35025E2099600E9D5F4 /* SensorDataFormat.swift */,
 				0563C35E25E20DFF00E9D5F4 /* SensorData.swift */,
 				0563C34525E2061100E9D5F4 /* SingletonBlackboard.swift */,
+				4F97A06628200183004FF956 /* BLEReceivedDataType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,7 +239,6 @@
 				05452C9525D683EF00745531 /* Protocol.swift */,
 				05452CB425D9024F00745531 /* DataConversion.swift */,
 				4F428DD22815590000222D72 /* ToolbarPickerView.swift */,
-				4F808189281A56EA003C5728 /* AutomaticPulsing.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -545,6 +545,7 @@
 			files = (
 				05A90A2B25E252FE00BB8E4C /* DataBox.swift in Sources */,
 				0518790025BB14BF0054849D /* MainVC.swift in Sources */,
+				4F97A06728200183004FF956 /* BLEReceivedDataType.swift in Sources */,
 				05452C7F25D670D300745531 /* ID.swift in Sources */,
 				05452C7625D64BEE00745531 /* BLEStack.swift in Sources */,
 				4F1F8CA5268DA4020052170C /* PlotDatasourceDelegate.swift in Sources */,
@@ -565,7 +566,6 @@
 				05452C8A25D6791200745531 /* BluetoothPeripheral.swift in Sources */,
 				051878FE25BB14BF0054849D /* SceneDelegate.swift in Sources */,
 				4F428DD32815590000222D72 /* ToolbarPickerView.swift in Sources */,
-				4F80818A281A56EA003C5728 /* AutomaticPulsing.swift in Sources */,
 				0563C35125E2099600E9D5F4 /* SensorDataFormat.swift in Sources */,
 				05A90A0525E2298F00BB8E4C /* BLECentralManager.swift in Sources */,
 				4F1F8CA926914E0B0052170C /* PinNamesVC.swift in Sources */,
@@ -576,7 +576,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F97A065281C01BD004FF956 /* PulsingTest.swift in Sources */,
+				4F97A065281C01BD004FF956 /* DataConversionTest.swift in Sources */,
 				0518791325BB14C00054849D /* SensorDataTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,7 +675,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -730,7 +730,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -791,7 +791,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H7G75LGMFX;
+				DEVELOPMENT_TEAM = 6DHB683768;
 				INFOPLIST_FILE = BSPWonTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -814,7 +814,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H7G75LGMFX;
+				DEVELOPMENT_TEAM = 6DHB683768;
 				INFOPLIST_FILE = BSPWonTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -836,8 +836,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H7G75LGMFX;
+				DEVELOPMENT_TEAM = 6DHB683768;
 				INFOPLIST_FILE = BSPWonUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -859,8 +860,9 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = H7G75LGMFX;
+				DEVELOPMENT_TEAM = 6DHB683768;
 				INFOPLIST_FILE = BSPWonUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

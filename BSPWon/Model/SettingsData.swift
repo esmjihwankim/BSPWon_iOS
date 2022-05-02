@@ -16,8 +16,8 @@ struct SettingsData
     struct SensoryNeuromorphicSetting
     {
         // time in seconds
-        static var averaging_time : Int = 2
-        static var sign_time : Int = 3
+        static var averaging_time : Int = 3
+        static var sign_time : Int = 4
     }
     
     struct PressureArraySetting

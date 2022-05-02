@@ -16,6 +16,7 @@ class MainVC: UIViewController
     
     @IBOutlet weak var pulsingSwitch: UISwitch!
     @IBOutlet weak var cascadeSwitch: UISwitch!
+    
     @IBOutlet weak var pin1Switch: UISwitch!
     @IBOutlet weak var pin2Switch: UISwitch!
     @IBOutlet weak var pin3Switch: UISwitch!
@@ -24,7 +25,6 @@ class MainVC: UIViewController
     @IBOutlet weak var pulsingMessageLabel: UILabel!
     @IBOutlet weak var plotView: PlotManager!
     
-    var automaticPulsing = AutomaticPulsing()
     var dataBox = DataBox()
     var recordPressed : Bool = false
     
@@ -38,7 +38,6 @@ class MainVC: UIViewController
         BLEStack.shared.recordSensorDataDelegate = self
         BLEStack.shared.mainVC = self
         plotView.initGraph()
-        NotificationCenter.default.addObserver(self, selector: #selector(on_pulse_notification), name: MainVC.pulse_ui_notification, object: nil)
     }
     
     // responsible for connecting and disconnecting
@@ -90,21 +89,20 @@ class MainVC: UIViewController
         }
     }
     
-    //MARK: Switches GPIO Control
+    
     @IBAction func pulsingSwitchPressed(_ sender: UISwitch)
     {
         if pulsingSwitch.isOn
         {
-            BLEStack.shared.writeValue(data: "<AUTOMATICPULSEON>")
+            BLEStack.shared.writeValue(data: "<PULSEON>")
             dataBox.clear()
             prepareStopRecordButton()
             
-            // automatic pulsing instance activated
-            automaticPulsing.start_pulsing()
+            
         }
         else
         {
-            BLEStack.shared.writeValue(data: "<AUTOMATICPULSEOFF>")
+            BLEStack.shared.writeValue(data: "<PULSEOFF>")
             prepareOriginalRecordButton()
             dataBox.saveToFileSystem()
             dataBox.clear()
@@ -174,6 +172,7 @@ class MainVC: UIViewController
    
 }
 
+//MARK: UI Display Logic
 extension MainVC
 {
     
@@ -213,28 +212,9 @@ extension MainVC
         
         self.pulsingMessageLabel.text = "Ready"
     }
-    
-    // Pulsing UI change from Notification
-    @objc
-    func on_pulse_notification()
-    {
-        if (Pulse_State.addup_state)
-        {
-            self.pulsingMessageLabel.text = "Stay still!"
-        }
-        else if (Pulse_State.sign_state)
-        {
-            self.pulsingMessageLabel.text = "Perform gesture"
-        }
-        else if (Pulse_State.off_state)
-        {
-            self.pulsingMessageLabel.text = "Ready"
-            
-        }
-    }
 }
 
-//MARK: Delegate Pattern for Updating value to UI
+//MARK: Data Delegates
 extension MainVC : SensorDataUpdateDelegate
 {
     func updateSensorValue()
