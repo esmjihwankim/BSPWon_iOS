@@ -271,12 +271,12 @@
                     <connections>
                         <outlet property="cascadeSwitch" destination="e1E-jS-pxt" id="DFa-0q-dbE"/>
                         <outlet property="connectButton" destination="eoT-kt-WcG" id="HbF-S6-bRe"/>
+                        <outlet property="logMessageLabel" destination="Oqc-JY-p0A" id="k1Z-6C-LOb"/>
                         <outlet property="pin1Switch" destination="BMG-Kr-AhJ" id="lyd-SB-U1q"/>
                         <outlet property="pin2Switch" destination="Khe-s4-Yhw" id="Zaa-1e-G3C"/>
                         <outlet property="pin3Switch" destination="bJi-uV-h2Q" id="v6o-1J-8Jn"/>
                         <outlet property="pin4Switch" destination="8Nh-ca-zJb" id="58B-o6-XaC"/>
                         <outlet property="plotView" destination="xVH-Wg-yeX" id="pQe-YW-MLH"/>
-                        <outlet property="pulsingMessageLabel" destination="Oqc-JY-p0A" id="k1Z-6C-LOb"/>
                         <outlet property="pulsingSwitch" destination="frf-S8-gFA" id="DVz-h2-9OI"/>
                         <outlet property="recordButton" destination="3ec-9F-OQr" id="l62-HG-BoC"/>
                     </connections>

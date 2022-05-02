@@ -67,22 +67,34 @@ extension BLEStack : CBPeripheralDelegate
             return
         }
         
+        let (type_received, ble_substring) = DataConversion.sortChannel(input: encodedStringSensorData)
+        
         // Perform String Parsing Algorithm
-        let resultArray = DataConversion.bleSensorStringToNumberArray(data: encodedStringSensorData)
-        print(resultArray)
+        if(type_received == BLEReceivedDataType.Data)
+        {
+            let resultArray = DataConversion.bleSensorStringToNumberArray(data: ble_substring)
+            print(resultArray)
+            
+            // Update Singleton instance
+            SingletonBlackboard.shared.data.dataU = resultArray[0]
+            SingletonBlackboard.shared.data.dataV = resultArray[1]
+            SingletonBlackboard.shared.data.dataW = resultArray[2]
+            SingletonBlackboard.shared.data.dataX = resultArray[3]
+            SingletonBlackboard.shared.data.dataY = resultArray[4]
+            SingletonBlackboard.shared.data.dataZ = resultArray[5]
+            SingletonBlackboard.shared.data.pulseInfo = resultArray[6]
+            
+            // Signal MainVC via Delegate to record values
+            sensorDataUpdateDelegate?.updateSensorValue()
+            recordSensorDataDelegate?.recordOnCondition()
+        }
+        // Display Log
+        else if(type_received == BLEReceivedDataType.Log)
+        {
+            SingletonBlackboard.shared.log_message = ble_substring
+            bluetoothLogDelegate?.displayLogOnUI()
+        }
         
-        // Update Singleton instance
-        SingletonBlackboard.shared.data.dataU = resultArray[0]
-        SingletonBlackboard.shared.data.dataV = resultArray[1]
-        SingletonBlackboard.shared.data.dataW = resultArray[2]
-        SingletonBlackboard.shared.data.dataX = resultArray[3]
-        SingletonBlackboard.shared.data.dataY = resultArray[4]
-        SingletonBlackboard.shared.data.dataZ = resultArray[5]
-        SingletonBlackboard.shared.data.pulseInfo = resultArray[6]
-        
-        // Signal MainVC via Delegate to record values
-        sensorDataUpdateDelegate?.updateSensorValue()
-        recordSensorDataDelegate?.recordOnCondition()
     }
     
     

@@ -30,6 +30,7 @@ class BLEStack : NSObject
     var deviceReloadDelegate : DeviceReloadDelegate?
     var sensorDataUpdateDelegate : SensorDataUpdateDelegate?
     var recordSensorDataDelegate : RecordSensorDataDelegate?
+    var bluetoothLogDelegate : BluetoothLogDelegate?
     
     var connectedFlag : Bool = false
     

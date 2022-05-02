@@ -22,7 +22,7 @@ class MainVC: UIViewController
     @IBOutlet weak var pin3Switch: UISwitch!
     @IBOutlet weak var pin4Switch: UISwitch!
     
-    @IBOutlet weak var pulsingMessageLabel: UILabel!
+    @IBOutlet weak var logMessageLabel: UILabel!
     @IBOutlet weak var plotView: PlotManager!
     
     var dataBox = DataBox()
@@ -210,12 +210,12 @@ extension MainVC
         prepareOriginalRecordButton()
         prepareOriginalConnectButton()
         
-        self.pulsingMessageLabel.text = "Ready"
+        self.logMessageLabel.text = "Ready"
     }
 }
 
 //MARK: Data Delegates
-extension MainVC : SensorDataUpdateDelegate
+extension MainVC : SensorDataUpdateDelegate, RecordSensorDataDelegate, BluetoothLogDelegate
 {
     func updateSensorValue()
     {
@@ -226,11 +226,8 @@ extension MainVC : SensorDataUpdateDelegate
         self.plotView.drawPlotY()
         self.plotView.drawPlotZ()
     }
-}
-
-// whenever new data from BLEStack refreshed, append data
-extension MainVC : RecordSensorDataDelegate
-{
+    
+    // whenever new data from BLEStack refreshed, append data
     func recordOnCondition()
     {
         if recordPressed == true
@@ -239,7 +236,14 @@ extension MainVC : RecordSensorDataDelegate
             dataBox.append()
         }
     }
+    
+    func displayLogOnUI()
+    {
+        logMessageLabel.text = SingletonBlackboard.shared.log_message
+    }
+    
 }
+
 
 
 

@@ -19,7 +19,7 @@
 		05452C7625D64BEE00745531 /* BLEStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05452C7525D64BEE00745531 /* BLEStack.swift */; };
 		05452C7F25D670D300745531 /* ID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05452C7E25D670D300745531 /* ID.swift */; };
 		05452C8A25D6791200745531 /* BluetoothPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05452C8925D6791200745531 /* BluetoothPeripheral.swift */; };
-		05452C9625D683EF00745531 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05452C9525D683EF00745531 /* Protocol.swift */; };
+		05452C9625D683EF00745531 /* DelegateGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05452C9525D683EF00745531 /* DelegateGroup.swift */; };
 		05452CB525D9024F00745531 /* DataConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05452CB425D9024F00745531 /* DataConversion.swift */; };
 		0563C33025E15E1D00E9D5F4 /* BSPWonUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563C32F25E15E1D00E9D5F4 /* BSPWonUITests.swift */; };
 		0563C34625E2061100E9D5F4 /* SingletonBlackboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0563C34525E2061100E9D5F4 /* SingletonBlackboard.swift */; };
@@ -81,7 +81,7 @@
 		05452C7525D64BEE00745531 /* BLEStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEStack.swift; sourceTree = "<group>"; };
 		05452C7E25D670D300745531 /* ID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ID.swift; sourceTree = "<group>"; };
 		05452C8925D6791200745531 /* BluetoothPeripheral.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothPeripheral.swift; sourceTree = "<group>"; };
-		05452C9525D683EF00745531 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		05452C9525D683EF00745531 /* DelegateGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateGroup.swift; sourceTree = "<group>"; };
 		05452CB425D9024F00745531 /* DataConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConversion.swift; sourceTree = "<group>"; };
 		0563C32F25E15E1D00E9D5F4 /* BSPWonUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSPWonUITests.swift; sourceTree = "<group>"; };
 		0563C34525E2061100E9D5F4 /* SingletonBlackboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonBlackboard.swift; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				05452C7E25D670D300745531 /* ID.swift */,
-				05452C9525D683EF00745531 /* Protocol.swift */,
+				05452C9525D683EF00745531 /* DelegateGroup.swift */,
 				05452CB425D9024F00745531 /* DataConversion.swift */,
 				4F428DD22815590000222D72 /* ToolbarPickerView.swift */,
 			);
@@ -553,7 +553,7 @@
 				05A90A0D25E229BB00BB8E4C /* BLEPeripheralManager.swift in Sources */,
 				05C409E025F4083B00C21D38 /* PlotManager.swift in Sources */,
 				0563C34625E2061100E9D5F4 /* SingletonBlackboard.swift in Sources */,
-				05452C9625D683EF00745531 /* Protocol.swift in Sources */,
+				05452C9625D683EF00745531 /* DelegateGroup.swift in Sources */,
 				051878FC25BB14BF0054849D /* AppDelegate.swift in Sources */,
 				05452C3125D5983B00745531 /* BLEConnectVC.swift in Sources */,
 				4F1F8CA3268C48280052170C /* PlotSettings.swift in Sources */,

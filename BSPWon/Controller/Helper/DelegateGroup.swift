@@ -29,3 +29,9 @@ protocol RecordSensorDataDelegate
     func recordOnCondition()
 }
 
+//MARK: -
+//
+protocol BluetoothLogDelegate
+{
+    func displayLogOnUI()
+}
