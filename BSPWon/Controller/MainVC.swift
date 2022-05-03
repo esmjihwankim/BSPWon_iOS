@@ -74,17 +74,13 @@ class MainVC: UIViewController
                 AlertCall.showAlert(viewController: self, message: "Please connect to a device before recording", handler: nil)
                 return
             }
-            dataBox.clear()
-            recordPressed = true
-            recordButton.setTitle("Stop", for: .normal)
-            recordButton.layer.backgroundColor = UIColor.systemRed.cgColor
+            dataBox.labelTopRow()
+            prepareStopRecordButton()
         }
         // Stop Recording
         else
         {
-            recordPressed = false
-            recordButton.setTitle("Record", for: .normal)
-            recordButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
+            prepareRecordButton()
             dataBox.saveToFileSystem()
             dataBox.clear()
         }
@@ -97,14 +93,13 @@ class MainVC: UIViewController
         {
             BLEStack.shared.writeValue(data: "<PULSEON>")
             dataBox.clear()
+            dataBox.labelTopRow()
             prepareStopRecordButton()
-            
-            
         }
         else
         {
             BLEStack.shared.writeValue(data: "<PULSEOFF>")
-            prepareOriginalRecordButton()
+            prepareRecordButton()
             dataBox.saveToFileSystem()
             dataBox.clear()
         }
@@ -177,25 +172,27 @@ class MainVC: UIViewController
 extension MainVC
 {
     
-    func prepareOriginalConnectButton()
+    func prepareConnectButton()
     {
         self.connectButton.layer.cornerRadius = 5.0
         self.connectButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
         self.connectButton.tintColor = UIColor.white
     }
     
-    func prepareOriginalRecordButton()
+    // When Stop has been pressed : Back to original state and data saving should occur
+    func prepareRecordButton()
     {
         self.recordButton.layer.cornerRadius = 5.0
         self.recordButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
         self.recordButton.tintColor = UIColor.white
     }
     
+    // When Record button has been pressed - record button turns red and sign changes
     func prepareStopRecordButton()
     {
-        recordPressed = true
         recordButton.setTitle("Stop", for: .normal)
         recordButton.layer.backgroundColor = UIColor.systemRed.cgColor
+        recordPressed = true
     }
     
     // UI
@@ -208,8 +205,8 @@ extension MainVC
         self.pin3Switch.isOn = false
         self.pin4Switch.isOn = false
         
-        prepareOriginalRecordButton()
-        prepareOriginalConnectButton()
+        prepareRecordButton()
+        prepareConnectButton()
         
         self.logMessageLabel.text = "Ready"
     }
@@ -248,7 +245,7 @@ extension MainVC : SensorDataUpdateDelegate, RecordSensorDataDelegate, Bluetooth
         if(SingletonBlackboard.shared.peripheral_state == "NMPD")
         {
             pulsingSwitch.isOn = false
-            prepareOriginalRecordButton()
+            prepareRecordButton()
             dataBox.saveToFileSystem()
             dataBox.clear()
         }

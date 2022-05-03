@@ -17,6 +17,11 @@ class DataBox : DataContainer {
         return _cnt
     }
     
+    func labelTopRow()
+    {
+        dataCollection.append("Timestamp,U,V,W,X,Y,Z,PulseInfo,Us,Ub,Vs,Vb,Ws,Wb,X+,X-,Y+,Y-,Z+,Z-\n")
+    }
+    
     func append()
     {
         let currentTime = Date()
@@ -38,29 +43,29 @@ class DataBox : DataContainer {
         dataCollection.append(",")
         dataCollection.append(String(SingletonBlackboard.shared.data.pulseInfo))
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b100000000000) >> 11))
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b100000000000) >> 11)) // Us
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b010000000000) >> 10))
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b010000000000) >> 10)) // Ub
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b001000000000) >> 9))
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b001000000000) >> 9)) // Vs
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000100000000) >> 8))
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000100000000) >> 8)) // Vb
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000010000000) >> 7))
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000010000000) >> 7)) // Ws
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000001000000) >> 6))
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000001000000) >> 6)) // Wb
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000100000) >> 5))
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000100000) >> 5)) // X+
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000010000) >> 4))
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000010000) >> 4)) // X-
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000001000) >> 3))
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000001000) >> 3)) // Y+
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000000100) >> 2))
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000000100) >> 2)) // Y-
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000000010) >> 1))
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000000010) >> 1)) // Z+
         dataCollection.append(",")
-        dataCollection.append(String(SingletonBlackboard.shared.data.pulseInfo & 0b000000000001))
+        dataCollection.append(String(SingletonBlackboard.shared.data.pulseInfo & 0b000000000001)) // Z-
         dataCollection.append("\n")
         
         _cnt += 6
