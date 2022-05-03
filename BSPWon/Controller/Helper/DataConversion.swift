@@ -35,6 +35,11 @@ class DataConversion
         {
             dataType = BLEReceivedDataType.Log
         }
+        // state channel
+        else if(input[input.startIndex] == "S")
+        {
+            dataType = BLEReceivedDataType.State
+        }
         
         return (dataType!, String(substring))
     }

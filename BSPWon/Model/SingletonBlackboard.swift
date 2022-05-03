@@ -17,5 +17,6 @@ final class SingletonBlackboard
         
     var data : SensorData = SensorData()
     var log_message : String?
+    var peripheral_state : String?
     
 }

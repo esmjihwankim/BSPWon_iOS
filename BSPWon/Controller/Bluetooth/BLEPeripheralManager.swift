@@ -68,12 +68,12 @@ extension BLEStack : CBPeripheralDelegate
         }
         
         let (type_received, ble_substring) = DataConversion.sortChannel(input: encodedStringSensorData)
+        print(encodedStringSensorData)
         
         // Perform String Parsing Algorithm
         if(type_received == BLEReceivedDataType.Data)
         {
             let resultArray = DataConversion.bleSensorStringToNumberArray(data: ble_substring)
-            print(resultArray)
             
             // Update Singleton instance
             SingletonBlackboard.shared.data.dataU = resultArray[0]
@@ -93,6 +93,11 @@ extension BLEStack : CBPeripheralDelegate
         {
             SingletonBlackboard.shared.log_message = ble_substring
             bluetoothLogDelegate?.displayLogOnUI()
+        }
+        else if(type_received == BLEReceivedDataType.State)
+        {
+            SingletonBlackboard.shared.peripheral_state = ble_substring
+            bluetoothStateChangeDelegate?.applyStateChanges()
         }
         
     }

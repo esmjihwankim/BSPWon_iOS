@@ -11,4 +11,5 @@ enum BLEReceivedDataType
 {
     case Data
     case Log
+    case State
 }

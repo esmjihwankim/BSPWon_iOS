@@ -35,3 +35,10 @@ protocol BluetoothLogDelegate
 {
     func displayLogOnUI()
 }
+
+//MARK: -
+//
+protocol BluetoothStateChangeDelegate
+{
+    func applyStateChanges()
+}

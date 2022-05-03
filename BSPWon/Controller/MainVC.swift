@@ -27,15 +27,16 @@ class MainVC: UIViewController
     
     var dataBox = DataBox()
     var recordPressed : Bool = false
-    
-    static let pulse_ui_notification = Notification.Name("signal_pulsing")
-    
+        
     override func viewDidLoad()
     {
         super.viewDidLoad()
         setUI()
         BLEStack.shared.sensorDataUpdateDelegate = self
         BLEStack.shared.recordSensorDataDelegate = self
+        BLEStack.shared.bluetoothLogDelegate = self
+        BLEStack.shared.bluetoothStateChangeDelegate = self
+        
         BLEStack.shared.mainVC = self
         plotView.initGraph()
     }
@@ -215,7 +216,7 @@ extension MainVC
 }
 
 //MARK: Data Delegates
-extension MainVC : SensorDataUpdateDelegate, RecordSensorDataDelegate, BluetoothLogDelegate
+extension MainVC : SensorDataUpdateDelegate, RecordSensorDataDelegate, BluetoothLogDelegate, BluetoothStateChangeDelegate
 {
     func updateSensorValue()
     {
@@ -241,6 +242,18 @@ extension MainVC : SensorDataUpdateDelegate, RecordSensorDataDelegate, Bluetooth
     {
         logMessageLabel.text = SingletonBlackboard.shared.log_message
     }
+    
+    func applyStateChanges()
+    {
+        if(SingletonBlackboard.shared.peripheral_state == "NMPD")
+        {
+            pulsingSwitch.isOn = false
+            prepareOriginalRecordButton()
+            dataBox.saveToFileSystem()
+            dataBox.clear()
+        }
+    }
+    
     
 }
 
