@@ -122,4 +122,10 @@ extension BLEStack : CBPeripheralDelegate
         print("WRITE::\(characteristic)")
     }
     
+    
+    /* RSSI */
+    func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
+       
+    }
+    
 }

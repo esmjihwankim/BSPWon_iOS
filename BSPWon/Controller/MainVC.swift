@@ -39,6 +39,12 @@ class MainVC: UIViewController
         
         BLEStack.shared.mainVC = self
         plotView.initGraph()
+        let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            if let myPeripheral = BLEStack.shared.peripheral
+            {
+                myPeripheral.readRSSI()
+            }
+        }
     }
     
     // responsible for connecting and disconnecting
@@ -76,6 +82,7 @@ class MainVC: UIViewController
             }
             dataBox.labelTopRow()
             prepareStopRecordButton()
+            recordPressed = true
         }
         // Stop Recording
         else
@@ -95,6 +102,7 @@ class MainVC: UIViewController
             dataBox.clear()
             dataBox.labelTopRow()
             prepareStopRecordButton()
+            recordPressed = true
         }
         else
         {
@@ -192,7 +200,7 @@ extension MainVC
     {
         recordButton.setTitle("Stop", for: .normal)
         recordButton.layer.backgroundColor = UIColor.systemRed.cgColor
-        recordPressed = true
+        
     }
     
     // UI

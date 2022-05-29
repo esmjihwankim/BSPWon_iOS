@@ -41,11 +41,13 @@ class PinNamesVC : UIViewController
 
 extension PinNamesVC : UITextFieldDelegate
 {
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
         view.endEditing(true)
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
         textField.resignFirstResponder()
         return true
     }
