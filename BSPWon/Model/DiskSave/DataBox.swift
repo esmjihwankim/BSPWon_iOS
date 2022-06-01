@@ -67,7 +67,7 @@ class DataBox : DataContainer {
         dataCollection.append(",")
         dataCollection.append(String(SingletonBlackboard.shared.data.pulseInfo & 0b000000000001)) // Z-
         dataCollection.append("\n")
-        
+
         _cnt += 6
         
         if(count > 100000)
@@ -90,7 +90,7 @@ class DataBox : DataContainer {
     func saveToFileSystem()
     {
         let currentDateTime = Date()
-        dateFormatter.dateFormat = "YYYY.mm.dd.HH_mm"
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let fileName = dateFormatter.string(from: currentDateTime)
         
         guard let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first

@@ -39,12 +39,8 @@ class MainVC: UIViewController
         
         BLEStack.shared.mainVC = self
         plotView.initGraph()
-        let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            if let myPeripheral = BLEStack.shared.peripheral
-            {
-                myPeripheral.readRSSI()
-            }
-        }
+        showRSSI()
+        
     }
     
     // responsible for connecting and disconnecting
@@ -259,6 +255,15 @@ extension MainVC : SensorDataUpdateDelegate, RecordSensorDataDelegate, Bluetooth
         }
     }
     
+    func showRSSI()
+    {
+        let _ = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+            if let myPeripheral = BLEStack.shared.peripheral
+            {
+                myPeripheral.readRSSI()
+            }
+        }
+    }
     
 }
 

@@ -124,8 +124,9 @@ extension BLEStack : CBPeripheralDelegate
     
     
     /* RSSI */
-    func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
-       
+    func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?)
+    {
+        print("RSSI Value::\(RSSI)dBM")
     }
     
 }
