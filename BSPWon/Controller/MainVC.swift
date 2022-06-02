@@ -40,7 +40,6 @@ class MainVC: UIViewController
         BLEStack.shared.mainVC = self
         plotView.initGraph()
         showRSSI()
-        
     }
     
     // responsible for connecting and disconnecting
@@ -253,6 +252,22 @@ extension MainVC : SensorDataUpdateDelegate, RecordSensorDataDelegate, Bluetooth
             dataBox.saveToFileSystem()
             dataBox.clear()
         }
+    }
+    
+    /*  @brief Plots data in every designated interval (current: 0.3 seconds)
+        @detail Instead of following the sensor's sampling frequency for plotting frequency,
+                designate a specialized timer for this function
+     */
+    func showPlot()
+    {
+        // TODO: see if this function can be implemented in the background thread
+        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { timer in
+            if BLEStack.shared.connectedFlag == true
+            {
+                self.updateSensorValue()
+            }
+        }
+        
     }
     
     func showRSSI()
