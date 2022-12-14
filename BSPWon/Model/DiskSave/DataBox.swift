@@ -19,7 +19,7 @@ class DataBox : DataContainer {
     
     func labelTopRow()
     {
-        dataCollection.append("Timestamp,U,V,W,X,Y,Z,PulseInfo,Us,Ub,Vs,Vb,Ws,Wb,X+,X-,Y+,Y-,Z+,Z-\n")
+        dataCollection.append("Timestamp,U,V,W,X,Y,Z,PulseInfo,Us,Ub,Vs,Vb,Ws,Wb,X-,X+,Y-,Y+,Z-,Z+\n")
     }
     
     func append()
@@ -55,17 +55,17 @@ class DataBox : DataContainer {
         dataCollection.append(",")
         dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000001000000) >> 6)) // Wb
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000100000) >> 5)) // X+
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000100000) >> 5)) // X-
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000010000) >> 4)) // X-
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000010000) >> 4)) // X+
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000001000) >> 3)) // Y+
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000001000) >> 3)) // Y-
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000000100) >> 2)) // Y-
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000000100) >> 2)) // Y+
         dataCollection.append(",")
-        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000000010) >> 1)) // Z+
+        dataCollection.append(String((SingletonBlackboard.shared.data.pulseInfo & 0b000000000010) >> 1)) // Z-
         dataCollection.append(",")
-        dataCollection.append(String(SingletonBlackboard.shared.data.pulseInfo & 0b000000000001)) // Z-
+        dataCollection.append(String(SingletonBlackboard.shared.data.pulseInfo & 0b000000000001)) // Z+
         dataCollection.append("\n")
 
         _cnt += 6
