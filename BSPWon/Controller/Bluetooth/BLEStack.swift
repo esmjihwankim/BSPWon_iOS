@@ -35,11 +35,13 @@ class BLEStack : NSObject
     
     var connectedFlag : Bool = false
     
+    
     override init()
     {
         super.init()
         centralManager = CBCentralManager(delegate: self, queue: nil)
     }
+    
 
 }
 

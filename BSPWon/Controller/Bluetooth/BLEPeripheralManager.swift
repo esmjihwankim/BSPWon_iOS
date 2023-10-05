@@ -113,15 +113,16 @@ extension BLEStack : CBPeripheralDelegate
         if let currentPeripheral = self.peripheral
         {
             guard let currentCharacteristic = transmitCharacteristic else { return print("transmit characteristics not found") }
-            currentPeripheral.writeValue(valueString!, for: currentCharacteristic, type: CBCharacteristicWriteType.withoutResponse)
+            currentPeripheral.writeValue(valueString!, for: currentCharacteristic, type: CBCharacteristicWriteType.withResponse)
         }
     }
     
     func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?)
     {
         print("WRITE::\(characteristic)")
+        PerformanceMetric.endTime = mach_absolute_time()
+        print("Time Taken to Write::\(PerformanceMetric.timeBlockWithMach())")
     }
-    
     
     /* RSSI */
     func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?)

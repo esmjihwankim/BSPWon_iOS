@@ -80,11 +80,12 @@ class MainVC: UIViewController
             recordPressed = true
         }
         // Stop Recording
-        else
+        else // recordPressed == true
         {
             prepareRecordButton()
             dataBox.saveToFileSystem()
             dataBox.clear()
+            recordPressed = false
         }
     }
     
@@ -123,6 +124,7 @@ class MainVC: UIViewController
     
     @IBAction func pin1SwitchPressed(_ sender: UISwitch)
     {
+        PerformanceMetric.startTime = mach_absolute_time()
         if pin1Switch.isOn
         {
             BLEStack.shared.writeValue(data: "<CONTROLPIN1ON>")
@@ -188,13 +190,14 @@ extension MainVC
         self.recordButton.layer.cornerRadius = 5.0
         self.recordButton.layer.backgroundColor = UIColor.systemIndigo.cgColor
         self.recordButton.tintColor = UIColor.white
+        self.recordButton.setTitle("Record", for: .normal)
     }
     
     // When Record button has been pressed - record button turns red and sign changes
     func prepareStopRecordButton()
     {
-        recordButton.setTitle("Stop", for: .normal)
-        recordButton.layer.backgroundColor = UIColor.systemRed.cgColor
+        self.recordButton.setTitle("Stop", for: .normal)
+        self.recordButton.layer.backgroundColor = UIColor.systemRed.cgColor
         
     }
     

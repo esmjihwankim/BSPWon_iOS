@@ -12,18 +12,11 @@ class SettingsVC : UIViewController, UITextFieldDelegate, UIPickerViewDelegate, 
     let pickerView = ToolbarPickerView()
     let projects = ["Neuromorphic", "Jellyfish", "Pressure Array"]
 
-    @IBOutlet weak var projectChoiceButton: UIButton!
-
     override func viewDidLoad()
-    {
-        projectChoiceButton.layer.cornerRadius = 10
-    }
-
-    @IBAction func showPickerviewButton(_ sender: Any)
     {
         createPickerView()
     }
-    
+
 }
 
 

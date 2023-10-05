@@ -31,6 +31,7 @@
 		05A90A2B25E252FE00BB8E4C /* DataBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A90A2A25E252FE00BB8E4C /* DataBox.swift */; };
 		05C409E025F4083B00C21D38 /* PlotManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C409DF25F4083B00C21D38 /* PlotManager.swift */; };
 		267349D1A65F224317FA196F /* Pods_BSPWonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4619C1C8703EBFE5C99FE84 /* Pods_BSPWonTests.framework */; };
+		4F1904DB2ACE536700EC5691 /* PerformanceMetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1904DA2ACE536600EC5691 /* PerformanceMetric.swift */; };
 		4F1F8CA3268C48280052170C /* PlotSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F8CA2268C48280052170C /* PlotSettings.swift */; };
 		4F1F8CA5268DA4020052170C /* PlotDatasourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F8CA4268DA4020052170C /* PlotDatasourceDelegate.swift */; };
 		4F1F8CA926914E0B0052170C /* PinNamesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1F8CA826914E0B0052170C /* PinNamesVC.swift */; };
@@ -94,6 +95,7 @@
 		05C409DF25F4083B00C21D38 /* PlotManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotManager.swift; sourceTree = "<group>"; };
 		0F6E28E8B59A78F629DE4624 /* Pods-BSPWon-BSPWonUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWon-BSPWonUITests.release.xcconfig"; path = "Target Support Files/Pods-BSPWon-BSPWonUITests/Pods-BSPWon-BSPWonUITests.release.xcconfig"; sourceTree = "<group>"; };
 		1EC3B6BD94BAEFC43A873A0F /* Pods-BSPWonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BSPWonTests.debug.xcconfig"; path = "Target Support Files/Pods-BSPWonTests/Pods-BSPWonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4F1904DA2ACE536600EC5691 /* PerformanceMetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceMetric.swift; sourceTree = "<group>"; };
 		4F1F8CA2268C48280052170C /* PlotSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotSettings.swift; sourceTree = "<group>"; };
 		4F1F8CA4268DA4020052170C /* PlotDatasourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlotDatasourceDelegate.swift; sourceTree = "<group>"; };
 		4F1F8CA826914E0B0052170C /* PinNamesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinNamesVC.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				05452C7E25D670D300745531 /* ID.swift */,
+				4F1904DA2ACE536600EC5691 /* PerformanceMetric.swift */,
 				05452C9525D683EF00745531 /* DelegateGroup.swift */,
 				05452CB425D9024F00745531 /* DataConversion.swift */,
 				4F428DD22815590000222D72 /* ToolbarPickerView.swift */,
@@ -549,6 +552,7 @@
 				05452C7F25D670D300745531 /* ID.swift in Sources */,
 				05452C7625D64BEE00745531 /* BLEStack.swift in Sources */,
 				4F1F8CA5268DA4020052170C /* PlotDatasourceDelegate.swift in Sources */,
+				4F1904DB2ACE536700EC5691 /* PerformanceMetric.swift in Sources */,
 				4F428DD12809A1AA00222D72 /* SettingsVC.swift in Sources */,
 				05A90A0D25E229BB00BB8E4C /* BLEPeripheralManager.swift in Sources */,
 				05C409E025F4083B00C21D38 /* PlotManager.swift in Sources */,

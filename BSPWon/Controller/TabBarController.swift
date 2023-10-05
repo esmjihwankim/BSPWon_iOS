@@ -14,7 +14,6 @@ class TabBarController : UITabBarController, UITabBarControllerDelegate
         super.viewDidLoad()
         setUI()
     }
-    
 
     func setUI()
     {
